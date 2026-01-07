@@ -29,6 +29,7 @@ header{
             .logo{
                 font-size: 32px;
                 color: #FFFFFF;
+                text-decoration: none;
                 span{
                     color: var(--primary-color);
                 }
