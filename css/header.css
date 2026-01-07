@@ -1,0 +1,156 @@
+body{
+    margin: 0 auto;
+    background-color: #272727;
+}
+
+:root{
+    --primary-color: #83C9FF;
+    --shadow: 0 4px 4px rgba(0, 0, 0, 0.207);
+}
+
+header{
+    font-family: 'Inter';
+    display: flex;
+    justify-content: center;
+    background-color: #1C1C1C;
+    box-shadow: var(--shadow);
+    .wrap{
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 133px;
+        height: 100px;
+        .wrap-1{
+            display: flex;
+            gap: 44px;
+
+            .logo{
+                font-size: 32px;
+                color: #FFFFFF;
+                span{
+                    color: var(--primary-color);
+                }
+            }
+            .navbar{
+                display: flex;
+                gap: 40px;
+                .item{
+                    font-size: 20px;
+                    text-decoration: none;
+                    color: #FFFFFF;
+                }
+                .co-active{
+                    color: var(--primary-color);
+                    text-decoration: underline;
+                    text-underline-offset: 8px;
+                }
+            }
+        }
+        .wrap-2{
+            display: flex;
+            gap: 26px;
+            .w2-1{
+                display: flex;
+                gap: 25px;
+                align-items: center;
+                .search{
+                    position: relative;
+                    #search-icon{
+                        position: absolute;
+                        top: 13px;
+                        left: 12px;
+                        height: 19px;
+                        width: 19px;
+                        img{
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    #search-icon:hover{
+                        transform: scale(1.15);
+                        transition: all 0.2s ease;
+                    }
+                    #search-bar{
+                        width: 230px;
+                        height: 45px;
+                        border-radius: 30px;
+                        background-color: #FFFFFF;
+                        padding-left: 50px;
+                        border: none;
+                    }
+                    
+                }
+                #notification{
+                    display: flex;
+                    background-color: rgb(255, 255, 255);
+                    position: absolute;
+                    right: 360px;
+                    top: 110px;
+                    width: 280px;
+                    border-radius: 10px;
+                    box-shadow: var(--shadow);
+
+                    opacity: 0;    
+                    visibility: hidden; 
+                    transition: opacity 0.2s ease, transform 0.2s ease;
+                    transform: translateY(-20px);
+
+                    .wrap-notic{
+                        width: 100%;
+                        max-width: 260px;
+                        margin: 0 auto;
+                        .item{
+                            
+                        }
+                    }
+                }
+
+                #notification.is-visible {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+
+                #belt:hover{
+                    transform: scale(1.15);
+                    transition: all 0.2s ease;
+                    box-shadow: var(--shadow);
+                }
+
+                #belt:active{
+                    transform: scale(1.1);
+                }
+                
+            }
+            .w2-2{
+                display: flex;
+                gap: 10px;
+                .user-avt{
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background-color: #FFFFFF;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    #avatar{
+                        height: 27px;
+                        width: 27px;
+                    }
+                }
+                .wrap-info{
+                    .user-name{
+                        font-size: 24px;
+                        color: #FFFFFF;
+                    }
+                    .setting-user{
+                        text-decoration: none;
+                        color: var(--primary-color);
+                    }
+                }
+            }
+        }
+    }
+}
