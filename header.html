@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="/webbcn/css/header.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <div class="wrap-1">
+                <div class="logo">Portfolio<span>BCN</span></div>
+                <div class="navbar">
+                    <a href="" class="item">Home</a>
+                    <a href="" class="item co-active">Users</a>
+                    <a href="" class="item">Projects</a>
+                </div>
+            </div>
+            <div class="wrap-2">
+                <div class="w2-1">
+                    <div class="search">
+                        <a href="" id="search-icon"><img src="/Assets/search-icon.svg" alt=""></a>
+                        <input id="search-bar" placeholder="Type to search" type="text">
+                    </div>
+                    <img onclick="noticBar()" id="belt" src="/Assets/notic.svg" alt="">
+                    <div id="notification">
+                        <div class="wrap-notic">
+                            <div class="item">Hello</div>
+                            <div class="item">Hi</div>
+                            <div class="item">Hola</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w2-2">
+                    <div class="user-avt">
+                        <img src="/Assets/avatar.svg" id="avatar" alt="">
+                    </div>
+                    <div class="wrap-info">
+                        <div class="user-name">Nguyen Hung</div>
+                        <a href="" class="setting-user">Account Setting</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        function noticBar(){
+            // alert("Hola!");
+            const notiBar = document.getElementById("notification");
+            if (notiBar.style.display === 'flex') {
+                notiBar.classList.toggle("is-visible");
+            } else {
+                notiBar.style.display = 'none';
+                notiBar.style.display = 'flex';
+            }
+
+        }
+    </script>
+</body>
+</html>
