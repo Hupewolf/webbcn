@@ -102,9 +102,6 @@ header{
                         width: 100%;
                         max-width: 260px;
                         margin: 0 auto;
-                        .item{
-                            
-                        }
                     }
                 }
 
@@ -113,17 +110,6 @@ header{
                     visibility: visible;
                     transform: translateY(0);
                 }
-
-                #belt:hover{
-                    transform: scale(1.15);
-                    transition: all 0.2s ease;
-                    box-shadow: var(--shadow);
-                }
-
-                #belt:active{
-                    transform: scale(1.1);
-                }
-                
             }
             .w2-2{
                 display: flex;
@@ -154,4 +140,26 @@ header{
             }
         }
     }
+}
+.belt {
+    display: inline-block;
+    transform-origin: top center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow);
+}
+.belt:hover{
+    animation: ring 0.6s ease-in-out;
+}
+@keyframes ring {
+    0%   { transform: rotate(0); }
+    15%  { transform: rotate(15deg); }
+    30%  { transform: rotate(-15deg); }
+    45%  { transform: rotate(10deg); }
+    60%  { transform: rotate(-10deg); }
+    75%  { transform: rotate(5deg); }
+    100% { transform: rotate(0); }
+}
+.belt:active {
+    transform: scale(0.95);
 }
