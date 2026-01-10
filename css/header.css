@@ -22,6 +22,7 @@ header{
         align-items: center;
         gap: 133px;
         height: 100px;
+        justify-content: space-between;
         .wrap-1{
             display: flex;
             gap: 44px;

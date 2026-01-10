@@ -244,6 +244,11 @@
             line-height: 1.5;
             max-width: 90%;
         }
+        .active {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
         /* footer */
         .card-footer {
@@ -274,7 +279,7 @@
             border: none;
             color: #272727;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 600;
             background-color: var(--primary-color);
             box-shadow: var(--shadow);
             transition: all 0.2s ease;
