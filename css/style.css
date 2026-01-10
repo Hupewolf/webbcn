@@ -145,6 +145,7 @@
     display: flex;
     justify-content: space-between;
     padding: 50px 0;
+    font-family: 'Inter';
     .main-left {
         width: 339px;
         height: 596px;
@@ -289,10 +290,9 @@
 
 .slider{
     position: relative;
-    width: 95%;
-    max-width: 1277px;
     height: 569px;
     overflow: hidden;
+    font-family: 'Inter';
     button {
         width: 49px;
         height: 49px;
@@ -363,6 +363,7 @@
     height: 458px;
     margin-top: 102px;
     background: #1C1C1C;
+    font-family: 'Inter';
     .frame1 {
         width: 95%;
         max-width: 1277px;
@@ -375,7 +376,7 @@
             flex-direction: column;
             gap: 16px;
             .logo {
-                font-weight: 400;
+                font-weight: 500;
                 font-size: 32px;
                 color: #FFFFFF;
                 span {
