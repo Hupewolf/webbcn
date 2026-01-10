@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #83C9FF;
+    --shadow: 0 4px 4px rgba(0, 0, 0, 0.207);
+}
+
+.container {
+    max-width: 1280px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.banner {
+    font-family: 'Inter';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 105px 0;
+    gap: 125px;
+}
+
+
+
+.avatar-wrapper {
+    position: relative;
+    width: 434px;
+    height: 434px;
+}
+
+.avatar {
+    width: 262px;
+    height: 262px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Vòng xoay */
+.ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 25px solid transparent;
+    border-top: 25px solid #fff;
+    border-bottom: 25px solid #fff;
+    animation: spin 6s linear infinite;
+    z-index: 1;
+}
+
+/* Animation xoay */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.ring.second {
+    inset: 30px;
+    border: 20px solid transparent;
+    border-top: 20px solid var(--primary-color);
+    border-right: 20px solid var(--primary-color);
+    border-left: 20px solid var(--primary-color);
+    animation: spinReverse 8s linear infinite;
+}
+
+@keyframes spinReverse {
+    from { transform: rotate(360deg); }
+    to   { transform: rotate(0deg); }
+}
+
+.banner-right {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .introduce {
+            width: 597px;
+            font-weight: 700;
+            font-size: 48px;
+            color: var(--primary-color);
+        }
+        .info {
+            width: 700px;
+            font-weight: 500;
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+    .btn-box {
+        display: flex;
+        gap: 22px;
+        button {
+            width: 195px;
+            height: 65px;
+            border-radius: 20px;
+            border: none;
+            color: #272727;
+            font-weight: 700;
+            font-size: 29px;
+            box-shadow: 0 4px 4px rgba(235, 235, 235, 0.207);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn1 {
+            background-color: var(--primary-color);
+        }
+        .btn2 {
+            background-color: #fff;
+        }
+        .btn1:hover {
+            background-color: #b2deff;
+        }
+        .btn2:hover {
+            background-color: #cacaca;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+.marquee {
+    background-color: #000;
+    padding: 30px 0;
+    .mar-box {
+        letter-spacing: 164px;
+    }
+}
+
+.mainContent {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+    .main-left {
+        width: 339px;
+        height: 596px;
+        display: flex;
+        flex-direction: column;
+        gap: 37px;
+        padding: 24px 41px 0;
+        background-color: #3B3B3B;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            .intro {
+                color: var(--primary-color);
+                font-size: 20px;
+                font-weight: 500;
+            }
+            .text {
+                color: #fff;
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+    .main-right {
+        width: 882px;
+        height: 703px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 51px;
+        flex-direction: column;
+        border-radius: 20px;
+        background-color: #3B3B3B;
+        box-shadow: var(--shadow);
+        .project-box {
+            max-width: 820px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .project {
+            border-radius: 20px;
+            width: 400px;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+        .item1 {
+            background-image: url(../img/main/bannerImg/Rectangle\ 52.png);
+        }
+        .item2 {
+            background-image: url(../img/main/bannerImg/Rectangle\ 53.png);
+        }
+        .item3 {
+            background-image: url(../img/main/bannerImg/Rectangle\ 52\ \(1\).png);
+        }
+        .item4 {
+            background-image: url(../img/main/bannerImg/Rectangle\ 53\ \(1\).png);
+        }
+        .overlay {
+            position: absolute;
+            inset: 0;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: 0.4s ease;
+        }
+
+        /* hover hiện bảng */
+        .project:hover .overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* text */
+        .overlay h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .overlay p {
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 90%;
+        }
+
+        /* footer */
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-footer button {
+            background: var(--primary-color);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 999px;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .stats {
+            display: flex;
+            gap: 16px;
+            font-size: 14px;
+        }
+        button {
+            width: 148px;
+            height: 42px;
+            border-radius: 20px;
+            border: none;
+            color: #272727;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: var(--primary-color);
+            box-shadow: var(--shadow);
+            transition: all 0.2s ease;
+        }
+        button:hover {
+            background-color: #b2deff;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+    }
+}
