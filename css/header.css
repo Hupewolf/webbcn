@@ -6,13 +6,15 @@ body{
 :root{
     --primary-color: #83C9FF;
     --shadow: 0 4px 4px rgba(0, 0, 0, 0.207);
+    --font-button: 20px;
+    --bg-accent: #f6f6f6;
 }
 
 header{
     font-family: 'Inter';
     display: flex;
     justify-content: center;
-    background-color: #f6f6f6;
+    background-color: var(--bg-accent);
     box-shadow: var(--shadow);
     .wrap{
         width: 100%;

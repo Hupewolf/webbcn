@@ -6,7 +6,11 @@
 
 :root{
     --primary-color: #83C9FF;
+    --accent-color: #f1f1f1;
     --shadow: 0 4px 4px rgba(0, 0, 0, 0.207);
+    --text-color: #000000;
+    --font-button: 20px;
+    --bg-accent: #f6f6f6;
 }
 
 .container {
@@ -49,8 +53,8 @@
     inset: 0;
     border-radius: 50%;
     border: 25px solid transparent;
-    border-top: 25px solid #fff;
-    border-bottom: 25px solid #fff;
+    border-top: 25px solid #747474;
+    border-bottom: 25px solid #747474;
     animation: spin 6s linear infinite;
     z-index: 1;
 }
@@ -109,17 +113,20 @@
             border-radius: 20px;
             border: none;
             color: #272727;
-            font-weight: 700;
-            font-size: 29px;
+            font-weight: 500;
+            font-size: var(--font-button);
             box-shadow: 0 4px 4px rgba(235, 235, 235, 0.207);
             cursor: pointer;
             transition: all 0.2s ease;
         }
         .btn1 {
             background-color: var(--primary-color);
+            img{
+                width: 16px;
+            }
         }
         .btn2 {
-            background-color: #fff;
+            background-color: #d2d2d2;
         }
         .btn1:hover {
             background-color: #b2deff;
@@ -134,7 +141,7 @@
 }
 
 .marquee {
-    background-color: #000;
+    background-color: var(--bg-accent);
     padding: 30px 0;
     .mar-box {
         letter-spacing: 164px;
@@ -153,7 +160,7 @@
         flex-direction: column;
         gap: 37px;
         padding: 24px 41px 0;
-        background-color: #3B3B3B;
+        background-color: var(--accent-color);
         border-radius: 20px;
         box-shadow: var(--shadow);
         .content {
@@ -166,7 +173,7 @@
                 font-weight: 500;
             }
             .text {
-                color: #fff;
+                color: var(--text-color);
                 font-size: 16px;
                 font-weight: 500;
             }
@@ -181,7 +188,7 @@
         gap: 51px;
         flex-direction: column;
         border-radius: 20px;
-        background-color: #3B3B3B;
+        background-color: var(--accent-color);
         box-shadow: var(--shadow);
         .project-box {
             max-width: 820px;
@@ -315,7 +322,7 @@
     height: 431px;
     text-align: justify;
     box-shadow: 0px 4px 4px 0px #00000040;
-    background: #323232;
+    background: var(--accent-color);
     border-radius: 10px;
     padding: 20px;
     transition: 0.5s;
@@ -336,7 +343,7 @@
         flex-direction: column;
     }
     .bottom  {
-        color: #FFFFFF;
+        color: var(--text-color);
         font-family: Inter;
         font-weight: 400;
         font-size: 16px;
@@ -367,7 +374,7 @@
     width: 100%;
     height: 458px;
     margin-top: 102px;
-    background: #ffffff;
+    background: var(--bg-accent);
     font-family: 'Inter';
     box-shadow: 0px 5px 10px black;
     .frame1 {
