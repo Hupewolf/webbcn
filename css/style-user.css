@@ -7,6 +7,7 @@
 :root{
     --primary-color: #83C9FF;
     --shadow: 0 4px 4px rgba(0, 0, 0, 0.207);
+    --font-button: 20px;
 }
 
 .container {
@@ -49,8 +50,8 @@
     inset: 0;
     border-radius: 50%;
     border: 25px solid transparent;
-    border-top: 25px solid #fff;
-    border-bottom: 25px solid #fff;
+    border-top: 25px solid #747474;
+    border-bottom: 25px solid #747474;
     animation: spin 6s linear infinite;
     z-index: 1;
 }
@@ -110,7 +111,7 @@
             border: none;
             color: #272727;
             font-weight: 700;
-            font-size: 29px;
+            font-size: var(--font-button);
             box-shadow: 0 4px 4px rgba(235, 235, 235, 0.207);
             cursor: pointer;
             transition: all 0.2s ease;
@@ -119,7 +120,7 @@
             background-color: var(--primary-color);
         }
         .btn2 {
-            background-color: #fff;
+            background-color: #d2d2d2;
         }
         .btn1:hover {
             background-color: #b2deff;
