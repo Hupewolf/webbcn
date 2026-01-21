@@ -3,13 +3,6 @@ body{
     background-color: #ffffff;
 }
 
-:root{
-    --primary-color: #83C9FF;
-    --shadow: 0 4px 4px rgba(0, 0, 0, 0.207);
-    --font-button: 20px;
-    --bg-accent: #f6f6f6;
-}
-
 header{
     font-family: 'Inter';
     display: flex;
