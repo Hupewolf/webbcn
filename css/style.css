@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Xai chung cho tat ca */
+    --primary-color: #83C9FF;
+    --accent-color: #f1f1f1;
+    --bg-accent: #f6f6f6;
+
+    --shadow: 0 4px 4px rgba(0, 0, 0, 0.207);
+
+    --text-color: #000000;
+
+    --font-button: 20px;
+    
+}
+body{
+    font-family: 'Inter';
+}
+.btn{
+    width: 195px;
+    height: 65px;
+    border-radius: 20px;
+    border: none;
+    color: #272727;
+    font-weight: 500;
+    font-size: var(--font-button);
+    box-shadow: 0 4px 4px rgba(235, 235, 235, 0.207);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.btn:active{
+    transform: scale(0.95);
+}
+
+.btn-primary-color{
+    background-color: var(--primary-color);
+}
+.btn-primary-color:hover{
+    background-color: #b2deff;
+}
+
+.btn-accent-color{
+    background-color: #d2d2d2;
+}
+.btn-accent-color:hover{
+    background-color: #cacaca;
+}
