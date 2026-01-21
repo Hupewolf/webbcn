@@ -18,8 +18,11 @@
     
 }
 body{
+    /* Font chung */
     font-family: 'Inter';
 }
+
+/* Nut bam chung */
 .btn{
     width: 195px;
     height: 65px;
@@ -52,4 +55,13 @@ body{
 }
 .btn-accent-color:hover{
     background-color: #cacaca;
+}
+
+/* Hover nut bam chuyen trang (Back, next button) chung */
+.hover:hover{
+    transform: scale(1.07);
+    transition: all 0.2s ease;
+}
+.hover:active{
+    opacity: 0.7;
 }
