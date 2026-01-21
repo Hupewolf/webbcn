@@ -9,6 +9,7 @@ header{
     justify-content: center;
     background-color: var(--bg-accent);
     box-shadow: var(--shadow);
+    z-index: 100;
     .wrap{
         width: 100%;
         max-width: 1280px;
