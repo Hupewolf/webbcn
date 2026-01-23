@@ -24,7 +24,13 @@ function loadShow(){
         items[i].style.filter = 'blur(5px)';
         items[i].style.opacity = stt > 2 ? 0 : 0.6;
     }
+    updateArrows();
 }
+function updateArrows() {
+    prev.style.display = active === 0 ? 'none' : 'flex';
+    next.style.display = active === items.length - 1 ? 'none' : 'flex';
+}
+
 loadShow();
 next.onclick = function(){
     active = active + 1 < items.length ? active + 1 : active;
