@@ -271,6 +271,38 @@
 
 .top-project .wrap .side-right{
     flex: 1;
-    background-color: #fe7e7e;
+    /* background-color: #ffffff; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
+.top-project .wrap .side-right .heading{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.top-project .wrap .side-right .content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content .item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.item .title{
+    
+}
+
+.item .wrap-icon{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
