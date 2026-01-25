@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header with Create Button</title>
-    
+    <title>Header with Integrated Modal</title>
+    <!-- Comment lại link CSS ngoài để dùng style nội bộ cho demo chạy được -->
+    <!-- <link rel="stylesheet" href="css/header.css"> -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    
 
 </head>
 <body>
     <header>
         <div class="wrap">
-            <!-- Wrap 1: Logo & Nav -->
             <div class="wrap-1">
                 <div class="logo">Portfolio<span>BCN</span></div>
                 <div class="navbar">
@@ -22,56 +25,41 @@
                     <a href="" class="item">Projects</a>
                 </div>
             </div>
-
-            <!-- Wrap 2: Actions & User -->
+            
             <div class="wrap-2">
-                
-                <!-- Group 1: Search & Notifications -->
                 <div class="w2-1">
                     <div class="search">
-                        <a href="#" id="search-icon">
-                            <!-- SVG Search Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
+                        <a href="" id="search-icon">
+                            <!-- SVG Search thay thế ảnh lỗi -->
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         </a>
                         <input id="search-bar" placeholder="Type to search" type="text">
                     </div>
                     
-                    <!-- SVG Bell Icon -->
-                    <div class="belt" onclick="noticBar()">
-                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                        </svg>
+                    <!-- SVG Bell thay thế ảnh lỗi -->
+                    <div onclick="noticBar()" id="belt" class="belt">
+                        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                     </div>
 
                     <div id="notification">
                         <div class="wrap-notic">
-                            <div class="item">New comment</div>
-                            <div class="item">Project update</div>
-                            <div class="item">Welcome!</div>
+                            <div class="item">Hello</div>
+                            <div class="item">Hi</div>
+                            <div class="item">Hola</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- NEW BUTTON: Create Project -->
-                <button class="btn-create">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                    </svg>
+                <!-- NÚT MỚI: CREATE PROJECT -->
+                <button class="btn-create" id="open-modal-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                     Create Project
                 </button>
 
-                <!-- Group 2: User Info -->
                 <div class="w2-2">
                     <div class="user-avt">
-                        <!-- SVG Avatar -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
-                        </svg>
+                        <!-- SVG Avatar thay thế ảnh lỗi -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#888"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     </div>
                     <div class="wrap-info">
                         <div class="user-name">Nguyen Hung</div>
@@ -82,37 +70,58 @@
         </div>
     </header>
 
-    <script>
-        function noticBar(){
-            const notiBar = document.getElementById("notification");
+    <!-- FORM MODAL (Ẩn mặc định) -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Tạo dự án mới</h3>
+                <span class="close-btn" id="close-modal-x">&times;</span>
+            </div>
             
-            // Toggle visibility class
-            if (notiBar.classList.contains("is-visible")) {
-                notiBar.classList.remove("is-visible");
-                setTimeout(() => {
-                    notiBar.style.display = 'none'; // Hide after animation
-                }, 200);
-            } else {
-                notiBar.style.display = 'flex'; // Show before animation
-                // Small timeout to allow display:flex to apply before adding opacity class
-                setTimeout(() => {
-                    notiBar.classList.add("is-visible");
-                }, 10);
-            }
-        }
+            <form class="modal-body" onsubmit="event.preventDefault(); alert('Đã tạo dự án thành công!'); closeModal();">
+                <div class="form-group">
+                    <label>Tên dự án <span style="color:red">*</span></label>
+                    <input type="text" placeholder="Nhập tên dự án..." required>
+                </div>
 
-        // Close notification when clicking outside
-        document.addEventListener('click', function(event) {
-            const notiBar = document.getElementById("notification");
-            const belt = document.querySelector('.belt');
-            
-            if (!notiBar.contains(event.target) && !belt.contains(event.target) && notiBar.classList.contains('is-visible')) {
-                notiBar.classList.remove("is-visible");
-                setTimeout(() => {
-                    notiBar.style.display = 'none';
-                }, 200);
-            }
-        });
-    </script>
+                <div style="display: flex; gap: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label>Lĩnh vực</label>
+                        <select>
+                            <option>Web Application</option>
+                            <option>Mobile App</option>
+                            <option>IoT System</option>
+                            <option>Data Science</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label>Công nghệ</label>
+                        <input type="text" placeholder="VD: React, NodeJS...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Mô tả ngắn</label>
+                    <textarea rows="3" placeholder="Mô tả chức năng chính..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Ảnh bìa</label>
+                    <div class="upload-area" id="upload-trigger">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-color)"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        <p style="font-size: 13px; color: #666; margin: 5px 0 0;">Bấm để tải ảnh lên</p>
+                        <input type="file" hidden id="file-input">
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" id="close-modal-btn">Hủy bỏ</button>
+                    <button type="submit" class="btn-submit">Hoàn tất</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
 </body>
 </html>
