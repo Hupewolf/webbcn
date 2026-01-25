@@ -1,6 +1,6 @@
 :root{
     /* Xai chung cho tat ca */
-    --primary-color: #83C9FF;
+    --primary-color: #4180ff;
     --accent-color: #f1f1f1;
     --bg-accent: #f6f6f6;
 
@@ -19,6 +19,7 @@
     background-color: rgb(168, 167, 167);
     position: relative;      
     overflow: hidden;
+    z-index: 1;
 }
 
 .wrap-hero {
@@ -40,6 +41,7 @@
     pointer-events: none;
     background-size: cover;
     background-position: center;
+    z-index: -1;
 }
 
         
