@@ -6,11 +6,11 @@
 
 :root{
     /* Xai chung cho tat ca */
-    --primary-color: #83C9FF;
-    --accent-color: #f1f1f1;
+    --primary-color: #0090FF;
+    --accent-color: #F8F8F8;
     --bg-accent: #f6f6f6;
 
-    --shadow: 0 4px 4px rgba(0, 0, 0, 0.207);
+    --shadow: 3px 3px 4px 0px #00000033, -5px -5px 4px 0px #FFFFFF;
 
     --text-color: #000000;
 
@@ -40,14 +40,21 @@ body{
     gap: 10px;
 }
 .btn:active{
-    transform: scale(0.95);
+    transform: scale(0.9);
 }
 
 .btn-primary-color{
     background-color: var(--primary-color);
+    color: #FFFFFF;
+    box-shadow: 3px 3px 4px 0px #00000033, -5px -5px 4px 0px #FFFFFF;
+    border: 3px solid #D9D9D9;
+    width: 200px;
+    height: 60px;
+    border-radius: 42px;
+    font-weight: 600;
 }
 .btn-primary-color:hover{
-    background-color: #b2deff;
+    background-color: #01326d;
 }
 
 .btn-accent-color{
