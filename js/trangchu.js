@@ -3,6 +3,7 @@ const slides = document.querySelectorAll(".wrap-hero");
 const prevBtn = document.getElementById("back-btn");
 const nextBtn = document.getElementById("next-btn");
 
+
 let currentIndex = 0;
 const totalSlide = slides.length;
 
