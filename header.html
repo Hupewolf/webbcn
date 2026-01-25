@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
-    <link rel="stylesheet" href="css/header.css">
-
+    <title>Header with Create Button</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -14,6 +13,7 @@
 <body>
     <header>
         <div class="wrap">
+            <!-- Wrap 1: Logo & Nav -->
             <div class="wrap-1">
                 <div class="logo">Portfolio<span>BCN</span></div>
                 <div class="navbar">
@@ -22,24 +22,56 @@
                     <a href="" class="item">Projects</a>
                 </div>
             </div>
+
+            <!-- Wrap 2: Actions & User -->
             <div class="wrap-2">
+                
+                <!-- Group 1: Search & Notifications -->
                 <div class="w2-1">
                     <div class="search">
-                        <a href="" id="search-icon"><img src="/Assets/search-icon.svg" alt=""></a>
+                        <a href="#" id="search-icon">
+                            <!-- SVG Search Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </a>
                         <input id="search-bar" placeholder="Type to search" type="text">
                     </div>
-                    <img onclick="noticBar()" id="belt" class="belt" src="img/main/header-img/Frame 70.svg" alt="">
+                    
+                    <!-- SVG Bell Icon -->
+                    <div class="belt" onclick="noticBar()">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </div>
+
                     <div id="notification">
                         <div class="wrap-notic">
-                            <div class="item">Hello</div>
-                            <div class="item">Hi</div>
-                            <div class="item">Hola</div>
+                            <div class="item">New comment</div>
+                            <div class="item">Project update</div>
+                            <div class="item">Welcome!</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- NEW BUTTON: Create Project -->
+                <button class="btn-create">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Create Project
+                </button>
+
+                <!-- Group 2: User Info -->
                 <div class="w2-2">
                     <div class="user-avt">
-                        <img src="/Assets/avatar.svg" id="avatar" alt="">
+                        <!-- SVG Avatar -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
                     </div>
                     <div class="wrap-info">
                         <div class="user-name">Nguyen Hung</div>
@@ -49,18 +81,38 @@
             </div>
         </div>
     </header>
+
     <script>
         function noticBar(){
-            // alert("Hola!");
             const notiBar = document.getElementById("notification");
-            if (notiBar.style.display === 'flex') {
-                notiBar.classList.toggle("is-visible");
+            
+            // Toggle visibility class
+            if (notiBar.classList.contains("is-visible")) {
+                notiBar.classList.remove("is-visible");
+                setTimeout(() => {
+                    notiBar.style.display = 'none'; // Hide after animation
+                }, 200);
             } else {
-                notiBar.style.display = 'none';
-                notiBar.style.display = 'flex';
+                notiBar.style.display = 'flex'; // Show before animation
+                // Small timeout to allow display:flex to apply before adding opacity class
+                setTimeout(() => {
+                    notiBar.classList.add("is-visible");
+                }, 10);
             }
-
         }
+
+        // Close notification when clicking outside
+        document.addEventListener('click', function(event) {
+            const notiBar = document.getElementById("notification");
+            const belt = document.querySelector('.belt');
+            
+            if (!notiBar.contains(event.target) && !belt.contains(event.target) && notiBar.classList.contains('is-visible')) {
+                notiBar.classList.remove("is-visible");
+                setTimeout(() => {
+                    notiBar.style.display = 'none';
+                }, 200);
+            }
+        });
     </script>
 </body>
 </html>
