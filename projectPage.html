@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/projectCSS.css">
+    <link rel="stylesheet" href="./css/card.css">
     <title>Porfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,54 +17,38 @@
 </head>
 <body>
     <header>
-        <div class="wrap">
-            <div class="wrap-1">
-                <div class="logo">Portfolio<span>BCN</span></div>
-                <div class="navbar">
-                    <a href="index.html" class="item">Home</a>
-                    <a href="userPage.html" class="item">Users</a>
-                    <a href="projectPage.html" class="item  co-active">Projects</a>
-                </div>
+        <div class="container-header">
+            <div class="wrap-left">
+                <a class="logo" href="#">Portfolio<span>BCN</span></a>
+                <navbar>
+                    <a href="index.html" class="item">Trang chủ</a>
+                    <a href="userPage.html" class="item">Người dùng</a>
+                    <a href="projectPage.html" class="item active">Dự án</a>
+                </navbar>
             </div>
-            
-            <div class="wrap-2">
-                <div class="w2-1">
-                    <div class="search">
-                        <a href="" id="search-icon">
-                            <!-- SVG Search thay thế ảnh lỗi -->
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                        </a>
-                        <input id="search-bar" placeholder="Type to search" type="text">
+            <div class="wrap-right">
+                <div class="search">
+                    <!-- Chhỗ onclick có thể thêm sau này tính năng tìm kiếm -->
+                    <div class="icon-search" onclick="search()">
+                        <img src="./img/main/header-img/search-icon.svg" alt="">
                     </div>
-                    
-                    <!-- SVG Bell thay thế ảnh lỗi -->
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+
+                <div class="notic">
                     <div onclick="noticBar()" id="belt" class="belt">
                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                     </div>
 
-                    <div id="notification">
-                        <div class="wrap-notic">
-                            <div class="item">Hello</div>
-                            <div class="item">Hi</div>
-                            <div class="item">Hola</div>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- NÚT MỚI: CREATE PROJECT -->
-                <button class="btn-create" id="open-modal-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    Create Project
-                </button>
+                <div class="line"></div>
 
-                <div class="w2-2">
-                    <div class="user-avt">
-                        <!-- SVG Avatar thay thế ảnh lỗi -->
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#888"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    </div>
-                    <div class="wrap-info">
-                        <div class="user-name">Nguyen Hung</div>
-                        <a href="" class="setting-user">Account Setting</a>
+                <div class="user-box">
+                    <div class="avatar">H</div>
+                    <div class="info-and-setting">
+                        <div class="user-name">Nguyễn Hùng</div>
+                        <div class="user-setting" onclick="openSetting()">Cài đặt người dùng</div>
                     </div>
                 </div>
             </div>
@@ -102,190 +87,219 @@
             <div class="content">
 
                 <!-- PROJECT 1 -->
-                <div class="project-card">
-                    <div class="card-thumb">
-                        <span class="card-badge">Web App</span>
-                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 1">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                            Oct 24, 2024
+                <div class="card-container">
+                    <div class="img">
+                        <div class="wrap-pj">
+                            <div class="tag-project">UI/UX</div>
+                            <div class="status"></div>
+
                         </div>
-                        <div class="card-title">Hệ thống quản lý nhân sự HRM Pro V2</div>
-                        <div class="card-desc">Nền tảng quản lý nhân sự tập trung, tích hợp chấm công FaceID và tính lương tự động.</div>
-                        <div class="card-footer">
-                            <div class="author">
-                                <div class="author-avt">NH</div>
-                                <span class="author-name">Nguyen Hung</span>
+                    </div>
+                    <div class="content-card">
+                        <div class="wrap-head">
+                            <div class="title-card">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
+                                <div class="text">29/09/2025</div>
                             </div>
-                            <div class="status-dot"></div>
+                            <div class="heading-card">Design Wireframe Dự án Project 1</div>
+                            <div class="description">Thiết kế dự án project 1 bằng figma, chuẩn hoá và đồng bộ thư viện</div>
+                        </div>
+
+                        <div class="user-card-wrap">
+                            <div class="user-avt-card">H</div>
+                            <div class="user-name-card">Huy Ly</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- PROJECT 2 -->
-                <div class="project-card">
-                    <div class="card-thumb">
-                        <span class="card-badge" style="background: #7C3AED;">AI/Data</span>
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&auto=format&fit=crop" alt="Project 2">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                            Nov 10, 2024
+                <div class="card-container">
+                    <div class="img">
+                        <div class="wrap-pj">
+                            <div class="tag-project">UI/UX</div>
+                            <div class="status"></div>
+
                         </div>
-                        <div class="card-title">BCN Chatbot Assistant</div>
-                        <div class="card-desc">Trợ lý ảo hỗ trợ giải đáp thắc mắc nội bộ, sử dụng mô hình LLM tinh chỉnh.</div>
-                        <div class="card-footer">
-                            <div class="author">
-                                <div class="author-avt" style="background:#F472B6; color:#fff">T</div>
-                                <span class="author-name">Thuy Linh</span>
+                    </div>
+                    <div class="content-card">
+                        <div class="wrap-head">
+                            <div class="title-card">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
+                                <div class="text">29/09/2025</div>
                             </div>
-                            <div class="status-dot"></div>
+                            <div class="heading-card">Design Wireframe Dự án Project 1</div>
+                            <div class="description">Thiết kế dự án project 1 bằng figma, chuẩn hoá và đồng bộ thư viện</div>
+                        </div>
+
+                        <div class="user-card-wrap">
+                            <div class="user-avt-card">H</div>
+                            <div class="user-name-card">Huy Ly</div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- PROJECT 3 -->
-                <div class="project-card">
-                    <div class="card-thumb">
-                        <span class="card-badge" style="background: #F59E0B;">Mobile</span>
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop" alt="Project 3">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                            Sep 15, 2024
+                <div class="card-container">
+                    <div class="img">
+                        <div class="wrap-pj">
+                            <div class="tag-project">UI/UX</div>
+                            <div class="status"></div>
+
                         </div>
-                        <div class="card-title">E-Learning Mobile App</div>
-                        <div class="card-desc">Ứng dụng học trực tuyến đa nền tảng (Flutter), hỗ trợ video streaming chất lượng cao.</div>
-                        <div class="card-footer">
-                            <div class="author">
-                                <div class="author-avt">D</div>
-                                <span class="author-name">Duc Minh</span>
+                    </div>
+                    <div class="content-card">
+                        <div class="wrap-head">
+                            <div class="title-card">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
+                                <div class="text">29/09/2025</div>
                             </div>
-                            <div class="status-dot pending"></div>
+                            <div class="heading-card">Design Wireframe Dự án Project 1</div>
+                            <div class="description">Thiết kế dự án project 1 bằng figma, chuẩn hoá và đồng bộ thư viện</div>
+                        </div>
+
+                        <div class="user-card-wrap">
+                            <div class="user-avt-card">H</div>
+                            <div class="user-name-card">Huy Ly</div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- PROJECT 4 -->
-                <div class="project-card">
-                    <div class="card-thumb">
-                        <span class="card-badge" style="background: #64748B;">DevOps</span>
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 4">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                            Dec 01, 2024
+                <div class="card-container">
+                    <div class="img">
+                        <div class="wrap-pj">
+                            <div class="tag-project">UI/UX</div>
+                            <div class="status"></div>
+
                         </div>
-                        <div class="card-title">Cloud Migration Phase 1</div>
-                        <div class="card-desc">Dự án chuyển đổi hạ tầng server vật lý sang AWS Cloud, tối ưu hóa chi phí.</div>
-                        <div class="card-footer">
-                            <div class="author">
-                                <div class="author-avt" style="background:#3B82F6; color:#fff">K</div>
-                                <span class="author-name">Kien Trung</span>
+                    </div>
+                    <div class="content-card">
+                        <div class="wrap-head">
+                            <div class="title-card">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
+                                <div class="text">29/09/2025</div>
                             </div>
-                            <div class="status-dot"></div>
+                            <div class="heading-card">Design Wireframe Dự án Project 1</div>
+                            <div class="description">Thiết kế dự án project 1 bằng figma, chuẩn hoá và đồng bộ thư viện</div>
+                        </div>
+
+                        <div class="user-card-wrap">
+                            <div class="user-avt-card">H</div>
+                            <div class="user-name-card">Huy Ly</div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- PROJECT 5 -->
-                <div class="project-card">
-                    <div class="card-thumb">
-                        <span class="card-badge" style="background: #10B981;">Blockchain</span>
-                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=600&auto=format&fit=crop" alt="Project 5">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                            Aug 20, 2024
+                <div class="card-container">
+                    <div class="img">
+                        <div class="wrap-pj">
+                            <div class="tag-project">UI/UX</div>
+                            <div class="status"></div>
+
                         </div>
-                        <div class="card-title">Traceability Chain</div>
-                        <div class="card-desc">Giải pháp truy xuất nguồn gốc nông sản sử dụng công nghệ Blockchain.</div>
-                        <div class="card-footer">
-                            <div class="author">
-                                <div class="author-avt">H</div>
-                                <span class="author-name">Hoang Long</span>
+                    </div>
+                    <div class="content-card">
+                        <div class="wrap-head">
+                            <div class="title-card">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
+                                <div class="text">29/09/2025</div>
                             </div>
-                            <div class="status-dot"></div>
+                            <div class="heading-card">Design Wireframe Dự án Project 1</div>
+                            <div class="description">Thiết kế dự án project 1 bằng figma, chuẩn hoá và đồng bộ thư viện</div>
+                        </div>
+
+                        <div class="user-card-wrap">
+                            <div class="user-avt-card">H</div>
+                            <div class="user-name-card">Huy Ly</div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- PROJECT 6 -->
-                <div class="project-card">
-                    <div class="card-thumb">
-                        <span class="card-badge" style="background: #EC4899;">UI/UX</span>
-                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=600&auto=format&fit=crop" alt="Project 6">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                            Jan 05, 2025
+                <div class="card-container">
+                    <div class="img">
+                        <div class="wrap-pj">
+                            <div class="tag-project">UI/UX</div>
+                            <div class="status"></div>
+
                         </div>
-                        <div class="card-title">BCN Design System 2025</div>
-                        <div class="card-desc">Bộ thư viện UI Kit chuẩn hóa cho toàn bộ các sản phẩm nội bộ.</div>
-                        <div class="card-footer">
-                            <div class="author">
-                                <div class="author-avt" style="background:#8B5CF6; color:#fff">M</div>
-                                <span class="author-name">Mai Anh</span>
+                    </div>
+                    <div class="content-card">
+                        <div class="wrap-head">
+                            <div class="title-card">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
+                                <div class="text">29/09/2025</div>
                             </div>
-                            <div class="status-dot"></div>
+                            <div class="heading-card">Design Wireframe Dự án Project 1</div>
+                            <div class="description">Thiết kế dự án project 1 bằng figma, chuẩn hoá và đồng bộ thư viện</div>
+                        </div>
+
+                        <div class="user-card-wrap">
+                            <div class="user-avt-card">H</div>
+                            <div class="user-name-card">Huy Ly</div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- PROJECT 7 -->
-                <div class="project-card">
-                    <div class="card-thumb">
-                        <span class="card-badge" style="background: #EF4444;">IoT</span>
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt="Project 7">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                            Jul 11, 2024
+                <div class="card-container">
+                    <div class="img">
+                        <div class="wrap-pj">
+                            <div class="tag-project">UI/UX</div>
+                            <div class="status"></div>
+
                         </div>
-                        <div class="card-title">Smart Office Controller</div>
-                        <div class="card-desc">Hệ thống điều khiển điện năng và nhiệt độ văn phòng tự động.</div>
-                        <div class="card-footer">
-                            <div class="author">
-                                <div class="author-avt">Q</div>
-                                <span class="author-name">Quang Huy</span>
+                    </div>
+                    <div class="content-card">
+                        <div class="wrap-head">
+                            <div class="title-card">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
+                                <div class="text">29/09/2025</div>
                             </div>
-                            <div class="status-dot"></div>
+                            <div class="heading-card">Design Wireframe Dự án Project 1</div>
+                            <div class="description">Thiết kế dự án project 1 bằng figma, chuẩn hoá và đồng bộ thư viện</div>
+                        </div>
+
+                        <div class="user-card-wrap">
+                            <div class="user-avt-card">H</div>
+                            <div class="user-name-card">Huy Ly</div>
                         </div>
                     </div>
                 </div>
+
 
                  <!-- PROJECT 8 -->
-                <div class="project-card">
-                    <div class="card-thumb">
-                        <span class="card-badge" style="background: #0EA5E9;">Big Data</span>
-                        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=600&auto=format&fit=crop" alt="Project 8">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                            Feb 12, 2025
+                <div class="card-container">
+                    <div class="img">
+                        <div class="wrap-pj">
+                            <div class="tag-project">UI/UX</div>
+                            <div class="status"></div>
+
                         </div>
-                        <div class="card-title">Customer Analytics Platform</div>
-                        <div class="card-desc">Nền tảng phân tích hành vi khách hàng real-time.</div>
-                        <div class="card-footer">
-                            <div class="author">
-                                <div class="author-avt" style="background:#F59E0B; color:#fff">L</div>
-                                <span class="author-name">Lam Truong</span>
+                    </div>
+                    <div class="content-card">
+                        <div class="wrap-head">
+                            <div class="title-card">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
+                                <div class="text">29/09/2025</div>
                             </div>
-                            <div class="status-dot"></div>
+                            <div class="heading-card">Design Wireframe Dự án Project 1</div>
+                            <div class="description">Thiết kế dự án project 1 bằng figma, chuẩn hoá và đồng bộ thư viện</div>
+                        </div>
+
+                        <div class="user-card-wrap">
+                            <div class="user-avt-card">H</div>
+                            <div class="user-name-card">Huy Ly</div>
                         </div>
                     </div>
                 </div>
 
-            </div> 
 
             <!-- Pagination -->
             <div class="pagination">
