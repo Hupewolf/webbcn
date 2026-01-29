@@ -2,9 +2,13 @@
     max-width: 1280px;
     width: 95%;
     margin: 0 auto;
+    margin-top: 30px;
 }
 
 .banner {
+    background-color: var(--accent-color);
+    box-shadow: var(--shadow);
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,49 +24,15 @@
     height: 434px;
 }
 
-.avatar {
-    width: 262px;
-    height: 262px;
+.avatar-img {
+    width: 362px;
+    height: 362px;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-}
-
-/* Vòng xoay */
-.ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 25px solid transparent;
-    border-top: 25px solid #747474;
-    border-bottom: 25px solid #747474;
-    animation: spin 6s linear infinite;
-    z-index: 1;
-}
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.ring.second {
-    inset: 30px;
-    border: 20px solid transparent;
-    border-top: 20px solid var(--primary-color);
-    border-right: 20px solid var(--primary-color);
-    border-left: 20px solid var(--primary-color);
-    animation: spinReverse 8s linear infinite;
-}
-
-@keyframes spinReverse {
-    from { transform: rotate(360deg); }
-    to   { transform: rotate(0deg); }
 }
 
 .banner-right {
@@ -91,39 +61,6 @@
     }
 }
 
-.marquee {
-    width: 100%;
-    overflow: hidden;
-    padding: 10px 0;
-}
-
-.mar-box {
-    width: 100%;
-    overflow: hidden;
-}
-
-.mar-track {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    gap: 200px;
-    animation: scroll var(--duration) linear infinite;
-}
-
-.mar-track img {
-    height: 50px;
-    white-space: nowrap;
-}
-
-@keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(calc(-1 * var(--scroll-width)));
-    }
-}
-
 .mainContent {
     display: flex;
     justify-content: space-between;
@@ -138,8 +75,9 @@
         padding: 24px 41px 0;
         background-color: var(--accent-color);
         border-radius: 20px;
-        box-shadow: 8px 8px 8px 0px #00000033, -8px -8px 8px 0px #FFFFFF;
-        border: 1px solid #0000001A;
+        /* box-shadow: 8px 8px 8px 0px #00000033, -8px -8px 8px 0px #FFFFFF; */
+        /* border: 1px solid #0000001A; */
+        box-shadow: var(--shadow);
         .content {
             display: flex;
             flex-direction: column;
@@ -167,8 +105,9 @@
         width: 882px;
         height: 889px;
         background-color: #F8F8F8;
-        border: 1px solid #0000001A;
-        box-shadow: 5px 5px 10px 0px #00000033 inset, -8px -8px 8px 0px #FFFFFF inset;
+        /* border: 1px solid #0000001A; */
+        /* box-shadow: 5px 5px 10px 0px #00000033 inset, -8px -8px 8px 0px #FFFFFF inset; */
+        box-shadow: var(--shadow);
         border-radius: 20px;
         .title {
             color: var(--primary-color);

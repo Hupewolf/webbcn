@@ -17,54 +17,38 @@
 </head>
 <body>
     <header>
-        <div class="wrap">
-            <div class="wrap-1">
-                <div class="logo">Portfolio<span>BCN</span></div>
-                <div class="navbar">
-                    <a href="index.html" class="item">Home</a>
-                    <a href="userPage.html" class="item">Users</a>
-                    <a href="projectPage.html" class="item  co-active">Projects</a>
-                </div>
+        <div class="container-header">
+            <div class="wrap-left">
+                <a class="logo" href="#">Portfolio<span>BCN</span></a>
+                <navbar>
+                    <a href="index.html" class="item">Trang chủ</a>
+                    <a href="userPage.html" class="item">Người dùng</a>
+                    <a href="projectPage.html" class="item active">Dự án</a>
+                </navbar>
             </div>
-            
-            <div class="wrap-2">
-                <div class="w2-1">
-                    <div class="search">
-                        <a href="" id="search-icon">
-                            <!-- SVG Search thay thế ảnh lỗi -->
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                        </a>
-                        <input id="search-bar" placeholder="Type to search" type="text">
+            <div class="wrap-right">
+                <div class="search">
+                    <!-- Chhỗ onclick có thể thêm sau này tính năng tìm kiếm -->
+                    <div class="icon-search" onclick="search()">
+                        <img src="./img/main/header-img/search-icon.svg" alt="">
                     </div>
-                    
-                    <!-- SVG Bell thay thế ảnh lỗi -->
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+
+                <div class="notic">
                     <div onclick="noticBar()" id="belt" class="belt">
                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                     </div>
 
-                    <div id="notification">
-                        <div class="wrap-notic">
-                            <div class="item">Hello</div>
-                            <div class="item">Hi</div>
-                            <div class="item">Hola</div>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- NÚT MỚI: CREATE PROJECT -->
-                <button class="btn-create" id="open-modal-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    Create Project
-                </button>
+                <div class="line"></div>
 
-                <div class="w2-2">
-                    <div class="user-avt">
-                        <!-- SVG Avatar thay thế ảnh lỗi -->
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#888"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    </div>
-                    <div class="wrap-info">
-                        <div class="user-name">Nguyen Hung</div>
-                        <a href="" class="setting-user">Account Setting</a>
+                <div class="user-box">
+                    <div class="avatar">H</div>
+                    <div class="info-and-setting">
+                        <div class="user-name">Nguyễn Hùng</div>
+                        <div class="user-setting" onclick="openSetting()">Cài đặt người dùng</div>
                     </div>
                 </div>
             </div>
@@ -114,7 +98,7 @@
                     <div class="content-card">
                         <div class="wrap-head">
                             <div class="title-card">
-                                <img src="./css/mdi_calendar.svg" alt="">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
                                 <div class="text">29/09/2025</div>
                             </div>
                             <div class="heading-card">Design Wireframe Dự án Project 1</div>
@@ -140,7 +124,7 @@
                     <div class="content-card">
                         <div class="wrap-head">
                             <div class="title-card">
-                                <img src="./css/mdi_calendar.svg" alt="">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
                                 <div class="text">29/09/2025</div>
                             </div>
                             <div class="heading-card">Design Wireframe Dự án Project 1</div>
@@ -167,7 +151,7 @@
                     <div class="content-card">
                         <div class="wrap-head">
                             <div class="title-card">
-                                <img src="./css/mdi_calendar.svg" alt="">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
                                 <div class="text">29/09/2025</div>
                             </div>
                             <div class="heading-card">Design Wireframe Dự án Project 1</div>
@@ -194,7 +178,7 @@
                     <div class="content-card">
                         <div class="wrap-head">
                             <div class="title-card">
-                                <img src="./css/mdi_calendar.svg" alt="">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
                                 <div class="text">29/09/2025</div>
                             </div>
                             <div class="heading-card">Design Wireframe Dự án Project 1</div>
@@ -221,7 +205,7 @@
                     <div class="content-card">
                         <div class="wrap-head">
                             <div class="title-card">
-                                <img src="./css/mdi_calendar.svg" alt="">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
                                 <div class="text">29/09/2025</div>
                             </div>
                             <div class="heading-card">Design Wireframe Dự án Project 1</div>
@@ -248,7 +232,7 @@
                     <div class="content-card">
                         <div class="wrap-head">
                             <div class="title-card">
-                                <img src="./css/mdi_calendar.svg" alt="">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
                                 <div class="text">29/09/2025</div>
                             </div>
                             <div class="heading-card">Design Wireframe Dự án Project 1</div>
@@ -275,7 +259,7 @@
                     <div class="content-card">
                         <div class="wrap-head">
                             <div class="title-card">
-                                <img src="./css/mdi_calendar.svg" alt="">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
                                 <div class="text">29/09/2025</div>
                             </div>
                             <div class="heading-card">Design Wireframe Dự án Project 1</div>
@@ -302,7 +286,7 @@
                     <div class="content-card">
                         <div class="wrap-head">
                             <div class="title-card">
-                                <img src="./css/mdi_calendar.svg" alt="">
+                                <img src="./img/main/mdi_calendar.svg" alt="">
                                 <div class="text">29/09/2025</div>
                             </div>
                             <div class="heading-card">Design Wireframe Dự án Project 1</div>

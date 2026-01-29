@@ -9,6 +9,7 @@
     --primary-color: #4180ff;
     --accent-color: #F8F8F8;
     --bg-accent: #f6f6f6;
+    --white: #FFFFFF;
 
     --shadow: 3px 3px 4px 0px #00000033, -5px -5px 4px 0px #FFFFFF;
 
@@ -46,8 +47,9 @@ body{
 .btn-primary-color{
     background-color: var(--primary-color);
     color: #FFFFFF;
-    box-shadow: 3px 3px 4px 0px #00000033, -5px -5px 4px 0px #FFFFFF;
-    border: 3px solid #D9D9D9;
+    /* Tam bo het bong */
+    /* box-shadow: 3px 3px 4px 0px #00000033, -5px -5px 4px 0px #FFFFFF; */
+    /* border: 3px solid #D9D9D9; */
     width: 200px;
     height: 60px;
     border-radius: 42px;
@@ -71,4 +73,19 @@ body{
 }
 .hover:active{
     opacity: 0.7;
+}
+
+
+.btn-smaller-primary-color{
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    width: 140px;
+    height: 40px;
+    border-radius: 42px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btn-smaller-primary-color:hover{
+    background-color: #01326d;
 }
