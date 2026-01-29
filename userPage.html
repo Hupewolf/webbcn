@@ -370,56 +370,6 @@
         <div class="coppyright">2026 PortfolioBCN . All Right Reserved. Powered by Team’s Uside</div>
     </div>
 
-    <div class="modal-overlay" id="project-modal">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3>Tạo dự án mới</h3>
-                <span class="close-btn" id="close-modal-x">&times;</span>
-            </div>
-            
-            <form class="modal-body" onsubmit="event.preventDefault(); alert('Đã tạo dự án thành công!'); closeModal();">
-                <div class="form-group">
-                    <label>Tên dự án <span style="color:red">*</span></label>
-                    <input type="text" placeholder="Nhập tên dự án..." required>
-                </div>
-
-                <div style="display: flex; gap: 15px;">
-                    <div class="form-group" style="flex: 1;">
-                        <label>Lĩnh vực</label>
-                        <select>
-                            <option>Web Application</option>
-                            <option>Mobile App</option>
-                            <option>IoT System</option>
-                            <option>Data Science</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="flex: 1;">
-                        <label>Công nghệ</label>
-                        <input type="text" placeholder="VD: React, NodeJS...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Mô tả ngắn</label>
-                    <textarea rows="3" placeholder="Mô tả chức năng chính..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Ảnh bìa</label>
-                    <div class="upload-area" id="upload-trigger">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-color)"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                        <p style="font-size: 13px; color: #666; margin: 5px 0 0;">Bấm để tải ảnh lên</p>
-                        <input type="file" hidden id="file-input">
-                    </div>
-                </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn-cancel" id="close-modal-btn">Hủy bỏ</button>
-                    <button type="submit" class="btn-submit">Hoàn tất</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
+   
 </body>
 </html>
