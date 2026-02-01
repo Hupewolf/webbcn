@@ -12,3 +12,9 @@ window.addEventListener('load', () => {
 
     track.style.setProperty('--duration', duration + 's');
 });
+
+document.getElementById("goContact").addEventListener("click", () => {
+    document.getElementById("contact").scrollIntoView({ 
+        behavior: "smooth" 
+    });
+});
