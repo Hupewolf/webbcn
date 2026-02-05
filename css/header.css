@@ -7,6 +7,7 @@ body{
     --width-header: 1280px;
     --height-header: 90px;
 
+    --second-color: #757575;
     --font-header: 24px;
 }
 
@@ -70,7 +71,7 @@ navbar .item{
 .wrap-right{
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 16px;
 }
 .search{
     display: flex;
@@ -78,7 +79,7 @@ navbar .item{
     gap: 8px;
     border: 1px solid #d7d6d6;
     box-sizing: border-box;
-    padding: 10px 30px;
+    padding: 10px 15px;
     border-radius: 20px;
     transition: all 0.3s ease;
 }
@@ -90,12 +91,28 @@ navbar .item{
 .search:focus-within{
     border-color: var(--primary-color);
 }
-.search .icon-search{
+.search .icon-search {
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img/main/header-img/search-icon.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/main/header-img/search-icon.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    /* Các thuộc tính hiển thị */
+    display: block;
     width: 16px;
     height: 16px;
     cursor: pointer;
-    margin-top: -3px;
+    background-color: var(--second-color); /* Đây là màu của icon sau khi mask */
+    z-index: 10000;
 }
+
 .search input{
     border: none;
     outline: none;
@@ -148,8 +165,44 @@ navbar .item{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-color);
+    color: var(--second-color);
     cursor: pointer;
+}
+
+.themDuAn{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.title{
+    font-size: 16px;
+    color: var(--white);
+
+}
+
+.dauCong{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img/main/header-img//add_ad_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/main/header-img/add_ad_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    display: block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background-color: var(--white);
 }
 
 .belt:hover{
@@ -164,12 +217,12 @@ navbar .item{
 
 .mobile-menu {
     position: fixed;
-    top: 80px; 
+    top: 0px; 
     right: 0;
-    width: 280px;
+    width: 45%;
     height: 100vh; 
-    background-color: #fff;
-    box-shadow: -2px 5px 10px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.384);
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -186,8 +239,24 @@ navbar .item{
     font-size: 16px;
 }
 
+.mobile-menu .search{
+    display: none;
+}
+
 .mobile-menu.active {
     transform: translateX(0);
+}
+
+.mobile-menu .thongBao{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-menu .thongBao .belt {
+    width: 15px;
+    height: 15px;
+    color: var(--text-color);
 }
 
 .hamburger-bar {
@@ -233,6 +302,18 @@ navbar .item{
         display: none;
     }
 
+    .wrap-right .search {
+        width: 300px;
+    }
+
+    .themDuAn .title{
+        display: none;
+    }
+
+    .wrap-right .notic{
+        display: none;
+    }
+
     .hamburger-bar{
         display: block;
         cursor: pointer;
@@ -245,8 +326,12 @@ navbar .item{
         /* --font-header: 18px;
         --font-item: 10px; */
     }   
-    .search{
+    .wrap-right .search{
         display: none;
+    }
+
+    .mobile-menu .search{
+        display: flex;
     }
 }
 @media screen and (max-width: 420px) {
