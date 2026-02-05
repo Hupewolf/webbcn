@@ -111,12 +111,12 @@
     padding: 50px 0;
     font-family: 'Inter';
     .main-left {
-        width: 339px;
+        width: 350px;
         height: 596px;
         display: flex;
         flex-direction: column;
         gap: 37px;
-        padding: 24px 41px 0;
+        padding: 20px 15px;
         background-color: var(--accent-color);
         border-radius: 20px;
         /* box-shadow: 8px 8px 8px 0px #00000033, -8px -8px 8px 0px #FFFFFF; */
@@ -125,18 +125,108 @@
         .content {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 15px;
             .intro {
                 color: var(--primary-color);
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: 600;
                 margin-bottom: 3px;
             }
-            .text {
-                color: var(--text-color);
-                font-size: 16px;
-                font-weight: 500;
+            .wrap-hl{
+                display: flex;
+                gap: 45px;
+                box-sizing: border-box;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: var(--white);
             }
+            .high-light{
+                .hl-head{
+                    color: rgb(11, 81, 221);
+                }
+            }
+
+            .wrap-hl-2{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                box-sizing: border-box;
+                padding: 20px;
+                background-color: var(--white);
+                border-radius: 10px;
+                .high-light{
+                    display: flex;
+                    align-items: flex-start;
+                    box-sizing: border-box;
+                    gap: 20px;
+                    .wrap-text-hl{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        .title-hl{
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: var(--text-color);
+                        }
+                        .content-hl{
+                            font-size: 16px;
+                            font-weight: 300;
+                            color: rgb(120, 120, 120);
+                        }
+                    }
+
+
+                    .icon-1{
+                        /* Mask cho Chrome/Safari/Edge */
+                        -webkit-mask-image: url(../img/side-user-page/time.svg);
+                        -webkit-mask-size: contain;
+                        -webkit-mask-repeat: no-repeat;
+                        -webkit-mask-position: center;
+
+                        /* Mask chuẩn */
+                        mask-image: url(../img/side-user-page/time.svg);
+                        mask-size: contain;
+                        mask-repeat: no-repeat;
+                        mask-position: center;
+                    }
+
+                    .icon-2{
+                        /* Mask cho Chrome/Safari/Edge */
+                        -webkit-mask-image: url(../img/contact-new-form/person.svg);
+                        -webkit-mask-size: contain;
+                        -webkit-mask-repeat: no-repeat;
+                        -webkit-mask-position: center;
+
+                        /* Mask chuẩn */
+                        mask-image: url(../img/contact-new-form/person.svg);
+                        mask-size: contain;
+                        mask-repeat: no-repeat;
+                        mask-position: center;
+                    }
+
+                    .icon-3{
+                        /* Mask cho Chrome/Safari/Edge */
+                        -webkit-mask-image: url(../img/contact-new-form/chat.svg);
+                        -webkit-mask-size: contain;
+                        -webkit-mask-repeat: no-repeat;
+                        -webkit-mask-position: center;
+
+                        /* Mask chuẩn */
+                        mask-image: url(../img/contact-new-form/chat.svg);
+                        mask-size: contain;
+                        mask-repeat: no-repeat;
+                        mask-position: center;
+                    }
+
+                    .hl-head-icon{
+                        display: block;
+                        min-width: 30px;
+                        height: 30px;
+                        background-color: var(--second-color);
+                    }
+                }
+            }
+
         }
     }
     .main-right {
