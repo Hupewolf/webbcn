@@ -76,6 +76,9 @@ body{
     opacity: 0.7;
 }
 
+.hover-dark:hover{
+    background-color: #01326d;
+}
 
 .btn-smaller-primary-color{
     background-color: var(--primary-color);
