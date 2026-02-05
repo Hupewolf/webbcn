@@ -1,6 +1,14 @@
 :root{
     --mw-container: 1280px;
     --avt-img-size: 362px;
+    --primary-color: #4180ff;
+    --second-color: #d7d6d6;
+
+    --accent-color: #F8F8F8;
+    --accent-color-lighter: #fefefe;
+
+    --bg-accent: #f6f6f6;
+    --white: #FFFFFF;
 }
 
 .container {
@@ -38,7 +46,7 @@
     position: relative;
     width: 434px;
     height: 434px;
-    background-image: url(/img/main/bannerImg/backgrounduser2-Photoroom.png);
+    background-image: url(../img/main/bannerImg/backgrounduser2-Photoroom.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -346,13 +354,14 @@ h2 {
     text-align: center;
 }
 
-.contact-section {
+/* Contact form cũ */
+/* .contact-section {
     padding: 80px 20px;
     background: #f7f9fc;
 }
 
 .contact-container {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
     background: #fff;
     border-radius: 16px;
@@ -432,8 +441,320 @@ h2 {
 .contact-form button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px #2563eb4d;
+} */
+
+/* Contact form mới */
+.contact-form{
+    width: 100%;
+    max-width: var(--mw-container);
+    box-sizing: border-box;
+    padding: 30px 40px;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    /* background-color: var(--white); */
+    background-color: var(--accent-color);
+    box-shadow: var(--shadow);
 }
 
+.contact-form .wrap-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wrap-form .heading-form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wrap-form .heading-form .title{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.wrap-form .heading-form .text{
+    font-size: 16px;
+    color: #686868;
+}
+
+.wrap-form .content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.wrap-form .content .left{
+    width: 70%;
+}
+
+.content .left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content .left .line-1{
+    display: flex;
+    width: 97%;
+    justify-content: space-between;
+
+}
+
+.line-1 .name .user-icon,
+.line-1 .mail .mail-icon{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--second-color);
+}
+
+.user-icon{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img//contact-new-form/person.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/contact-new-form/person.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.mail-icon{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img/contact-new-form/mail.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/contact-new-form/mail.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.line-1 .name,
+.line-1 .mail {
+    display: flex;
+    background-color: var(--white);
+    border: 1px solid var(--second-color);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 400px;
+    gap: 10px;
+}
+
+.line-1 .name:focus-within,
+.line-1 .mail:focus-within{
+    border-color: var(--primary-color);
+}
+
+.line-1 .input{
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.left .line-2{
+    width: 97%;
+    height: 140px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: var(--white);
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--second-color);
+}
+
+.line-2 textarea{
+    border: none;
+    outline: none;
+    font-family: 'Inter';
+    width: 100%;
+    height: 100%;
+}
+
+.line-2:focus-within{
+    border-color: var(--primary-color);
+}
+
+.left .line-2 .text-icon{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img//contact-new-form/chat.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/contact-new-form/chat.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--second-color);
+}
+
+.send{
+    width: 97%;
+    height: 42px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.send:hover{
+    transform: scale(1.01);
+}
+
+.wrap-form .content .right{
+    width: 30%;
+    height: 264px;
+    box-sizing: border-box;
+    padding: 15px 30px;
+    border: 1px solid var(--second-color);
+    background-color: var(--accent-color-lighter);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content .right .heading{
+    text-align: center;
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.content .right .wrap-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.city, 
+.mail,
+.phone{
+    display: flex;
+    gap: 15px;
+}
+
+.city .text, 
+.mail .text,
+.phone .text{
+    font-size: 16px;
+}
+
+.icon-1{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img//contact-new-form/location.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/contact-new-form/location.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.icon-2{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img//contact-new-form/mail.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/contact-new-form/mail.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.icon-3{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img//contact-new-form/phone.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/contact-new-form/phone.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.icon-1,
+.icon-2,
+.icon-3{
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: var(--second-color);
+}
+
+.content .right .logo-social{
+    display: flex;
+    gap: 20px;
+}
+
+.logo-social .icon-log{
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.github{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img//contact-new-form/github.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/contact-new-form/github.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    
+    background-color: #404040;
+}
+
+.facebook{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img//contact-new-form/facebook.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/contact-new-form/facebook.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    background-color: #2a5af6;
+}
+
+.zalo{
+    background-color: var(--accent-color-lighter) !important;
+    color: var(--white);
+}
 
 @media screen and (max-width: 1380px) {
     :root {
@@ -501,6 +822,11 @@ h2 {
             height: auto; 
             padding: 30px 0;
         }
+    }
+
+    .line-1 .name,
+    .line-1 .mail{
+        width: 305px;
     }
 }
 
@@ -573,6 +899,61 @@ h2 {
             height: auto; 
             padding: 30px 0;
         }
+    }
+
+    .wrap-form .content{
+        width: 100%;
+    }
+
+    .contact-form .wrap-form .content .left{
+        width: 100%;
+        
+    }
+
+    .left .line-1{
+        width: 100% !important;
+        justify-content: space-between;
+    }
+
+    .line-1 .name,
+    .line-1 .mail{
+        width: 310px;
+    }
+
+    .left .line-2{
+        width: 100% !important;
+    }
+
+    .left .send {
+        width: 100% !important;
+    }
+
+    .contact-form .wrap-form .content{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .wrap-form .content .logo-social{
+        gap: 30px;
+        justify-content: center;
+    }
+    .wrap-form .content .right{
+        width: 100%;
+        height: 220px;
+    }
+
+    .wrap-info .city,
+    .wrap-info .mail,
+    .wrap-info .phone{
+        width: 47%;
+    }
+
+    .right .wrap-info{
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 
@@ -652,6 +1033,34 @@ h2 {
     .contact-container {
         grid-template-columns: 1fr;
         padding: 30px 20px;
+    }
+
+    .wrap-form .heading-form .title{
+        font-size: 24px;
+    }
+
+    .wrap-form .content .left .line-1{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .wrap-info .city,
+    .wrap-info .mail,
+    .wrap-info .phone{
+        width: 100%;
+    }
+
+    .right .wrap-info{
+        display: flex;
+        flex-direction: column !important;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .wrap-form .content .right{
+        width: 100%;
+        height: 240px;
     }
 }
 
