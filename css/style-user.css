@@ -63,7 +63,7 @@
 }
 
 .sauanhHung {
-    background-image: url(/img/main/bannerImg/backgrounduser2-Photoroom.png);
+    background-image: url(../img/main/bannerImg/backgrounduser2-Photoroom.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -217,7 +217,8 @@
 }
 
 .box:hover{
-    background-color: var(--accent-color-darker);    
+    border: 1px solid var(--primary-color) !important;    
+    transition: all 0.1s ease !important;
 }
 
 .wrap-content .left{
@@ -622,6 +623,25 @@
     gap: 20px;
 }
 
+.icon-send{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img//contact-new-form/send.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    
+    /* Mask chuẩn */
+    mask-image: url(../img/contact-new-form/send.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: var(--white);
+}
+
 .content .left .line-1{
     display: flex;
     width: 97%;
@@ -948,6 +968,14 @@
         }
     }
 
+    .wrap-content .box{
+        width: 460px;
+    }
+
+    .wrap-content .left{
+        margin-left: 500px;
+    }
+
     .line-1 .name,
     .line-1 .mail{
         width: 305px;
@@ -1025,6 +1053,14 @@
         }
     }
 
+    .wrap-content .box{
+        width: 320px;
+    }
+
+    .wrap-content .left{
+        margin-left: 360px;
+    }
+
     .wrap-form .content{
         width: 100%;
     }
@@ -1086,6 +1122,13 @@
         --mw-container: 390px;
         --avt-img-size: 280px;
     }
+
+    .btn-box{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .banner {
         display: flex;
         /* justify-content: space-between; */
@@ -1154,6 +1197,27 @@
             }
         }
     }
+
+    .wrap-content .box{
+        width: 340px;
+        margin: 0 auto;
+        border: none;
+        border-left: 4px solid var(--primary-color) !important;
+    }
+
+    .wrap-content .line-center{
+        display: none;
+    }
+
+    .wrap-content .left{
+        margin: 0 auto;
+    }
+
+    .ball{
+        display: none;
+
+    }
+
     .contact-container {
         grid-template-columns: 1fr;
         padding: 30px 20px;

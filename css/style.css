@@ -5,6 +5,10 @@
     transition: all 0.3s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root{
     /* Xai chung cho tat ca */
     --primary-color: #4180ff;
@@ -40,6 +44,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
 }
 .btn:active{
     transform: scale(0.9);

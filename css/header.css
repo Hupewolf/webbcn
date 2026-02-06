@@ -154,6 +154,10 @@ navbar .item{
     color: #585858;
 }
 
+.user-box .user-setting:hover{
+    color: var(--primary-color);
+}
+
 .notic {
     display: flex;
     justify-content: center;
