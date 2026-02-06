@@ -51,9 +51,8 @@ body{
     /* Tam bo het bong */
     /* box-shadow: 3px 3px 4px 0px #00000033, -5px -5px 4px 0px #FFFFFF; */
     /* border: 3px solid #D9D9D9; */
-    width: 200px;
-    height: 60px;
-    border-radius: 42px;
+    /* width: 200px;
+    height: 60px; */
     font-weight: 600;
 }
 .btn-primary-color:hover{
@@ -69,7 +68,7 @@ body{
 
 /* Hover nut bam chuyen trang (Back, next button) chung */
 .hover:hover{
-    transform: scale(1.07);
+    transform: scale(1.03);
     transition: all 0.2s ease;
 }
 .hover:active{
