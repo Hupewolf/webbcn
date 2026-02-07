@@ -44,6 +44,70 @@
     background-color: var(--node-tag) !important;
 }
 
+/* Icon chung */
+
+.git-icon{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img/side-user-page/git.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/side-user-page/git.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.figma-icon{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img/side-user-page/figma.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/side-user-page/figma.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.vercel-icon{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img/side-user-page/vercel.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/side-user-page/vercel.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.download-icon{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img/download.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/download.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--text-color);
+}
+
+
 .container {
     max-width: var(--mw-container);
     width: 100%;
@@ -101,6 +165,13 @@
     transform: translate(-50%, -50%);
     z-index: 2;
 }
+
+.download-cv{
+    display: flex;
+    gap: 5px;
+    font-weight: 500;
+}
+
 
 .banner-right {
     display: flex;
@@ -316,12 +387,22 @@
                         padding: 5px 8px;
                         border-radius: 15px;
                         box-sizing: border-box;
+                        display: flex;
+                        gap: 5px;
+                        align-items: center;
                         background-color: var(--accent-color-darker);
                         /* color: var(--white); */
                         cursor: pointer;
                     }
                     .item:hover{
                         transform: scale(1.05);
+                    }
+ 
+                    .icon-li{
+                        display: block;
+                        width: 15px;
+                        height: 15px;
+                        background-color: var(--text-color);
                     }
                 }
             }
@@ -409,7 +490,7 @@
                     }
                 }
             }
-
+            
         }
     }
     .main-right {
@@ -1250,6 +1331,7 @@
         width: 100%;
         height: 240px;
     }
+
 }
 
 @media screen and (max-width: 420px) {
@@ -1276,6 +1358,10 @@
         width: 140px;
         height: 200px;
     }
+    .wrap-content .box{
+        width: 290px;
+    }
+
     .banner-right {
         display: flex;
         flex-direction: column;
@@ -1328,6 +1414,11 @@
                 gap: 30px;
             }
         }
+    }
+
+    .line-1 .name,
+    .line-1 .mail{
+        width: 260px;
     }
 }
 
