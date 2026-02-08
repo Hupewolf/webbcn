@@ -8,12 +8,33 @@ body{
     --height-header: 90px;
 
     --second-color: #757575;
+
     --font-header: 24px;
 }
 
+
+
+
 .hamburger-bar{
+    /* Mask cho Chrome/Safari/Edge */
+    -webkit-mask-image: url(../img/Hamburger.svg);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    /* Mask chuẩn */
+    mask-image: url(../img/Hamburger.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    
+    background-color: var(--bar-color) !important;
+
+    width: 38px;
+    height: 38px;
     display: none;
-    filter: drop-shadow(0px 1px 1px #00000071);
+    cursor: pointer;
+
 }
 header{
     width: 100%;
