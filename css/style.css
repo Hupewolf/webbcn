@@ -20,7 +20,7 @@ html {
 
     --text-color: #000000;
 
-    --font-button: 20px;
+    --font-button: 16px;
     --bar-color: #b3b1b1;
     
 }
@@ -32,8 +32,8 @@ body{
 /* Nut bam chung */
 .btn{
     width: 195px;
-    height: 65px;
-    border-radius: 20px;
+    height: 44px;
+    border-radius: 10px;
     border: none;
     color: #272727;
     font-weight: 500;
@@ -54,11 +54,6 @@ body{
 .btn-primary-color{
     background-color: var(--primary-color);
     color: #FFFFFF;
-    /* Tam bo het bong */
-    /* box-shadow: 3px 3px 4px 0px #00000033, -5px -5px 4px 0px #FFFFFF; */
-    /* border: 3px solid #D9D9D9; */
-    /* width: 200px;
-    height: 60px; */
     font-weight: 600;
 }
 .btn-primary-color:hover{
