@@ -15,7 +15,7 @@
 
     <script defer src="./js/header.js"></script>
     <script defer src="./js/main.js"></script>
-    <script defer src="./js/userPage.js"></script>
+    <script defer src="../js/userPage.js"></script>
 </head>
 <body>
     <header>
@@ -38,9 +38,9 @@
                     <input type="text" placeholder="Tìm kiếm...">
                 </div>
 
-                <div class="themDuAn hover hover-dark">
+                <div class="themDuAn hover hover-dark" onclick="AddProject()">
                     <div class="title">Thêm</div>
-                    <div class="dauCong" onclick="AddProject()">
+                    <div class="dauCong">
 
                     </div>
                 </div>
@@ -70,6 +70,13 @@
             </div>
         </div>
     </header>
+
+    <div class="overlay">
+        <div class="themDuAn-popUp">
+            <div class="close-popUp-btn" onclick="closePopUp()">x</div>
+        </div>
+
+    </div>
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="search">
@@ -213,8 +220,43 @@
                 </div>
             </div> -->
             <div class="project-box">
+                
+                <!-- Chi tiet du an -->
+                <div class="overlay-chitiet">
+                    <div class="chiTietDuAn-1">
+                        <div class="close-popUp-btn" onclick="closePopUp()">x</div>
+                        
+                        <div class="title-popUp-DuAn">Design Wireframe Dự án Project 1</div>
+                        <div class="content-popUp-DuAn">
+                            <div class="left-popUp">
+                                <div class="bg-popUp"></div>
+                            </div>
+                            <div class="right-popUp">
+                                <div class="title-pop">
+                                    <div class="high">Giới thiệu:</div>
+                                    <div class="text">Thiết kế dự án project 1 bằng figma, chuẩn hoá và đồng bộ thư viện</div>
+                                </div>
+                                <div class="title-pop">
+                                    <div class="high">Tính năng:</div>
+                                    <div class="text">
+                                        <li>Feature 1</li>
+                                        <li>Feature 2</li>
+                                        <li>Feature 3</li>
+                                    </div>
+                                </div>
+                                <div class="title-pop">
+                                    <div class="high">Công nghệ sử dụng:</div>
+                                    <div class="text"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overView">
+                            <div class="link-popUp"><a href="#">https://webbcn.vercel.app/userPage.html</a></div>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="card-container">
+                <div class="card-container" onclick="openPJ()">
                     <div class="img">
                         <div class="wrap-pj">
                             <div class="tag-project">UI/UX</div>
@@ -239,7 +281,7 @@
                     </div>
                 </div>
 
-                <div class="card-container">
+                <div class="card-container" onclick="openPJ()">
                     <div class="img img-2">
                         <div class="wrap-pj">
                             <div class="tag-project">UI/UX</div>
@@ -264,7 +306,7 @@
                     </div>
                 </div>
 
-                <div class="card-container">
+                <div class="card-container" onclick="openPJ()">
                     <div class="img img-3">
                         <div class="wrap-pj">
                             <div class="tag-project">UI/UX</div>
@@ -289,7 +331,7 @@
                     </div>
                 </div>
 
-                <div class="card-container">
+                <div class="card-container" onclick="openPJ()">
                     <div class="img img-4">
                         <div class="wrap-pj">
                             <div class="tag-project">UI/UX</div>
@@ -314,7 +356,7 @@
                     </div>
                 </div>
 
-                <div class="card-container">
+                <div class="card-container" onclick="openPJ()">
                     <div class="img img-5">
                         <div class="wrap-pj">
                             <div class="tag-project">UI/UX</div>
@@ -339,7 +381,7 @@
                     </div>
                 </div>
                 
-                <div class="card-container">
+                <div class="card-container" onclick="openPJ()">
                     <div class="img img-6">
                         <div class="wrap-pj">
                             <div class="tag-project">UI/UX</div>
@@ -347,7 +389,7 @@
 
                         </div>
                     </div>
-                    <div class="content-card">
+                    <div class="content-card" onclick="openPJ()">
                         <div class="wrap-head">
                             <div class="title-card">
                                 <img src="./img/main/mdi_calendar.svg" alt="">

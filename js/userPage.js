@@ -1,17 +1,17 @@
-const track = document.querySelector('.mar-track');
+// const track = document.querySelector('.mar-track');
 
-track.innerHTML += track.innerHTML;
+// track.innerHTML += track.innerHTML;
 
-window.addEventListener('load', () => {
-    const totalWidth = track.scrollWidth / 2;
+// window.addEventListener('load', () => {
+//     const totalWidth = track.scrollWidth / 2;
 
-    track.style.setProperty('--scroll-width', totalWidth + 'px');
+//     track.style.setProperty('--scroll-width', totalWidth + 'px');
 
-    const speed = 100;
-    const duration = totalWidth / speed;
+//     const speed = 100;
+//     const duration = totalWidth / speed;
 
-    track.style.setProperty('--duration', duration + 's');
-});
+//     track.style.setProperty('--duration', duration + 's');
+// });
 
 document.getElementById("goContact").addEventListener("click", () => {
     document.getElementById("contact").scrollIntoView({ 
@@ -19,71 +19,52 @@ document.getElementById("goContact").addEventListener("click", () => {
     });
 });
 
-// const chips = document.querySelectorAll('.chip');
-// const cards = document.querySelectorAll('.project-card');
-// const searchInput = document.getElementById('searchInput');
 
-// const drawer = document.getElementById('drawer');
-// const overlay = document.getElementById('overlay');
-// const openFilter = document.getElementById('openFilter');
-// const apply = document.getElementById('apply');
-// const reset = document.getElementById('reset');
 
-// let activeType = 'all';
-// let activeTags = [];
+function AddProject() {
+    const themDuAn = document.querySelector('.overlay');
+    const popUpDuAn = document.querySelector('.themDuAn-popUp');
+    const closePop = document.querySelector('.close-popUp-btn');
 
-// chips.forEach(chip => {
-//     chip.onclick = () => {
-//         chips.forEach(c => c.classList.remove('actives'));
-//         chip.classList.add('actives');
-//         activeType = chip.dataset.type;
-//         filter();
-//     };
-// });
+    themDuAn.classList.toggle('active-duan')
+    
+    themDuAn.onclick = () => {
+        themDuAn.classList.remove("active-duan");
+    };
 
-// searchInput.oninput = filter;
+    popUpDuAn.onclick = (e) => {
+        e.stopPropagation();
+    };
 
-// openFilter.onclick = () => {
-//     drawer.classList.add('show');
-//     overlay.classList.add('show');
-// };
+    if(closePop) {
+        closePop.onclick = () => {
+            themDuAn.classList.remove("active-duan");
+        }
+    }
 
-// overlay.onclick = closeDrawer;
+}
 
-// function closeDrawer() {
-//     drawer.classList.remove('show');
-//     overlay.classList.remove('show');
-// }
 
-// apply.onclick = () => {
-//     activeTags = [...drawer.querySelectorAll('input:checked')]
-//         .map(i => i.value);
-//     closeDrawer();
-//     filter();
-// };
+function openPJ() {
+    const overlay = document.querySelector('.overlay-chitiet');
+    const closePop = document.querySelector('.close-popUp-btn');
+    const chiTiet1 = document.querySelector('.chiTietDuAn-1');
 
-// reset.onclick = () => {
-//     drawer.querySelectorAll('input').forEach(i => i.checked = false);
-//     activeTags = [];
-//     filter();
-// };
+    overlay.classList.toggle('moChiTiet');
 
-// function filter() {
-//     const keyword = searchInput.value.toLowerCase();
+    overlay.onclick = () => {
+        overlay.classList.remove('moChiTiet');
+    };
 
-//     cards.forEach(card => {
-//         const type = card.dataset.type;
-//         const tags = card.dataset.tags;
-//         const text = card.innerText.toLowerCase();
+    chiTiet1.onclick = (e) => {
+        e.stopPropagation();
+    };
 
-//         const matchType = activeType === 'all' || type === activeType;
-//         const matchSearch = text.includes(keyword);
-//         const matchTag = activeTags.length === 0 ||
-//             activeTags.some(tag => tags.includes(tag));
 
-//         card.classList.toggle(
-//             'hide',
-//             !(matchType && matchSearch && matchTag)
-//         );
-//     });
-// }
+    if(closePop) {
+        closePop.onclick = () => {
+            themDuAn.classList.remove("active-duan");
+        }
+    }
+
+}
