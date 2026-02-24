@@ -15,18 +15,24 @@ html {
     --accent-color: #F8F8F8;
     --bg-accent: #f6f6f6;
     --white: #FFFFFF;
+    --white-body: #fbfbfb;
 
     --shadow: 3px 3px 4px 0px #00000033, -5px -5px 4px 0px #FFFFFF;
 
     --text-color: #000000;
+    --theme-light: #ffffff;
+    --theme-dark: black;
 
     --font-button: 16px;
     --bar-color: #b3b1b1;
     
 }
+
+
 body{
     /* Font chung */
     font-family: 'Inter';
+    background-color: var(--white-body);
 }
 
 /* Nut bam chung */

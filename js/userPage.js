@@ -1,17 +1,3 @@
-// const track = document.querySelector('.mar-track');
-
-// track.innerHTML += track.innerHTML;
-
-// window.addEventListener('load', () => {
-//     const totalWidth = track.scrollWidth / 2;
-
-//     track.style.setProperty('--scroll-width', totalWidth + 'px');
-
-//     const speed = 100;
-//     const duration = totalWidth / speed;
-
-//     track.style.setProperty('--duration', duration + 's');
-// });
 
 document.getElementById("goContact").addEventListener("click", () => {
     document.getElementById("contact").scrollIntoView({ 
@@ -47,7 +33,7 @@ function AddProject() {
 
 function openPJ() {
     const overlay = document.querySelector('.overlay-chitiet');
-    const closePop = document.querySelector('.close-popUp-btn');
+    const closePop = document.querySelector('.close-popUp-btn-CT');
     const chiTiet1 = document.querySelector('.chiTietDuAn-1');
 
     overlay.classList.toggle('moChiTiet');
@@ -63,8 +49,42 @@ function openPJ() {
 
     if(closePop) {
         closePop.onclick = () => {
-            themDuAn.classList.remove("active-duan");
+            overlay.classList.remove("moChiTiet");
         }
     }
+
+}
+function search(e) {
+    if (e) e.stopPropagation();
+    const box = document.getElementById('searchBox');
+    const input = document.getElementById('searchInput');
+    
+    box.classList.toggle('expanded');
+    
+    if (box.classList.contains('expanded')) {
+        setTimeout(() => input.focus(), 100);
+    }
+}
+
+document.addEventListener('click', (e) => {
+    const box = document.getElementById('searchBox');
+    if (box && !box.contains(e.target) && box.classList.contains('expanded')) {
+        box.classList.remove('expanded');
+    }
+});
+
+document.getElementById('searchBox').onclick = (e) => {
+    e.stopPropagation();
+};
+
+function openSetting() {
+    const settingBox = document.querySelector('.setting-bar');
+    settingBox.classList.toggle('active-setting');
+    
+}
+
+function noticBar() {
+    const notic = document.querySelector('.notic-bar');
+    notic.classList.toggle('active-notic');
 
 }

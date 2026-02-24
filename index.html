@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/TrangChu.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/TrangChu.css">
     <link rel="stylesheet" href="./css/footer.css">
     <title>Porfolio</title>
 
@@ -14,60 +14,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     <script defer src="./js/trangchu.js"></script>
-    <script defer src="js/header.js"></script>
+    <script defer src="./js/header.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container-header">
-            <div class="wrap-left">
-                <a class="logo" href="#">Portfolio<span>BCN</span></a>
-                <navbar>
-                    <a href="index.html" class="item active">Trang chủ</a>
-                    <a href="userPage.html" class="item">Cộng đồng</a>
-                    <a href="projectPage.html" class="item">Dự án</a>
-                </navbar>
+    
+
+    <div class="header-wrapper">
+        <header>
+            <div class="container-header">
+                <div class="wrap-left">
+                    <a class="logo" href="#">Portfolio<span>BCN</span></a>
+                    <navbar>
+                        <a href="index.html" class="item active">Trang chủ</a>
+                        <a href="userPage.html" class="item">Cộng đồng</a>
+                        <a href="projectPage.html" class="item">Dự án</a>
+                        <div class="indicator"></div>
+                    </navbar>
+                </div>
+                <div class="wrap-right">
+                    
+                    <div class="search" id="searchBox">
+                        <div class="icon-btn" onclick="search()">
+                            <div class="icon-search">
+    
+                            </div>
+
+                        </div>
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+                    </div>
+    
+                    <div class="themDuAn hover hover-dark" onclick="AddProject()">
+                        <div class="title">Thêm</div>
+                        <div class="dauCong">
+    
+                        </div>
+                    </div>
+    
+                    <div class="notic" onclick="noticBar()">
+                        <div id="belt" class="belt">
+                            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        </div>
+    
+                    </div>
+    
+                    <div class="notic-bar">
+                        <div class="item-notic">Dự án project 1 đã được duyệt</div>
+                        <div class="item-notic checked">Dự án project 1 đã được duyệt</div>
+                    </div>
+    
+                    <div class="line"></div>
+    
+                    <div class="user-box" onclick="openSetting()">
+                        <div class="info-and-setting">
+                            <div class="user-name">Nguyễn Hùng</div>
+                        </div>
+                        <div class="avatar">H</div>
+                    </div>
+
+                    <div class="setting-bar">
+                        <div class="item-setting">Cài đặt cá nhân</div>
+                        <div class="line"></div>
+                        <div class="item-setting">Cài đặt</div>
+                        <div class="item-setting" onclick="changeTheme()">Đổi nền</div>
+                        <div class="item-setting dangXuat">Đăng Xuất</div>
+                    </div>
+    
+                    <div class="hamburger-bar">
+                    </div>
+                </div>
             </div>
-            <div class="wrap-right">
-                <div class="search">
-                    <!-- Chhỗ onclick có thể thêm sau này tính năng tìm kiếm -->
-                    <div class="icon-search" onclick="search()">
-                        <img src="./img/main/header-img/search-icon.svg" alt="">
-                    </div>
-                    <input type="text" placeholder="Tìm kiếm...">
-                </div>
-
-                <div class="themDuAn">
-                    <div class="title">Thêm</div>
-                    <div class="dauCong" onclick="AddProject()">
-
-                    </div>
-                </div>
-
-                <div class="notic">
-                    <div onclick="noticBar()" id="belt" class="belt">
-                        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                    </div>
-
-                </div>
-
-                <div class="line"></div>
-
-                <div class="user-box">
-                    <div class="avatar">H</div>
-                    <div class="info-and-setting">
-                        <div class="user-name">Nguyễn Hùng</div>
-                        <div class="user-setting" onclick="openSetting()">Cài đặt người dùng</div>
-                    </div>
-
-                </div>
-                <div class="hamburger-bar">
-                    <!-- <img src="./img/Hamburger.svg" alt=""> -->
-                </div>
-
-                
-            </div>
-        </div>
-    </header>
+        </header>
+    </div>
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="index.html" class="item active">Trang chủ</a>
