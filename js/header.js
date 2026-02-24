@@ -86,3 +86,88 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("Không tìm thấy ID 'mobileMenu' hoặc class 'hamburger-bar'");
     }
 });
+
+
+function search(e) {
+    if (e) e.stopPropagation();
+    const box = document.getElementById('searchBox');
+    const input = document.getElementById('searchInput');
+    
+    box.classList.toggle('expanded');
+    
+    if (box.classList.contains('expanded')) {
+        setTimeout(() => input.focus(), 100);
+    }
+}
+
+document.addEventListener('click', (e) => {
+    const box = document.getElementById('searchBox');
+    if (box && !box.contains(e.target) && box.classList.contains('expanded')) {
+        box.classList.remove('expanded');
+    }
+});
+
+document.getElementById('searchBox').onclick = (e) => {
+    e.stopPropagation();
+};
+
+function openSetting() {
+    const settingBox = document.querySelector('.setting-bar');
+    settingBox.classList.toggle('active-setting');
+    
+}
+
+function noticBar() {
+    const notic = document.querySelector('.notic-bar');
+    notic.classList.toggle('active-notic');
+    
+}
+
+function changeTheme() {
+    const root = document.documentElement;
+    const currentTheme = root.getAttribute('data-theme');
+
+    if (currentTheme === 'dark') {
+        root.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light'); 
+    } else {
+        root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+
+
+function updateIndicator() {
+    const navbar = document.querySelector('navbar');
+    const activeItem = navbar.querySelector('.item.active');
+    const indicator = navbar.querySelector('.indicator');
+
+    if (activeItem && indicator) {
+        // Lấy vị trí và chiều rộng của item đang active
+        indicator.style.width = `${activeItem.offsetWidth}px`;
+        indicator.style.left = `${activeItem.offsetLeft}px`;
+    }
+}
+
+// Chạy ngay khi load trang
+window.onload = updateIndicator;
+
+// Nếu bạn muốn khi di chuột (hover) thanh trượt cũng chạy theo
+const items = document.querySelectorAll('.item');
+const indicator = document.querySelector('.indicator');
+
+items.forEach(item => {
+    item.addEventListener('mouseenter', (e) => {
+        indicator.style.width = `${e.target.offsetWidth}px`;
+        indicator.style.left = `${e.target.offsetLeft}px`;
+    });
+
+    // Khi rời chuột thì quay về item đang active
+    item.addEventListener('mouseleave', updateIndicator);
+});
