@@ -35,6 +35,63 @@ body{
     background-color: var(--white-body);
 }
 
+/* ThemDuAn */
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 100000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(111, 111, 111, 0.456);
+}
+
+.active-duan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.themDuAn-popUp{
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 900px;
+    height: 650px;
+    z-index: 10000000;
+    border-radius: 10px;
+    background-color: var(--accent-color);
+}
+
+.close-popUp-btn {
+    margin: 0 auto;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-popUp-btn-CT {
+    margin: 0 auto;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+
+.close-popUp-btn:hover{
+    color: red;
+}
+
+.close-popUp-btn-CT:hover{
+    color: red;
+}
+
 /* Nut bam chung */
 .btn{
     width: 195px;

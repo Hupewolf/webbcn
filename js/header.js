@@ -117,6 +117,8 @@ function openSetting() {
     
 }
 
+
+
 function noticBar() {
     const notic = document.querySelector('.notic-bar');
     notic.classList.toggle('active-notic');
@@ -145,21 +147,18 @@ if (savedTheme === 'dark') {
 
 function updateIndicator() {
     const navbar = document.querySelector('navbar');
-    const activeItem = navbar.querySelector('.item.active');
+    const activeItem = navbar.querySelector('.item-hd.active');
     const indicator = navbar.querySelector('.indicator');
 
     if (activeItem && indicator) {
-        // Lấy vị trí và chiều rộng của item đang active
         indicator.style.width = `${activeItem.offsetWidth}px`;
         indicator.style.left = `${activeItem.offsetLeft}px`;
     }
 }
 
-// Chạy ngay khi load trang
 window.onload = updateIndicator;
 
-// Nếu bạn muốn khi di chuột (hover) thanh trượt cũng chạy theo
-const items = document.querySelectorAll('.item');
+const items = document.querySelectorAll('.item-hd');
 const indicator = document.querySelector('.indicator');
 
 items.forEach(item => {
@@ -168,6 +167,5 @@ items.forEach(item => {
         indicator.style.left = `${e.target.offsetLeft}px`;
     });
 
-    // Khi rời chuột thì quay về item đang active
     item.addEventListener('mouseleave', updateIndicator);
 });

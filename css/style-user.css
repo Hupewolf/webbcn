@@ -115,62 +115,6 @@
 /* ------------------------------------------------------------------------------------------------------------ */
 /* Hero Section */
 
-/* ThemDuAn */
-
-.overlay {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    z-index: 100000;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(111, 111, 111, 0.456);
-}
-
-.active-duan {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.themDuAn-popUp{
-    display: flex;
-    position: relative;
-    box-sizing: border-box;
-    padding: 20px;
-    width: 900px;
-    height: 650px;
-    z-index: 10000000;
-    border-radius: 10px;
-    background-color: var(--accent-color);
-}
-
-.close-popUp-btn {
-    margin: 0 auto;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-
-.close-popUp-btn-CT {
-    margin: 0 auto;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-
-
-.close-popUp-btn:hover{
-    color: red;
-}
-
-.close-popUp-btn-CT:hover{
-    color: red;
-}
 
 .container {
     max-width: var(--mw-container);
@@ -1168,7 +1112,90 @@
 
 /* ------------------------------------------------------------------------------------------------------------ */
 /* Res */
-@media screen and (max-width: 1380px) {
+@media screen and (max-width: 1300px) {
+    :root {
+        --mw-container: 1160px;
+        --avt-img-size: 280px;
+    }
+    .banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        /* max-width: 1000px; */
+        padding: 30px 10px;
+    }
+    .avatar-wrapper {
+        position: relative;
+        width: 380px;
+        height: 380px;
+    }
+    .banner-right {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        max-width: 440px;
+        box-sizing: border-box;
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .introduce {
+                width: 420px;
+                font-weight: 700;
+                font-size: 36px;
+                color: var(--primary-color);
+            }
+            .info {
+                font-weight: 500;
+                font-size: 16px;
+                color: var(--text-color);
+            }
+        }
+        .btn-box {
+            display: flex;
+            gap: 22px;
+        }
+    }
+
+
+    .mainContent {
+        flex-direction: row;
+        /* align-items: center; */
+        gap: 30px;
+        .main-left {
+            width: 80%;
+            /* height: auto; */
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 24px 20px ;
+        }
+        .main-right {
+            width: 100%;
+            height: auto; 
+            padding: 30px 0;
+        }
+    }
+
+    .wrap-content .box{
+        width: 490px;
+    }
+
+    .wrap-content .left{
+        margin-left: 620px;
+    }
+
+    .line-1 .name,
+    .line-1 .mail{
+        width: 360px;
+    }
+}
+
+
+@media screen and (max-width: 1180px) {
     :root {
         --mw-container: 1000px;
         --avt-img-size: 280px;
