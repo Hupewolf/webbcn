@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-    <script defer src="./js/header.js"></script>
-    <script defer src="./js/main.js"></script>
+    <script defer src="../js/header.js"></script>
+    <script defer src="../js/main.js"></script>
     <script defer src="../js/userPage.js"></script>
     
 </head>
@@ -25,9 +25,9 @@
                 <div class="wrap-left">
                     <a class="logo" href="#">Portfolio<span>BCN</span></a>
                     <navbar>
-                        <a href="index.html" class="item">Trang chủ</a>
-                        <a href="userPage.html" class="item active">Cộng đồng</a>
-                        <a href="projectPage.html" class="item">Dự án</a>
+                        <a href="index.html" class="item-hd">Trang chủ</a>
+                        <a href="userPage.html" class="item-hd active">Cộng đồng</a>
+                        <a href="projectPage.html" class="item-hd">Dự án</a>
                         <div class="indicator"></div>
                     </navbar>
                 </div>
@@ -72,14 +72,24 @@
                     </div>
 
                     <div class="setting-bar">
+                        <div class="search-mobile" id="searchBox">
+                            <div class="icon-btn" onclick="search()">
+                                <div class="icon-search">
+        
+                                </div>
+
+                            </div>
+                            <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+                        </div>
+                        <a class="item-setting mobile" href="index.html">Trang chủ</a>
+                        <a class="item-setting mobile" href="userPage.html">Cộng đồng</a>
+                        <a class="item-setting mobile" href="projectPage.html">Dự án</a>
+                        <div class="line mobile"></div>
                         <div class="item-setting">Cài đặt cá nhân</div>
                         <div class="line"></div>
                         <div class="item-setting">Cài đặt</div>
                         <div class="item-setting" onclick="changeTheme()">Đổi nền</div>
                         <div class="item-setting dangXuat">Đăng Xuất</div>
-                    </div>
-    
-                    <div class="hamburger-bar">
                     </div>
                 </div>
             </div>
@@ -90,33 +100,6 @@
         <div class="themDuAn-popUp">
             <div class="close-popUp-btn" onclick="closePopUp()">x</div>
         </div>
-
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="search" id="searchBox">
-            <div class="icon-btn" onclick="search()">
-                <div class="icon-search">
-
-                </div>
-
-            </div>
-            <input type="text" id="searchInput" placeholder="Tìm kiếm...">
-        </div>
-
-        <a href="index.html" class="item">Trang chủ</a>
-        <a href="userPage.html" class="item active">Cộng đồng</a>
-        <a href="projectPage.html" class="item">Dự án</a>
-        <a href="#" class="thongBao item">
-            <div class="title-mobile">Thông báo</div>
-            <div class="notic">
-
-                <div onclick="noticBar()" id="belt" class="belt">
-                    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                </div>
-                    
-            </div>
-        </a>
 
     </div>
 

@@ -55,7 +55,7 @@ body{
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 95%;
+    width: var(--width-header);
     max-width: 1280px;
 
     display: flex;
@@ -147,7 +147,7 @@ navbar {
     transition: all 0.3s ease; /* Tạo hiệu ứng trượt mượt */
 }
 
-navbar .item{
+navbar .item-hd{
     text-decoration: none;
     color: var(--black);
     font-size: var(--font-item);
@@ -343,54 +343,6 @@ navbar .item{
     background-color: #d7d6d6;
 }
 
-.mobile-menu {
-    position: fixed;
-    top: 0px; 
-    right: 0;
-    width: 45%;
-    height: 100vh; 
-    background-color: #ffffff;
-    box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.384);
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    
-    transform: translateX(100%); 
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-}
-
-.mobile-menu .item {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 0;
-    font-size: 16px;
-}
-
-.mobile-menu .search{
-    display: none;
-}
-
-.mobile-menu.active {
-    transform: translateX(0);
-}
-
-.mobile-menu .thongBao{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.mobile-menu .thongBao .belt {
-    width: 15px;
-    height: 15px;
-    color: var(--text-color);
-}
-
-.hamburger-bar {
-    cursor: pointer;
-}
-
 /* Setting Bar */
 
 .setting-bar {
@@ -407,10 +359,14 @@ navbar .item{
     display: none;
 }
 
+
+
 .setting-bar .line {
     height: 1px;
     width: 100%;
 }
+
+
 
 .item-setting {
     width: 100%;
@@ -422,6 +378,10 @@ navbar .item{
     cursor: pointer;
     color: var(--text-color);
     user-select: none;
+}
+
+.mobile {
+    display: none;
 }
 
 .item-setting:hover {
@@ -452,6 +412,10 @@ navbar .item{
     display: none;
 }
 
+.search-mobile {
+    display: none;
+}
+
 .notic-bar .item-notic {
     width: 100%;
     height: 36px;
@@ -474,7 +438,7 @@ navbar .item{
 }
 
 /* responsive */
-@media (max-width: 1380px) {
+@media (max-width: 1180px) {
     :root {
         --width-header: 1000px;
         --font-header: 24px;
@@ -487,8 +451,8 @@ navbar .item{
         gap: 10px;
         cursor: pointer;
     }
-    .user-box .avatar{
-        
+    .user-box {
+        width: fit-content;
     }
     .user-box .info-and-setting{
         display: none;
@@ -498,6 +462,10 @@ navbar .item{
         justify-content: space-between;
         align-items: center;
         /* gap: 32px; */
+    }
+
+    .notic-bar {
+        right: 100px;
     }
 }
 
@@ -513,21 +481,40 @@ navbar .item{
     }
 
     .wrap-right .search {
-        width: 300px;
+        /* width: 300px; */
     }
 
     .themDuAn .title{
         display: none;
     }
 
+    .notic-bar {
+        /* width: 100%; */
+        right: 0;
+    }
     .wrap-right .notic{
-        display: none;
+        /*  */
     }
 
-    .hamburger-bar{
+    /* .hamburger-bar{
         display: block;
         cursor: pointer;
+    } */
+
+    .setting-bar {
+        height: 760px;
     }
+
+    .mobile {
+        display: block;
+        
+    }
+
+    .mobile {
+        text-decoration: none;
+        color: var(--text-color);
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -540,8 +527,28 @@ navbar .item{
         display: none;
     }
 
+    .search-mobile {
+        display: flex;
+    }
+    
+    .search-mobile input {
+        border: 1px solid var(--accent-color);
+        outline: none;
+        font-size: 16px;
+        border-radius: 30px;
+        box-sizing: border-box;
+        padding: 5px 20px;
+        width: 100%;
+        background: transparent;
+
+    }
+
     .mobile-menu .search{
         display: flex;
+    }
+
+    .notic-bar {
+        width: 100%;
     }
 }
 @media screen and (max-width: 420px) {
@@ -550,8 +557,8 @@ navbar .item{
         /* --font-header: 18px;
         --font-item: 10px; */
     }   
-    .search{
-        display: none;
+    .search.mobile{
+        
     }
 
     .wrap-right{
