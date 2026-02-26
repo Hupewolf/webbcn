@@ -118,10 +118,57 @@
     position: relative;
     width: 100%;
     height: 450px;
-    margin-bottom: 182px;
-    background: url(../img/bg-hero.jpg);
+    margin-bottom: 222px;
+    background: var(--bg-hero);
     background-size: cover;
+    background-position: center;
     box-shadow: var(--shadow-premium);
+    .change-bg-hero {
+        display: none;
+    }
+}
+
+.bg-user:hover {
+    .change-bg-hero {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: flex;
+        padding: 5px 10px;
+        border-radius: 30px;
+        background-color: var(--accent-color);
+        color: var(--text-color);
+        cursor: pointer;
+    }
+}
+.dieuHuong {
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    max-width: var(--mw-container);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    
+}
+
+.item-dieuHuong {
+    width: fit-content;
+    border-radius: 30px;
+    backdrop-filter: blur(125px) saturate(150%);
+    padding: 10px 30px;
+    display: flex;
+    gap: 10px;
+    color: var(--text-color);
+}
+
+.item-dieuHuong a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.item-active {
+    color: var(--primary-color) !important;
 }
 
 .container {
@@ -139,7 +186,7 @@
     box-shadow: var(--shadow-premium);
     border-radius: 20px;
     position: absolute;
-    top: 140px;
+    top: 180px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -149,7 +196,7 @@
     padding: 65px 20px;
 }
 
-.sauanhHung {
+/* .sauanhHung {
     background-image: url(../img/main/bannerImg/backgrounduser2-Photoroom.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -160,13 +207,13 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-}
+} */
 
 .avatar-wrapper {
     position: relative;
     width: 434px;
     height: 434px;
-    background-image: url(../img/main/bannerImg/backgrounduser2-Photoroom.png);
+    /* background-image: url(../img/main/bannerImg/backgrounduser2-Photoroom.png); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1115,7 +1162,7 @@
     display: block;
     width: 15px;
     height: 15px;
-    background-color: var(--white);
+    background-color: white;
 }
 
 .content .left .line-1{
@@ -1182,6 +1229,7 @@
     width: 100%;
     border: none;
     outline: none;
+    background-color: transparent;
 }
 
 .left .line-2{
@@ -1201,6 +1249,7 @@
     border: none;
     outline: none;
     font-family: 'Inter';
+    background-color: transparent;
     width: 100%;
     height: 100%;
     resize: none;
