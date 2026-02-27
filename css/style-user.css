@@ -3,6 +3,8 @@
     --avt-img-size: 362px;
     --primary-color: #4180ff;
     --primary-color-lighter: #d0e0ff;
+    --primary-color-lighter-2: #ffffff49;
+    --primary-color-lighter-3: #6c9bf7;
 
     --second-color: #d7d6d6;
 
@@ -118,7 +120,7 @@
     position: relative;
     width: 100%;
     height: 450px;
-    margin-bottom: 109px;
+    margin-bottom: 160px;
     background: var(--bg-hero);
     background-size: cover;
     background-position: center;
@@ -175,13 +177,12 @@
     max-width: var(--mw-container);
     width: 100%;
     margin: 0 auto;
-    /* margin-top: 30px; */
 }
 
 .banner {
     /* margin-top: 140px; */
     /* background-color: var(--white); */
-    backdrop-filter: blur(125px) saturate(150%);
+    backdrop-filter: var(--filter);
     background: transparent;
     box-shadow: var(--shadow-premium);
     border-radius: 20px;
@@ -192,27 +193,22 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    gap: 40px;
     align-items: center;
     padding: 65px 60px;
 }
 
-/* .sauanhHung {
-    background-image: url(../img/main/bannerImg/backgrounduser2-Photoroom.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 362px;
-    height: 362px;
+.banner-left {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-} */
+    gap: 30px;
+    width: 100%;
+    max-width: 50%;
+}
 
 .avatar-wrapper {
     position: relative;
     background-color: var(--accent-color-darker);
-    width: 210px;
+    min-width: 210px;
     height: 210px;
     display: flex;
     justify-content: center;
@@ -244,39 +240,203 @@
     z-index: 2;
 }
 
-.download-cv{
-    display: flex;
-    gap: 5px;
-    font-weight: 500;
+.banner-status {
+    position: absolute;
+    left: 250px;
+    bottom: 140px;
 }
 
-
-.banner-right {
+.expUser-wrap {
+    position: absolute;
+    bottom: -40px;
     display: flex;
     flex-direction: column;
-    gap: 100px;
-    .content {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        width: 100%;
-        max-width: 797px;
-        .introduce {
-            width: 597px;
-            font-weight: 500;
-            font-size: 44px;
-            color: var(--primary-color);
-        }
-        .info {
-            font-size: 16px;
-            color: var(--text-color);
-        }
-    }
-    .btn-box {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-    }
+    gap: 5px;
+    text-align: center;
+}
+
+.expUser-wrap .expBar {
+    width: 100%;
+    height: 8px;
+    border-radius: 30px;
+    background-color: var(--accent-color-darker);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid var(--primary-color-lighter);
+    padding: 1px 1px;
+}
+
+.expBar .expRealBar {
+    width: 80%;
+    height: 6px;
+    border-radius: 30px;
+    background-color: var(--primary-color);
+}
+
+.expScore {
+    padding: 5px 5px;
+    border-radius: 30px;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: var(--accent-color-lighter);
+    /* color: ; */
+    font-weight: 600;
+}
+
+.expScore span {
+    color: var(--primary-color);
+
+}
+
+.userTag {
+    padding: 5px 10px;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: purple;
+    border-radius: 30px;
+    color: white;
+}
+
+.userThongTin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.userThongTin .userName {
+    font-size: 36px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: white;
+}
+
+.userThongTin .userID {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-color);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.icon-copy {
+    mask-image: url(../img/copy.svg);
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color-darker);
+    cursor: pointer;
+}
+
+.icon-copy:hover {
+    background-color: var(--primary-color);
+}
+
+.box-btn {
+    display: flex;
+    gap: 20px;
+
+}
+
+.userThongTin .userBio {
+    padding: 10px 10px;
+    border-radius: 5px;
+    line-height: 1.4;
+    background-color: var(--primary-color-lighter-2);
+}
+
+.download-cv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 25px;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.download-cv:hover {
+    background-color: #cacaca;
+
+}
+
+.download-cv:active {
+    opacity: 0.6;
+}
+
+.icon-download {
+    width: 20px;
+    height: 20px;
+    mask-image: url(../img/download.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--text-color);
+}
+
+.banner-right {
+    padding: 10px 10px;
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
+}
+
+.banner-right .top-banner {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: var(--accent-color); */
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.316);
+    box-shadow: var(--shadow-premium);
+}
+
+.top-banner .circle-item {
+    width: 120px;
+    height: 120px;
+    /* border-radius: 50%; */
+    /* background-color: var(--white); */
+    /* border: 5px solid rgb(98, 240, 98); */
+    text-align: center;
+    align-content: center;
+    font-weight: 500;
+    color: var(--primary-color-lighter-3);
+}
+
+.circle-item span {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.line-banner {
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-color-lighter);
+}
+
+.bottom-banner {
+    display: flex;
+    width: 100%;
+}
+
+.wrap-bottom {
+    display: flex;
+    padding: 10px 10px;
+    margin-left: auto;
+    width: fit-content;
+    border-radius: 10px;
+    gap: 10px;
+    background-color: var(--accent-color);
+}
+
+.zalo-banner{
+    /* background-color: var(--accent-color-lighter) !important; */
+    color: var(--white);
 }
 
 .title-comment {
@@ -1390,7 +1550,7 @@
     gap: 20px;
 }
 
-.logo-social .icon-log{
+.icon-log{
     display: block;
     width: 48px;
     height: 48px;

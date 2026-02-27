@@ -17,9 +17,11 @@ body{
     --transition-snap: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 
     --bg-hero: url(../img/bg-day.jpg);
+    --filter: blur(150px) saturate(150%);
 }
 
 [data-theme="dark"] {
+    --filter: blur(125px) saturate(150%);
     --accent-color: rgb(17, 17, 17) !important;
     --text-color: white !important;
     --white: rgb(28, 28, 28) !important;
