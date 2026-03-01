@@ -157,7 +157,8 @@
 .item-dieuHuong {
     width: fit-content;
     border-radius: 30px;
-    backdrop-filter: blur(125px) saturate(150%);
+    background-color: var(--dieuHuong-bg-color);
+    backdrop-filter: blur(155px) saturate(150%);
     padding: 10px 30px;
     display: flex;
     gap: 10px;
@@ -243,16 +244,17 @@
 .banner-status {
     position: absolute;
     left: 250px;
-    bottom: 140px;
+    bottom: 150px;
 }
 
 .expUser-wrap {
     position: absolute;
-    bottom: -40px;
+    bottom: -50px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
     text-align: center;
+    z-index: 2;
 }
 
 .expUser-wrap .expBar {
@@ -351,7 +353,7 @@
     align-items: center;
     gap: 6px;
     padding: 5px 25px;
-    background-color: var(--accent-color);
+    background-color: var(--DL-color);
     border-radius: 10px;
     font-weight: 500;
     text-decoration: none;
@@ -392,7 +394,7 @@
     justify-content: space-between;
     /* background-color: var(--accent-color); */
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.316);
+    background: var(--banner-top);
     box-shadow: var(--shadow-premium);
 }
 
@@ -1608,16 +1610,21 @@
         align-items: center;
         width: 100%;
         /* max-width: 1000px; */
-        padding: 30px 10px;
+        padding: 30px 40px;
     }
     .avatar-wrapper {
         position: relative;
         
     }
+
+    .bg-user {
+        margin-bottom: 90px;
+    }
+
     .banner-right {
         display: flex;
         flex-direction: column;
-        gap: 100px;
+        /* gap: 100px; */
         max-width: 440px;
         box-sizing: border-box;
         .content {
@@ -1664,6 +1671,11 @@
         }
     }
 
+    .banner-status {
+        bottom: 110px;
+        left: 190px;
+    }
+
     .wrap-content .box{
         width: 490px;
     }
@@ -1699,8 +1711,8 @@
     .banner-right {
         display: flex;
         flex-direction: column;
-        gap: 100px;
-        max-width: 440px;
+        /* gap: 100px; */
+        max-width: 410px;
         box-sizing: border-box;
         .content {
             display: flex;

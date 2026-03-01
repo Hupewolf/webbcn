@@ -14,13 +14,19 @@ body{
     --font-header: 24px;
     --accent: #70e3f4;
     --nav-color: #eeeeee;
+    --DL-color: #F8F8F8;
+    --dieuHuong-bg-color: rgba(255, 255, 255, 0.463);
     --transition-snap: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 
     --bg-hero: url(../img/bg-day.jpg);
+    --banner-top: rgba(255, 255, 255, 0.672);
     --filter: blur(150px) saturate(150%);
 }
 
 [data-theme="dark"] {
+    --dieuHuong-bg-color: rgba(255, 255, 255, 0);
+    --DL-color: #3736369a;
+    --banner-top: rgba(48, 48, 48, 0.447);
     --filter: blur(125px) saturate(150%);
     --accent-color: rgb(17, 17, 17) !important;
     --text-color: white !important;
