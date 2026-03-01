@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnam Mega City - Urban Planning Edition</title>
+    <style>
+        /* CSS THUẦN - URBAN VIBE & GRID SYSTEM */
+        :root {
+            --bg-city: #050507;
+            --street-color: #0f172a;
+            --grid-line: rgba(255, 255, 255, 0.03);
+            --block-default: #1e293b;
+            --block-border: #334155;
+            --ultra-bg: #fefce8;
+            --ultra-text: #1e1b4b;
+            --ultra-glow: rgba(254, 252, 232, 0.15);
+            --unit-size: 28px; 
+            --road-gap: 12px; /* Độ rộng đường phố */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-city);
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* HEADER - GLASSMORPHISM */
+        .header {
+            width: 100%;
+            max-width: 900px;
+            margin: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+            z-index: 100;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            color: #fde047;
+        }
+
+        .subtitle {
+            font-size: 9px;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            margin-top: 5px;
+        }
+
+        button#refresh-btn {
+            background: #fde047;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 11px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        button#refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(253, 224, 71, 0.3);
+        }
+
+        /* CITY CORE - THE GRID AREA */
+        .city-viewport {
+            position: relative;
+            padding: 40px;
+            background: var(--bg-city);
+            /* Tạo lớp lưới đường phố chìm phía dưới */
+            background-image: 
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+background-size: calc(var(--unit-size) + var(--road-gap)) calc(var(--unit-size) + var(--road-gap));
+            border-radius: 40px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-auto-flow: dense;
+            grid-template-columns: repeat(24, var(--unit-size));
+            grid-auto-rows: var(--unit-size);
+            gap: var(--road-gap);
+            width: fit-content;
+        }
+
+        /* CÁC KHỐI NHÀ (BUILDINGS) */
+        .block {
+            background-color: var(--block-default);
+            border: 1px solid var(--block-border);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        /* Khối đặc biệt 5x5 - Glowing Effect */
+        .block.ultra {
+            background-color: var(--ultra-bg);
+            border: none;
+            box-shadow: 0 0 30px var(--ultra-glow);
+            z-index: 10;
+        }
+
+        .block.ultra .block-name {
+            color: var(--ultra-text);
+        }
+
+        .block.ultra .block-id {
+            background: rgba(0,0,0,0.1);
+            color: var(--ultra-text);
+            opacity: 0.6;
+        }
+
+        .block:hover {
+            transform: scale(1.08) translateY(-5px);
+            z-index: 50;
+            border-color: #fde047;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .block-name {
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: -0.02em;
+            pointer-events: none;
+        }
+
+        .block-id {
+            position: absolute;
+            bottom: 6px;
+            font-size: 7px;
+            font-weight: 700;
+            background: rgba(0,0,0,0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #64748b;
+        }
+
+        /* FOOTER STATS */
+        .footer-stats {
+            margin: 40px 0;
+            display: flex;
+            gap: 50px;
+            padding: 20px 40px;
+            background: rgba(30, 41, 59, 0.3);
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-val {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #fde047;
+        }
+
+        .stat-label {
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <h1>Urban Mega City</h1>
+            <div class="subtitle">Systematic Planning & Infrastructure</div>
+        </div>
+<button id="refresh-btn">Re-Plan City</button>
+    </header>
+
+    <div class="city-viewport">
+        <div class="grid-container" id="city-grid"></div>
+    </div>
+
+    <div class="footer-stats">
+        <div class="stat">
+            <span class="stat-val">100</span>
+            <span class="stat-label">Building Units</span>
+        </div>
+        <div class="stat">
+            <span class="stat-val">24</span>
+            <span class="stat-label">Grid Sectors</span>
+        </div>
+        <div class="stat">
+            <span class="stat-val">4</span>
+            <span class="stat-label">Prime Districts</span>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * LOGIC QUY HOẠCH:
+         * 1. Unique ID & Object: Tạo 100 đối tượng riêng biệt để không bao giờ trùng Name + ID.
+         * 2. Tỉ lệ quy hoạch:
+         * - 4 lô Prime (5x5): Trung tâm hành chính.
+         * - 26 lô Medium (3x3): Khu thương mại.
+         * - 70 lô Standard (2x2): Khu dân cư cao cấp.
+         * 3. Grid Dynamics: Khoảng cách gap mô phỏng hệ thống đường xá (Street).
+         */
+
+        const NAMES = [
+            "Huy", "Nam", "Dũng", "Linh", "Cường", "Sơn", "Hà", "Minh", "Trang", "Tuấn",
+            "An", "Bắc", "Việt", "Phong", "Thành", "Trung", "Đức", "Tùng", "Quang", "Hùng",
+            "Yến", "Thảo", "Mai", "Hồng", "Oanh", "Phúc", "Lộc", "Thắng", "Bình", "Vinh"
+        ];
+
+        const grid = document.getElementById('city-grid');
+        const refreshBtn = document.getElementById('refresh-btn');
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function generate() {
+            grid.innerHTML = "";
+
+            // Tạo 100 ID duy nhất từ 101 đến 999
+            const idPool = shuffle(Array.from({length: 899}, (_, i) => i + 101));
+            
+            // Tạo mảng kích thước cố định để đảm bảo tỉ lệ
+            const architecture = [
+                ...Array(4).fill({w: 5, h: 5, type: 'ultra'}),
+                ...Array(26).fill({w: 3, h: 3, type: 'medium'}),
+                ...Array(70).fill({w: 2, h: 2, type: 'standard'})
+            ];
+            shuffle(architecture);
+
+            architecture.forEach((style, index) => {
+                const name = NAMES[Math.floor(Math.random() * NAMES.length)];
+                const id = idPool[index];
+
+                const block = document.createElement('div');
+                block.className = `block ${style.type}`;
+                block.style.gridColumn = `span ${style.w}`;
+                block.style.gridRow = `span ${style.h}`;
+
+                // Tính toán cỡ chữ theo tỉ lệ khối
+                let fs = "8px";
+                if (style.w === 5) fs = "22px";
+else if (style.w === 3) fs = "10px";
+
+                block.innerHTML = `
+                    <span class="block-name" style="font-size: ${fs}">${name}</span>
+                    <span class="block-id">UNIT-${id}</span>
+                `;
+
+                grid.appendChild(block);
+            });
+        }
+
+        refreshBtn.addEventListener('click', generate);
+        window.onload = generate;
+    </script>
+</body>
+</html>
