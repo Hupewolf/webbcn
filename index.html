@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/TrangChu.css">
+    <link rel="stylesheet" href="./css/style-user.css">
     <link rel="stylesheet" href="./css/footer.css">
     <title>Porfolio</title>
 
@@ -18,13 +19,11 @@
     <script defer src="./js/header.js"></script>
 </head>
 <body>
-    
-
     <div class="header-wrapper">
         <header>
             <div class="container-header">
                 <div class="wrap-left">
-                    <a class="logo" href="#">Portfolio<span>BCN</span></a>
+                    <a class="logo" href="index.html">Portfolio<span>BCN</span></a>
                     <navbar>
                         <a href="index.html" class="item-hd active">Trang chủ</a>
                         <a href="userPage.html" class="item-hd">Cộng đồng</a>
@@ -36,26 +35,20 @@
                     
                     <div class="search" id="searchBox">
                         <div class="icon-btn" onclick="search()">
-                            <div class="icon-search">
-    
-                            </div>
-
+                            <div class="icon-search"></div>
                         </div>
                         <input type="text" id="searchInput" placeholder="Tìm kiếm...">
                     </div>
     
                     <div class="themDuAn hover hover-dark" onclick="AddProject()">
                         <div class="title">Thêm</div>
-                        <div class="dauCong">
-    
-                        </div>
+                        <div class="dauCong"></div>
                     </div>
     
                     <div class="notic" onclick="noticBar()">
                         <div id="belt" class="belt">
                             <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                         </div>
-    
                     </div>
     
                     <div class="notic-bar">
@@ -75,10 +68,7 @@
                     <div class="setting-bar">
                         <div class="search-mobile" id="searchBox">
                             <div class="icon-btn" onclick="search()">
-                                <div class="icon-search">
-        
-                                </div>
-
+                                <div class="icon-search"></div>
                             </div>
                             <input type="text" id="searchInput" placeholder="Tìm kiếm...">
                         </div>
@@ -102,13 +92,38 @@
         <div class="themDuAn-popUp">
             <div class="close-popUp-btn" onclick="closePopUp()">x</div>
         </div>
-
     </div>
 
-    <div class="search-box-main"></div>
-    <div class="grid-city"></div>
+    <div class="hero-searching">
+        <div class="heading-hero">Chào mừng bạn đến với website <span>Portfolio</span></div>
+        <div class="search-box-wrap">
+            <div class="search-box">
+                <div class="searching">
+                    <div class="icon-search-hero"></div>
+                    <input type="text" placeholder="Tìm thành viên...">
+                </div>
+                <div class="boLocSearch">
+                    <div class="loc-item-box">
+                        <div class="loc-item">Mới tham gia <div class="xoa-item">-</div></div>
+                        <div class="loc-item">Website Designer<div class="xoa-item">-</div></div>
+                    </div>
+                    <div class="moBoLoc">
+                        Lọc
+                        <div class="iconBoLoc"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="mapCity">
 
-   
+        <div class="headingCity">Thành phố <span>Ban Công Nghệ</span></div>
+
+        <div class="city-viewport">
+            <div class="grid-container" id="city-grid"></div>
+        </div>
+    </div>
 
     <div class="footer">
         <div class="frame1">
@@ -151,6 +166,56 @@
         <div class="line"></div>
         <div class="coppyright">2026 PortfolioBCN . All Right Reserved. Powered by Team’s Uside</div>
     </div>
-    
+
+    <script>
+        const NAMES = [
+            "Huy", "Nam", "Dũng", "Linh", "Cường", "Sơn", "Hà", "Minh", "Trang", "Tuấn",
+            "An", "Bắc", "Việt", "Phong", "Thành", "Trung", "Đức", "Tùng", "Quang", "Hùng",
+            "Yến", "Thảo", "Mai", "Hồng", "Oanh", "Phúc", "Lộc", "Thắng", "Bình", "Vinh"
+        ];
+
+        const grid = document.getElementById('city-grid');
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function generate() {
+            if(!grid) return;
+            grid.innerHTML = "";
+            const idPool = shuffle(Array.from({length: 899}, (_, i) => i + 101));
+            const architecture = [
+                ...Array(4).fill({w: 5, h: 5, type: 'ultra'}),
+                ...Array(26).fill({w: 3, h: 3, type: 'medium'}),
+                ...Array(70).fill({w: 2, h: 2, type: 'standard'})
+            ];
+            shuffle(architecture);
+
+            architecture.forEach((style, index) => {
+                const name = NAMES[Math.floor(Math.random() * NAMES.length)];
+                const id = idPool[index];
+                const block = document.createElement('div');
+                block.className = `block ${style.type}`;
+                block.style.gridColumn = `span ${style.w}`;
+                block.style.gridRow = `span ${style.h}`;
+
+                let fs = "8px";
+                if (style.w === 5) fs = "22px";
+                else if (style.w === 3) fs = "10px";
+
+                block.innerHTML = `
+                    <span class="block-name" style="font-size: ${fs}">${name}</span>
+                    <span class="block-id">UNIT-${id}</span>
+                `;
+                grid.appendChild(block);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', generate);
+    </script>
 </body>
 </html>
