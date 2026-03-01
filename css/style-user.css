@@ -686,7 +686,7 @@
 }
 
 .popUp-right .primary {
-    background: linear-gradient(135deg,var(--primary-color),#1c0cff);
+    background: var(--primary-color);
     color: white;
     display: flex;
     align-items: center;
