@@ -469,7 +469,6 @@
     box-sizing: border-box;
     padding: 30px 20px;
     width: 900px;
-    height: 550px;
     z-index: 10000000;
     border-radius: 10px;
     background-color: var(--accent-color-lighter);
@@ -508,7 +507,7 @@
 }
 
 .popUp-left .small {
-    height: 200px;
+    height: calc(590px/4);
     flex: 1;
 }
 
@@ -583,7 +582,7 @@
 
 /* intro box */
 
-.popUp-right .box {
+.popUp-right .box1 {
     background: #f6f7fb;
     padding: 14px;
     border-radius: 12px;
@@ -592,14 +591,14 @@
     border: 1px solid var(--primary-color);
 }
 
-.popUp-right .box strong {
+.popUp-right .box1 strong {
     display: flex;
     gap: 8px;
     align-items: center;
     color: var(--primary-color);
 }
 
-.popUp-right .box p {
+.popUp-right .box1 p {
     color: #5a5a5a;
 }
 
@@ -687,7 +686,7 @@
 }
 
 .popUp-right .primary {
-    background: var(--primary-color);
+    background: linear-gradient(135deg,var(--primary-color),#1c0cff);
     color: white;
     display: flex;
     align-items: center;
