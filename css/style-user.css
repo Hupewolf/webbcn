@@ -1791,10 +1791,37 @@
         position: relative;
         
     }
+
+
+    .bg-user {
+        height: 1195px;
+        margin-bottom: 20px;
+    }
+
+    .banner-left {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 210px;
+    }
+
+    .userThongTin {
+        width: 240px;
+        margin-top: 40px;
+        margin-left: -15px;
+    }
+
+    .userName {
+        font-size: 16px;
+    }
+
+    .banner-status {
+        top: 220px;
+        left: 440px;
+    }
+
     .banner-right {
         display: flex;
         flex-direction: column;
-        gap: 100px;
         max-width: 440px;
         box-sizing: border-box;
         .content {
@@ -1918,6 +1945,11 @@
         gap: 20px;
     }
 
+    .banner-status {
+        top: 215px;
+        left: 270px;
+    }
+
     .banner {
         display: flex;
         /* justify-content: space-between; */
@@ -1935,7 +1967,6 @@
     .banner-right {
         display: flex;
         flex-direction: column;
-        gap: 100px;
         max-width: 370px;
         box-sizing: border-box;
         .content {
