@@ -237,7 +237,6 @@
     box-sizing: border-box;
     padding: 30px 20px;
     width: 900px;
-    height: 650px;
     z-index: 10000000;
     border-radius: 10px;
     background-color: var(--accent-color-lighter);
@@ -274,7 +273,7 @@
 }
 
 .popUp-left .small {
-    height: calc(590px/2 - 16px);
+    height: calc(590px/4);
     flex: 1;
 }
 
@@ -349,7 +348,7 @@
 
 /* intro box */
 
-.popUp-right .box {
+.popUp-right .box1 {
     background: #f6f7fb;
     padding: 14px;
     border-radius: 12px;
@@ -357,14 +356,14 @@
     font-size: 14px;
 }
 
-.popUp-right .box strong {
+.popUp-right .box1 strong {
     display: flex;
     gap: 8px;
     align-items: center;
-    color: #666be3;
+    color: var(--primary-color);
 }
 
-.popUp-right .box p {
+.popUp-right .box1 p {
     color: #5a5a5a;
 }
 
@@ -415,7 +414,7 @@
     display: flex;
     gap: 8px;
     align-items: center;
-    color: #666be3;
+    color: var(--primary-color);
     margin-bottom: 16px;
 }
 
@@ -452,7 +451,7 @@
 }
 
 .popUp-right .primary {
-    background: linear-gradient(135deg,#6d5efc,#8b5cf6);
+    background: linear-gradient(135deg,var(--primary-color),#1c0cff);
     color: white;
     display: flex;
     align-items: center;
@@ -487,13 +486,13 @@
 }
 
 .popUp-right .file {
-    background-color: #666be3;
+    background-color: var(--primary-color);
     -webkit-mask: url("../img/popUp/intro.svg") no-repeat center;
     mask: url("../img/popUp/intro.svg") no-repeat center;
 }
 
 .popUp-right .code {
-    background-color: #666be3;
+    background-color: var(--primary-color);
     -webkit-mask: url("../img/popUp/code.svg") no-repeat center;
     mask: url("../img/popUp/code.svg") no-repeat center;
 }
