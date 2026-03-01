@@ -469,7 +469,7 @@
     box-sizing: border-box;
     padding: 30px 20px;
     width: 900px;
-    height: 650px;
+    height: 550px;
     z-index: 10000000;
     border-radius: 10px;
     background-color: var(--accent-color-lighter);
@@ -497,6 +497,8 @@
 
 .popUp-left .big {
     height: calc(590px/2 - 16px);
+    background: url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==);
+    background-size: cover;
 }
 
 .popUp-left .popUp-img-row {
@@ -506,7 +508,7 @@
 }
 
 .popUp-left .small {
-    height: calc(590px/2 - 16px);
+    height: 200px;
     flex: 1;
 }
 
@@ -587,13 +589,14 @@
     border-radius: 12px;
     margin: 16px 0;
     font-size: 14px;
+    border: 1px solid var(--primary-color);
 }
 
 .popUp-right .box strong {
     display: flex;
     gap: 8px;
     align-items: center;
-    color: #666be3;
+    color: var(--primary-color);
 }
 
 .popUp-right .box p {
@@ -608,15 +611,15 @@
     margin-bottom: 16px;
 }
 
-.popUp-right .feature {
+/* .popUp-right .feature {
     border: 1px solid #cacaca;
     color: #181818;
     border-radius: 12px;
     display: flex;
     gap: 8px;
     align-items: center;
-    padding: 0 0 0 6px;
-}
+    padding: 5px 10px;
+} */
 
 .popUp-right .fast {
     background-color: #181818;
@@ -647,7 +650,7 @@
     display: flex;
     gap: 8px;
     align-items: center;
-    color: #666be3;
+    color: var(--primary-color);
     margin-bottom: 16px;
 }
 
@@ -684,7 +687,7 @@
 }
 
 .popUp-right .primary {
-    background: linear-gradient(135deg,#6d5efc,#8b5cf6);
+    background: var(--primary-color);
     color: white;
     display: flex;
     align-items: center;
@@ -719,13 +722,13 @@
 }
 
 .popUp-right .file {
-    background-color: #666be3;
+    background-color: var(--primary-color);
     -webkit-mask: url("../img/popUp/intro.svg") no-repeat center;
     mask: url("../img/popUp/intro.svg") no-repeat center;
 }
 
 .popUp-right .code {
-    background-color: #666be3;
+    background-color: var(--primary-color);
     -webkit-mask: url("../img/popUp/code.svg") no-repeat center;
     mask: url("../img/popUp/code.svg") no-repeat center;
 }
