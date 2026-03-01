@@ -225,7 +225,7 @@
 }
 
 .block.ultra .block-name { 
-    color: var(--ultra-text); 
+    color: var(--white); 
 }
 
 .block.ultra .block-id { 
