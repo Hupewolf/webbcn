@@ -28,12 +28,12 @@ body{
     --DL-color: #3736369a;
     --banner-top: rgba(48, 48, 48, 0.447);
     --filter: blur(125px) saturate(150%);
-    --accent-color: rgb(17, 17, 17) !important;
-    --text-color: white !important;
-    --white: rgb(28, 28, 28) !important;
-    --white-body: rgb(32, 32, 32) !important;
-    --shadow-premium: 0 10px 40px -10px rgba(216, 216, 216, 0.05), 0 20px 25px -5px rgba(246, 246, 246, 0.02) !important;
-    --shadow: 3px 3px 4px 0px #efefef33, -5px -5px 4px 0px #747474 !important;
+    --accent-color: rgb(17, 17, 17) ;
+    --text-color: white ;
+    --white: rgb(28, 28, 28) ;
+    --white-body: rgb(32, 32, 32) ;
+    --shadow-premium: 0 10px 40px -10px rgba(216, 216, 216, 0.05), 0 20px 25px -5px rgba(246, 246, 246, 0.02) ;
+    --shadow: 3px 3px 4px 0px #efefef33, -5px -5px 4px 0px #747474 ;
     --bg-hero: url(../img/bg-hero.jpg);
 }
 
@@ -51,7 +51,7 @@ body{
     mask-repeat: no-repeat;
     mask-position: center;
     
-    background-color: var(--bar-color) !important;
+    background-color: var(--bar-color) ;
 
     width: 38px;
     height: 38px;
@@ -101,7 +101,7 @@ header{
 }
 
 header:hover {
-    /* background: var(--bg-glass) !important; */
+    /* background: var(--bg-glass) ; */
     box-shadow: 0 15px 45px rgba(11, 94, 227, 0.12);
     transform: translateY(-3px);
 }
@@ -166,8 +166,8 @@ navbar .item-hd{
     z-index: 1;
 }
 
-.active{
-    color: var(--primary-color) !important;
+navbar .active{
+    color: var(--primary-color) ;
     /* background-color: var(--white); */
     box-sizing: border-box;
     padding: 12px 10px;
@@ -438,7 +438,7 @@ navbar .item-hd{
 }
 
 .checked {
-    background-color: var(--white) !important;
+    background-color: var(--white);
 }
 
 .active-notic {
@@ -497,9 +497,9 @@ navbar .item-hd{
         display: none;
     }
 
-    .wrap-right .search {
-        /* width: 300px; */
-    }
+    /* .wrap-right .search {
+        width: 300px;
+    } */
 
     .themDuAn .title{
         display: none;
@@ -509,9 +509,9 @@ navbar .item-hd{
         /* width: 100%; */
         right: 0;
     }
-    .wrap-right .notic{
-        /*  */
-    }
+    /* .wrap-right .notic{
+
+    } */
 
     /* .hamburger-bar{
         display: block;
@@ -574,9 +574,9 @@ navbar .item-hd{
         /* --font-header: 18px;
         --font-item: 10px; */
     }   
-    .search.mobile{
+    /* .search.mobile{
         
-    }
+    } */
 
     .wrap-right{
         display: flex;
