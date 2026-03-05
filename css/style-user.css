@@ -1,7 +1,7 @@
 :root{
     --mw-container: 1280px;
     --avt-img-size: 362px;
-    --primary-color: #4180ff;
+    --primary-color: #4080ff;
     --primary-color-lighter: #d0e0ff;
     --primary-color-lighter-2: #ffffff49;
     --primary-color-lighter-3: #6c9bf7;
@@ -183,9 +183,9 @@
 .banner {
     /* margin-top: 140px; */
     /* background-color: var(--white); */
-    backdrop-filter: var(--filter);
-    background: transparent;
-    box-shadow: var(--shadow-premium);
+    /* backdrop-filter: var(--filter); */
+    /* background: transparent; */
+    /* box-shadow: var(--shadow-premium); */
     border-radius: 20px;
     position: absolute;
     top: 180px;
@@ -201,9 +201,12 @@
 
 .banner-left {
     display: flex;
+    backdrop-filter: var(--filter);
     gap: 30px;
-    width: 100%;
-    max-width: 50%;
+    padding: 44px;
+    border-radius: 20px;
+    /* width: 100%; */
+    /* max-width: 50%; */
 }
 
 .avatar-wrapper {
@@ -386,6 +389,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    backdrop-filter: var(--filter);
     
 }
 
