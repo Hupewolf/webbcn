@@ -3,495 +3,485 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PortfolioBCN - Light Project Card</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Nguyễn Văn A | Digital Identity 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=JetBrains+Mono:wght@400;700;800&display=swap');
+
         :root {
-            --primary: #6366f1;
-            --secondary: #a855f7;
-            --accent: #22d3ee;
-            --text-main: #1e293b;
-            --text-second: #64748b;
-            --bg-glass: rgba(255, 255, 255, 0.7);
-            --border-glass: rgba(0, 0, 0, 0.05);
-            --shadow-premium: 0 10px 40px -10px rgba(0, 0, 0, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.02);
-            --transition-snap: all 0.3s cubic-bezier(0.3, 1.4, 0.5, 1);
-            --led-thickness: 2.5px;
-            --danger: #ef4444;
-            --success: #10b981;
-            --warning: #f59e0b;
-            
-            /* Light Project Card Colors */
-            --card-bg: #ffffff;
-            --card-border: rgba(0, 0, 0, 0.06);
-            --card-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.08);
-            --img-overlay: rgba(99, 102, 241, 0.05);
-        }
-
-        @property --angle {
-            syntax: '<angle>';
-            initial-value: 0deg;
-            inherits: false;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
+            --bg: #fdfdfd;
+            --primary: #000000;
+            --accent: #6366f1;
+            --border: #eceef2;
+            --glass: rgba(255, 255, 255, 0.8);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: radial-gradient(circle at top, #ffffff, #f8fafc);
-            min-height: 100vh;
-            padding-top: 120px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
             overflow-x: hidden;
-            color: var(--text-main);
         }
 
-        /* --- Header Section (Consistent Style) --- */
-        .header-wrapper {
+        .heading-font { font-family: 'Bricolage Grotesque', sans-serif; }
+        .mono-font { font-family: 'JetBrains Mono', monospace; }
+
+        /* Subtle Noise Layer Overlay */
+        .noise-layer {
             position: fixed;
-            top: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 95%;
-            max-width: 1100px;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-        }
-
-        .unified-island {
-            position: relative;
-            background: var(--bg-glass);
-            backdrop-filter: blur(25px) saturate(200%);
-            -webkit-backdrop-filter: blur(25px) saturate(200%);
-            border-radius: 40px;
-            height: 72px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 12px;
-            box-shadow: var(--shadow-premium);
-            transition: all 0.4s ease;
-            z-index: 1;
-            border: 1px solid var(--border-glass);
-        }
-
-        .unified-island.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
-
-        .unified-island:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
-        }
-
-        .unified-island::before {
-            content: '';
-            position: absolute;
-            inset: calc(var(--led-thickness) * -1);
-            border-radius: 42px;
-            padding: var(--led-thickness);
-            background: conic-gradient(from var(--angle), transparent 10%, var(--primary) 20%, var(--accent) 30%, transparent 45%, transparent 60%, var(--secondary) 75%, var(--primary) 85%, transparent 95%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            mix-blend-mode: overlay;
             pointer-events: none;
-            z-index: -1;
+            z-index: 9999;
         }
 
-        .unified-island:hover::before { opacity: 0.6; animation: rotateLED 4s linear infinite; }
-        @keyframes rotateLED { to { --angle: 360deg; } }
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #000000 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        .logo { text-decoration: none; font-size: 20px; font-weight: 600; color: var(--text-main); letter-spacing: -1px; }
-        .logo span { color: var(--primary); }
-
-        .section-center { position: relative; display: flex; background: rgba(0, 0, 0, 0.04); padding: 6px; border-radius: 30px; }
-        .nav-item { position: relative; text-decoration: none; color: var(--text-second); font-size: 13px; font-weight: 600; padding: 10px 22px; z-index: 3; transition: color 0.2s ease; text-transform: uppercase; letter-spacing: 0.5px; }
-        .nav-item.active { color: var(--primary); }
-        .nav-indicator { position: absolute; height: calc(100% - 12px); top: 6px; left: 6px; background: white; border-radius: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); z-index: 2; transition: var(--transition-snap); }
-
-        .section-right { display: flex; align-items: center; gap: 10px; padding-right: 8px; }
-        .icon-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; color: var(--text-second); transition: 0.2s; }
-        .icon-btn:hover { color: var(--primary); background: white; }
-
-        .user-pill { display: flex; align-items: center; gap: 12px; padding: 5px 5px 5px 16px; background: var(--text-main); color: white; border-radius: 30px; cursor: pointer; height: 44px; }
-        .avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 13px; }
-
-        /* --- Project Card Section --- */
-        .project-container {
-            width: 95%;
-            max-width: 1200px;
-            margin: 40px auto;
-            background: var(--card-bg);
-            border-radius: 32px;
-            border: 1px solid var(--card-border);
-            padding: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            box-shadow: var(--card-shadow);
+        /* Compact Bento Grid */
+        .bento-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 1.25rem;
             position: relative;
-        }
-
-        /* --- Visual Column (Galllery) --- */
-        .visual-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 16px;
-            height: 100%;
-        }
-
-        .img-card {
-            width: 100%;
-            height: 100%;
-            min-height: 200px;
-            background: var(--img-overlay);
-            border-radius: 24px;
-            border: 1px solid var(--card-border);
             overflow: hidden;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
         }
 
-        .img-card:first-child {
-            grid-column: span 2;
-            min-height: 300px;
+        .bento-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
         }
 
-        .img-card:hover {
-            transform: scale(1.02);
-            border-color: var(--primary);
-            box-shadow: 0 20px 30px -10px rgba(99, 102, 241, 0.15);
+        /* Local Glow Effect */
+        .bento-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
         }
+        .bento-card:hover::before { opacity: 1; }
 
-        .img-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #f1f5f9, #ffffff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-second);
-        }
-
-        /* --- Content Column --- */
-        .content-details {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .project-header {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .status-pill {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--success);
-            padding: 6px 12px;
-            border-radius: 100px;
-            font-size: 11px;
-            font-weight: 600;
-            width: fit-content;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .project-title {
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-        }
-
-        .project-subtitle {
-            font-size: 15px;
-            color: var(--text-second);
-            font-weight: 400;
-        }
-
-        .tag-group {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .tag-item {
-            background: #f1f5f9;
-            color: var(--text-second);
-            padding: 6px 14px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .description-box {
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px dashed var(--card-border);
-        }
-
-        .section-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .text-body {
-            font-size: 14px;
-            color: var(--text-second);
-            line-height: 1.6;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            background: white;
-            border: 1px solid var(--card-border);
-            border-radius: 14px;
-            font-size: 13px;
-        }
-
-        .feature-item i {
-            color: var(--primary);
-        }
-
-        /* Tech Pills */
-        .tech-container {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .tech-tag {
-            background: white;
-            border: 1px solid var(--card-border);
-            padding: 6px 12px;
-            border-radius: 10px;
-            font-size: 12px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 500;
-        }
-
-        /* Action Buttons */
-        .footer-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 10px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 16px;
-            font-size: 14px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .btn-fill {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        /* GRID BREAKER: Re-positioned Marquee */
+        .grid-breaker {
+            width: 120%;
+            background: var(--accent);
             color: white;
-            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+            padding: 1rem 0;
+            margin: 4rem -10%;
+            transform: rotate(-1.5deg);
+            z-index: 20;
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.15);
+            pointer-events: none;
+            overflow: hidden;
+            flex-shrink: 0;
         }
 
-        .btn-outline {
-            background: white;
-            color: var(--text-main);
-            border: 1px solid var(--card-border);
+        .marquee-content {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 40s linear infinite;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.05);
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        .btn-outline:hover {
+        /* ADVANCED SYSTEM IDENTITY AVATAR */
+        .avatar-system {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s ease-out;
+        }
+
+        .avatar-ring {
+            position: absolute;
+            inset: -6px;
+            background: conic-gradient(from 0deg, transparent 0%, var(--accent) 50%, transparent 100%);
+            border-radius: 50%;
+            animation: spin 4s linear infinite;
+            mask: radial-gradient(circle, transparent 65%, black 66%);
+            -webkit-mask: radial-gradient(circle, transparent 65%, black 66%);
+            opacity: 0.8;
+        }
+
+        .avatar-core {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 900;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        }
+
+        .avatar-noise {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)'/%3E%3C/svg%3E");
+            opacity: 0.15;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        .avatar-sub-rings {
+            position: absolute;
+            inset: -12px;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* Typography Enhancements */
+        .system-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #94a3b8;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 1px;
+            background: var(--border);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -4px; top: 0;
+            width: 9px; height: 9px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .metric-badge {
             background: #f8fafc;
-            border-color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            border: 1px solid var(--border);
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 1100px) {
-            .project-container { grid-template-columns: 1fr; gap: 30px; }
-            .visual-gallery { height: 400px; }
-        }
+        .reveal { opacity: 0; transform: translateY(20px); }
 
-        @media (max-width: 640px) {
-            .project-container { padding: 24px; }
-            .project-title { font-size: 28px; }
-            .feature-grid { grid-template-columns: 1fr; }
-            .footer-actions { flex-direction: column; }
-            .visual-gallery { height: 300px; grid-template-columns: 1fr; grid-template-rows: auto; }
-            .img-card:first-child { grid-column: span 1; }
-        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
     </style>
 </head>
-<body>
+<body class="selection:bg-indigo-50">
 
-    <div class="header-wrapper">
-        <header class="unified-island" id="island">
-            <div class="section-left">
-                <a href="#" class="logo">Portfolio<span>BCN</span></a>
+    <div class="noise-layer"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-8 py-4 flex justify-between items-center bg-white/60 backdrop-blur-xl border-b border-gray-100">
+        <div class="flex items-center gap-10">
+            <div class="heading-font text-xl font-black tracking-tighter flex items-center gap-2">
+                <span class="bg-black text-white px-1.5 rounded-md">A</span>
+                IDENTITY<span class="text-indigo-600">.</span>SYS
             </div>
-            <nav class="section-center" id="mainNav">
-                <div class="nav-indicator" id="navIndicator"></div>
-                <a href="#" class="nav-item">Home</a>
-                <a href="#" class="nav-item active">Work</a>
-                <a href="#" class="nav-item">About</a>
-                <a href="#" class="nav-item">Contact</a>
-            </nav>
-            <div class="section-right">
-                <div class="icon-btn"><i data-lucide="search" size="18"></i></div>
-                <div class="icon-btn"><i data-lucide="bell" size="20"></i></div>
-                <div class="user-pill">
-                    <span class="user-pill-label" style="font-size: 11px; font-weight: 600;">HÙNG NGUYỄN</span>
-                    <div class="avatar">H</div>
+            <div class="hidden md:flex gap-8 text-[9px] font-black uppercase tracking-[0.3em] opacity-40">
+                <a href="#" class="hover:opacity-100 hover:text-black transition">Navigation</a>
+                <a href="#" class="hover:opacity-100 hover:text-black transition">Archive</a>
+                <a href="#" class="hover:opacity-100 hover:text-black transition">Protocol</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-[8px] font-black text-emerald-600 uppercase tracking-widest">Active Sync</span>
+            </div>
+            <button class="bg-black text-white px-6 py-2 rounded-full text-[9px] font-black uppercase tracking-widest hover:bg-indigo-600 transition-all shadow-sm magnetic-btn">Contact</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-20 px-6 md:px-12 max-w-[1300px] mx-auto relative">
+        
+        <!-- BENTO HERO SYSTEM -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-2 relative">
+            
+            <!-- BLOCK 1: IDENTITY & AVATAR -->
+            <div class="md:col-span-4 md:row-span-3 bento-card p-8 flex flex-col items-center justify-center text-center reveal">
+                <div class="avatar-system mb-10 magnetic-target">
+                    <div class="avatar-sub-rings"></div>
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-core">
+                        A
+                        <div class="avatar-noise"></div>
+                    </div>
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 system-label text-indigo-400">Auth:Verified</div>
+                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 system-label">[CORE_NVA_v4]</div>
+                </div>
+
+                <h2 class="heading-font text-2xl font-black mb-1">Nguyễn Văn A</h2>
+                <p class="mono-font text-[9px] text-zinc-400 uppercase tracking-[0.2em] mb-6">UID: 22110XXX // Saigon, VN</p>
+                <div class="w-full space-y-2 mt-4">
+                    <div class="flex justify-between items-center bg-gray-50/50 p-2.5 rounded-xl border border-gray-100/50">
+                        <span class="system-label">Position</span>
+                        <span class="font-bold text-[11px]">Senior Lead Architect</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-50/50 p-2.5 rounded-xl border border-gray-100/50">
+                        <span class="system-label">Availability</span>
+                        <span class="font-bold text-[11px] text-emerald-500 italic">Open for Missions</span>
+                    </div>
                 </div>
             </div>
-        </header>
-    </div>
 
-    <main class="project-container">
-        <!-- Visual Column: Gallery Cards -->
-        <div class="visual-gallery">
-            <div class="img-card">
-                <div class="img-placeholder">
-                    <i data-lucide="image" size="48"></i>
-                    <span style="position: absolute; bottom: 20px; font-size: 12px; font-weight: 500;">Ảnh Đại Diện Dự Án</span>
+            <!-- BLOCK 2: THE MANIFESTO -->
+            <div class="md:col-span-8 md:row-span-3 bento-card p-10 md:p-14 flex flex-col justify-center reveal" style="transition-delay: 0.1s">
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="metric-badge !bg-indigo-600 !text-white !border-none">System Core v4.0</span>
+                        <span class="system-label opacity-30">BOOT_SEQ: SUCCESS</span>
+                    </div>
+                    <h1 class="heading-font text-5xl md:text-[5.5rem] font-black leading-[0.85] tracking-tighter mb-8 gradient-text">
+                        CODE IS THE <br> NEW CANVAS_
+                    </h1>
+                    <p class="text-xl text-zinc-400 font-medium leading-relaxed max-w-xl">
+                        Khai phá giới hạn giữa <span class="text-black font-bold">thuật toán</span> và <span class="text-black font-bold">cảm xúc</span>. Chuyên gia điều hướng hệ sinh thái số hiện đại.
+                    </p>
                 </div>
             </div>
-            <div class="img-card">
-                <div class="img-placeholder"><i data-lucide="layout" size="24"></i></div>
+
+            <!-- BLOCK 3: TECH STACK -->
+            <div class="md:col-span-4 bento-card p-6 reveal" style="transition-delay: 0.2s">
+                <span class="system-label block mb-4 italic">Core_Expertise</span>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-lg text-[9px] font-extrabold hover:border-indigo-400 hover:bg-indigo-50 transition-all cursor-default">React.js</span>
+                    <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-lg text-[9px] font-extrabold hover:border-indigo-400 hover:bg-indigo-50 transition-all cursor-default">TypeScript</span>
+                    <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-lg text-[9px] font-extrabold hover:border-indigo-400 hover:bg-indigo-50 transition-all cursor-default">Node.js</span>
+                    <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-lg text-[9px] font-extrabold hover:border-indigo-400 hover:bg-indigo-50 transition-all cursor-default">Next.js</span>
+                    <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-lg text-[9px] font-extrabold hover:border-indigo-400 hover:bg-indigo-50 transition-all cursor-default">AWS</span>
+                </div>
             </div>
-            <div class="img-card">
-                <div class="img-placeholder"><i data-lucide="smartphone" size="24"></i></div>
+
+            <!-- BLOCK 4: PERFORMANCE METRICS -->
+            <div class="md:col-span-4 bento-card p-6 flex items-center justify-between reveal" style="transition-delay: 0.3s">
+                <div class="flex flex-col">
+                    <span class="system-label mb-1">Success Rate</span>
+                    <div class="text-3xl font-black heading-font tracking-tighter">98<span class="text-indigo-600">%</span></div>
+                </div>
+                <div class="h-8 w-px bg-gray-100"></div>
+                <div class="flex flex-col text-right">
+                    <span class="system-label mb-1">Active Assets</span>
+                    <div class="text-3xl font-black heading-font tracking-tighter">32</div>
+                </div>
+            </div>
+
+            <!-- BLOCK 5: CORE STATS - HOURS -->
+            <div class="md:col-span-2 bento-card p-6 flex flex-col justify-between reveal" style="transition-delay: 0.4s">
+                <span class="system-label italic">Uptime</span>
+                <div>
+                    <div class="text-4xl font-black heading-font tracking-tighter">$1.2K$</div>
+                    <p class="system-label mt-1">Prod. Hours</p>
+                </div>
+            </div>
+
+            <!-- BLOCK 6: SYNC CTA -->
+            <div class="md:col-span-2 bento-card bg-indigo-600 text-white p-6 flex flex-col justify-between reveal magnetic-btn" style="transition-delay: 0.5s">
+                <div class="text-2xl font-black heading-font italic leading-none">SYNC <br> DATA.</div>
+                <button class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center text-sm self-end hover:scale-110 active:scale-95 transition-transform"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
 
-        <!-- Content Column -->
-        <div class="content-details">
-            <div class="project-header">
-                <div class="status-pill">
-                    <span style="width: 6px; height: 6px; background: var(--success); border-radius: 50%;"></span>
-                    Dự án hoàn thành
-                </div>
-                <h1 class="project-title">Hệ Thống Quản Lý Thư Viện</h1>
-                <p class="project-subtitle">Giải pháp số hóa quy trình quản lý sách và mượn trả hiện đại cho các trường học.</p>
-                <div class="tag-group">
-                    <span class="tag-item">Branding</span>
-                    <span class="tag-item">Web App</span>
-                    <span class="tag-item">UX Research</span>
-                </div>
-            </div>
-
-            <div class="description-box">
-                <div class="section-label"><i data-lucide="file-text" size="14"></i> Giới thiệu</div>
-                <p class="text-body">Hệ thống giúp quản trị viên theo dõi hàng ngàn đầu sách, quản lý thẻ thành viên tự động và tạo báo cáo thống kê chỉ với một cú click.</p>
-            </div>
-
-            <div class="feature-grid">
-                <div class="feature-item"><i data-lucide="zap" size="16"></i> Tìm kiếm thời gian thực</div>
-                <div class="feature-item"><i data-lucide="shield-check" size="16"></i> Phân quyền bảo mật</div>
-                <div class="feature-item"><i data-lucide="bar-chart-3" size="16"></i> Thống kê trực quan</div>
-                <div class="feature-item"><i data-lucide="mail" size="16"></i> Thông báo mượn trả</div>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-                <div class="section-label"><i data-lucide="code-2" size="14"></i> Công nghệ</div>
-                <div class="tech-container">
-                    <div class="tech-tag"><i data-lucide="atom" size="14"></i> React JS</div>
-                    <div class="tech-tag"><i data-lucide="database" size="14"></i> Firebase</div>
-                    <div class="tech-tag"><i data-lucide="palette" size="14"></i> Tailwind CSS</div>
-                    <div class="tech-tag"><i data-lucide="framer" size="14"></i> Figma</div>
-                </div>
-            </div>
-
-            <div class="footer-actions">
-                <button class="btn btn-fill"><i data-lucide="external-link" size="18"></i> Xem dự án</button>
-                <button class="btn btn-outline"><i data-lucide="github" size="18"></i> Github</button>
+        <!-- RE-POSITIONED GRID BREAKER: KINETIC MARQUEE -->
+        <div class="grid-breaker">
+            <div class="marquee-content">
+                <span>SYSTEM_OVERRIDE_V4 // EXPERIMENTAL_UI // NEURAL_FLOW // BENTO_KINETIC // LOGIC_ARCHITECTURE // VISUAL_ENGINE // </span>
+                <span>SYSTEM_OVERRIDE_V4 // EXPERIMENTAL_UI // NEURAL_FLOW // BENTO_KINETIC // LOGIC_ARCHITECTURE // VISUAL_ENGINE // </span>
             </div>
         </div>
+
+        <!-- CASE STUDY LOGS -->
+        <section class="mt-20">
+            <div class="flex items-end justify-between mb-10 px-4 reveal">
+                <div>
+                    <h2 class="heading-font text-4xl md:text-6xl font-black uppercase italic tracking-tighter leading-none gradient-text">CASE_LOGS.</h2>
+                    <p class="system-label opacity-30 mt-4">Thực thi chiến lược // $2024-2026$</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <!-- Case 1 -->
+                <div class="bento-card p-8 reveal">
+                    <div class="flex justify-between items-start mb-10">
+                        <span class="metric-badge !bg-black !text-white !border-none">Log #01: Nebula Cloud</span>
+                        <div class="text-right">
+                            <span class="text-xl font-black text-indigo-600 leading-none">$+240\%$</span>
+                            <p class="system-label">Perf. Impact</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container space-y-8 mb-10">
+                        <div class="timeline-line"></div>
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="system-label mb-1 italic">Problem</h4>
+                            <p class="text-sm font-bold leading-tight">Hệ thống nghẽn cổ chai, gây thất thoát $40\%$ traffic giờ cao điểm.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="system-label mb-1 italic">Solution</h4>
+                            <p class="text-sm font-bold leading-tight">Triển khai Microservices **Go** và kiến trúc **Distributed UI**.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="system-label mb-1 italic text-indigo-600">Final Outcome</h4>
+                            <p class="text-sm font-black italic underline">Phản hồi giảm còn $120ms$, giữ chân $98\%$ người dùng.</p>
+                        </div>
+                    </div>
+                    <div class="aspect-video rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 group shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover grayscale opacity-30 group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bento-card p-8 reveal" style="transition-delay: 0.1s">
+                    <div class="flex justify-between items-start mb-10">
+                        <span class="metric-badge !bg-black !text-white !border-none">Log #02: Zenith ID</span>
+                        <div class="text-right">
+                            <span class="text-xl font-black text-emerald-600 leading-none">$100\%$</span>
+                            <p class="system-label">Security Rate</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container space-y-8 mb-10">
+                        <div class="timeline-line"></div>
+                        <div class="relative pl-6">
+                            <div class="timeline-dot" style="background: #10b981;"></div>
+                            <h4 class="system-label mb-1 italic">Problem</h4>
+                            <p class="text-sm font-bold leading-tight">Tỉ lệ lừa đảo và mạo danh tăng đột biến trong hệ sinh thái DeFi.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <div class="timeline-dot" style="background: #10b981;"></div>
+                            <h4 class="system-label mb-1 italic">Solution</h4>
+                            <p class="text-sm font-bold leading-tight">Tích hợp xác thực võng mạc **AI-Vision** và Blockchain.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <div class="timeline-dot" style="background: #10b981;"></div>
+                            <h4 class="system-label mb-1 italic text-emerald-600">Final Outcome</h4>
+                            <p class="text-sm font-black italic underline">Loại bỏ hoàn toàn giả danh trong năm đầu vận hành.</p>
+                        </div>
+                    </div>
+                    <div class="aspect-video rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 group shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover grayscale opacity-30 group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="py-24 text-center border-t border-gray-100">
+        <div class="heading-font text-6xl md:text-9xl font-black opacity-5 italic mb-12 select-none tracking-tighter">IDENTITY CORE</div>
+        <div class="mono-font text-[9px] font-black uppercase tracking-[1em] text-gray-300 mb-8">
+            © 2026 // SYSTEM ARCHITECT // EST. 2026
+        </div>
+        <div class="flex justify-center gap-16">
+            <div class="w-1.5 h-1.5 bg-indigo-600 rotate-45 shadow-[0_0_10px_#6366f1]"></div>
+            <div class="w-1.5 h-1.5 bg-black rotate-45"></div>
+            <div class="w-1.5 h-1.5 bg-rose-500 rotate-45 shadow-[0_0_10px_#f43f5e]"></div>
+        </div>
+    </footer>
+
     <script>
-        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
 
-        // Nav logic
-        const nav = document.getElementById('mainNav');
-        const indicator = document.getElementById('navIndicator');
-        const items = document.querySelectorAll('.nav-item');
-
-        function moveIndicator(element) {
-            if(!indicator) return;
-            indicator.style.width = `${element.offsetWidth}px`;
-            indicator.style.left = `${element.offsetLeft}px`;
-        }
-
-        window.onload = () => {
-            const activeItem = document.querySelector('.nav-item.active');
-            if(activeItem) moveIndicator(activeItem);
-        };
-
-        items.forEach(item => {
-            item.addEventListener('mouseenter', (e) => moveIndicator(e.target));
-            item.addEventListener('click', (e) => {
-                items.forEach(i => i.classList.remove('active'));
-                e.target.classList.add('active');
-                moveIndicator(e.target);
+        // Reveal Animations
+        document.querySelectorAll('.reveal').forEach((el) => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 92%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power4.out"
             });
         });
 
-        nav.addEventListener('mouseleave', () => {
-            const activeItem = document.querySelector('.nav-item.active');
-            if(activeItem) moveIndicator(activeItem);
+        // Micro-interaction: Local Glow Interaction Logic
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--x', `${x}%`);
+                card.style.setProperty('--y', `${y}%`);
+            });
         });
 
-        // Scroll state
+        // Micro-interaction: Magnetic Logic
+        const magneticTargets = document.querySelectorAll('.magnetic-target, .magnetic-btn');
+        magneticTargets.forEach(target => {
+            target.addEventListener('mousemove', e => {
+                const rect = target.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                gsap.to(target, {
+                    x: x * 0.3,
+                    y: y * 0.3,
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+            });
+            target.addEventListener('mouseleave', () => {
+                gsap.to(target, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "elastic.out(1, 0.3)"
+                });
+            });
+        });
+
+        // Parallax for Grid Breaker (Updated for new position)
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('.unified-island');
-            header.classList.toggle('scrolled', window.scrollY > 50);
+            const scrolled = window.pageYOffset;
+            gsap.to('.grid-breaker', {
+                x: scrolled * 0.05,
+                duration: 1,
+                ease: "power1.out"
+            });
         });
     </script>
 </body>
