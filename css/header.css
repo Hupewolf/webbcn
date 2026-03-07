@@ -29,7 +29,7 @@ body{
     --banner-top: rgba(48, 48, 48, 0.447) !important;
     --filter: blur(125px) saturate(150%) !important;
     --accent-color: rgb(17, 17, 17) !important;
-    --text-color: white ;
+    --text-color: white !important;
     --white: rgb(28, 28, 28) !important;
     --white-body: rgb(32, 32, 32) !important;
     --shadow-premium: 0 10px 40px -10px rgba(216, 216, 216, 0.05), 0 20px 25px -5px rgba(246, 246, 246, 0.02) !important;
