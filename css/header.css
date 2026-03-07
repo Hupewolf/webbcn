@@ -24,16 +24,16 @@ body{
 }
 
 [data-theme="dark"] {
-    --dieuHuong-bg-color: rgba(255, 255, 255, 0);
-    --DL-color: #3736369a;
-    --banner-top: rgba(48, 48, 48, 0.447);
-    --filter: blur(125px) saturate(150%);
-    --accent-color: rgb(17, 17, 17) ;
+    --dieuHuong-bg-color: rgba(255, 255, 255, 0) !important;
+    --DL-color: #3736369a !important;
+    --banner-top: rgba(48, 48, 48, 0.447) !important;
+    --filter: blur(125px) saturate(150%) !important;
+    --accent-color: rgb(17, 17, 17) !important;
     --text-color: white ;
-    --white: rgb(28, 28, 28) ;
-    --white-body: rgb(32, 32, 32) ;
-    --shadow-premium: 0 10px 40px -10px rgba(216, 216, 216, 0.05), 0 20px 25px -5px rgba(246, 246, 246, 0.02) ;
-    --shadow: 3px 3px 4px 0px #efefef33, -5px -5px 4px 0px #747474 ;
+    --white: rgb(28, 28, 28) !important;
+    --white-body: rgb(32, 32, 32) !important;
+    --shadow-premium: 0 10px 40px -10px rgba(216, 216, 216, 0.05), 0 20px 25px -5px rgba(246, 246, 246, 0.02) !important;
+    --shadow: 3px 3px 4px 0px #efefef33, -5px -5px 4px 0px #747474 !important;
     --bg-hero: url(../img/bg-hero.jpg);
 }
 
@@ -170,7 +170,7 @@ navbar .active{
     color: var(--primary-color) ;
     /* background-color: var(--white); */
     box-sizing: border-box;
-    padding: 12px 10px;
+    padding: 10px 10px;
     border-radius: 40px;
     text-align: center;
     align-content: center;
