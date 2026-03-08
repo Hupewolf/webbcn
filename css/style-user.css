@@ -1733,7 +1733,7 @@
         align-items: center;
         width: 100%;
         /* max-width: 1000px; */
-        padding: 30px 40px;
+        /* padding: 30px 40px; */
     }
     .avatar-wrapper {
         position: relative;
@@ -1741,7 +1741,19 @@
     }
 
     .bg-user {
-        margin-bottom: 90px;
+        margin-bottom: 340px;
+    }
+
+    .banner-left {
+        width: 360px;
+    }
+
+    .banner-right {
+        width: 780px;
+    }
+
+    .top .bio {
+        font-size: 56px;
     }
 
     .mainContent {
@@ -1790,12 +1802,26 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        /* max-width: 1000px; */
-        padding: 30px 10px;
     }
     .avatar-wrapper {
         position: relative;
         
+    }
+
+    .bg-user {
+        margin-bottom: 340px;
+    }
+
+    .banner-left {
+        width: 340px;
+    }
+
+    .banner-right {
+        width: 640px;
+    }
+
+    .top .bio {
+        font-size: 44px;
     }
 
     .mainContent {
@@ -1840,23 +1866,47 @@
     }
     .banner {
         display: flex;
-        /* justify-content: space-between; */
         flex-direction: column;
-        text-align: center;
-        align-items: center;
-        width: 100%;
-        max-width: var(--mw-container);
-        padding: 30px 10px;
+        gap: 20px;
     }
     .avatar-wrapper {
         position: relative;
         
     }
 
+    .banner-left {
+        width: var(--mw-container);
+    }
+
+    .banner-right {
+        width: var(--mw-container);
+        margin: 0 auto;
+    }
+    
+    .top .bio {
+        font-size: 32px;
+    }
+
+    .bottom-bn-right {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: var(--mw-container);
+        margin: 0 auto;
+
+    }
+
+    .bottom-1 {
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .bottom-2 {
+        width: 170px;
+    }
 
     .bg-user {
         height: 1195px;
-        margin-bottom: 20px;
+        margin-bottom: 240px;
     }
 
     .mainContent {
@@ -1956,19 +2006,43 @@
         gap: 20px;
     }
 
+    .bg-user {
+        height: 1195px;
+        margin-bottom: 550px;
+    }
+
     .banner {
-        display: flex;
-        /* justify-content: space-between; */
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        width: 100%;
-        max-width: var(--mw-container);
-        padding: 25px 10px;
+        
     }
     .avatar-wrapper {
         position: relative;
         
+    }
+
+    .banner-right .top {
+        width: var(--mw-container);
+        margin: 0 auto;
+    }
+    
+    .top .bio {
+        font-size: 32px;
+    }
+
+    .bottom-bn-right {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: var(--mw-container);
+        margin: 0 auto;
+
+    }
+
+    .bottom-1 {
+        max-width: var(--mw-container);
+        margin: 0 auto;
+    }
+
+    .bottom-2 {
+        width: var(--mw-container);
     }
 
     .mainContent {
