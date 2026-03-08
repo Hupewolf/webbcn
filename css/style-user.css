@@ -519,6 +519,57 @@
     color: var(--primary-color);
 }
 
+.bottom-2.accent-bt {
+    position: relative;
+    overflow: hidden; 
+    z-index: 1;
+}
+
+.bottom-2.accent-bt::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 60%;
+    left: -50%;
+    background-color: rgba(52, 118, 218, 0.15); 
+    border-radius: 48% 42% 40% 45%;
+    
+    z-index: -1;
+    pointer-events: none;
+    animation: wave-motion 6s linear infinite;
+    
+}
+
+.bottom-2.accent-bt::after {
+    content: "";
+    position: absolute;
+    width: 210%;
+    height: 210%;
+    border-radius: 40% 40% 42% 35%;
+    top: 65%;
+    left: -55%;
+    background-color: rgba(14, 87, 223, 0.134);
+    pointer-events: none;
+    animation: wave-motion 9s linear infinite; 
+    z-index: -1;
+}
+
+@keyframes wave-motion {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bottom-2.accent-bt .line-1,
+.bottom-2.accent-bt .line-2 {
+    position: relative;
+    z-index: 1;
+}
+
 /* Chi tiet du an */
 .overlay-chitiet {
     width: 100vw;
@@ -1693,35 +1744,6 @@
         margin-bottom: 90px;
     }
 
-    .banner-right {
-        display: flex;
-        flex-direction: column;
-        /* gap: 100px; */
-        max-width: 440px;
-        box-sizing: border-box;
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            .introduce {
-                width: 420px;
-                font-weight: 700;
-                font-size: 36px;
-                color: var(--primary-color);
-            }
-            .info {
-                font-weight: 500;
-                font-size: 16px;
-                color: var(--text-color);
-            }
-        }
-        .btn-box {
-            display: flex;
-            gap: 22px;
-        }
-    }
-
-
     .mainContent {
         flex-direction: row;
         /* align-items: center; */
@@ -1741,11 +1763,6 @@
             height: auto; 
             padding: 30px 0;
         }
-    }
-
-    .banner-status {
-        bottom: 110px;
-        left: 190px;
     }
 
     .wrap-content .box{
@@ -1780,34 +1797,6 @@
         position: relative;
         
     }
-    .banner-right {
-        display: flex;
-        flex-direction: column;
-        /* gap: 100px; */
-        max-width: 410px;
-        box-sizing: border-box;
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            .introduce {
-                width: 420px;
-                font-weight: 700;
-                font-size: 36px;
-                color: var(--primary-color);
-            }
-            .info {
-                font-weight: 500;
-                font-size: 16px;
-                color: var(--text-color);
-            }
-        }
-        .btn-box {
-            display: flex;
-            gap: 22px;
-        }
-    }
-
 
     .mainContent {
         flex-direction: column;
@@ -1869,56 +1858,6 @@
         height: 1195px;
         margin-bottom: 20px;
     }
-
-    .banner-left {
-        flex-direction: column;
-        gap: 20px;
-        max-width: 210px;
-    }
-
-    .userThongTin {
-        width: 240px;
-        margin-top: 40px;
-        margin-left: -15px;
-    }
-
-    .userName {
-        font-size: 16px;
-    }
-
-    .banner-status {
-        top: 220px;
-        left: 440px;
-    }
-
-    .banner-right {
-        display: flex;
-        flex-direction: column;
-        max-width: 440px;
-        box-sizing: border-box;
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            .introduce {
-                width: 420px;
-                font-weight: 700;
-                font-size: 36px;
-                color: var(--primary-color);
-            }
-            .info {
-                font-weight: 500;
-                font-size: 16px;
-                color: var(--text-color);
-            }
-        }
-        .btn-box {
-            display: flex;
-            gap: 22px;
-            margin: 0 auto;
-        }
-    }
-
 
     .mainContent {
         flex-direction: column;
@@ -2017,11 +1956,6 @@
         gap: 20px;
     }
 
-    .banner-status {
-        top: 215px;
-        left: 270px;
-    }
-
     .banner {
         display: flex;
         /* justify-content: space-between; */
@@ -2036,34 +1970,6 @@
         position: relative;
         
     }
-    .banner-right {
-        display: flex;
-        flex-direction: column;
-        max-width: 370px;
-        box-sizing: border-box;
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            .introduce {
-                width: 370px;
-                font-weight: 700;
-                font-size: 24px;
-                color: var(--primary-color);
-            }
-            .info {
-                font-weight: 500;
-                font-size: 12px;
-                color: var(--text-color);
-            }
-        }
-        .btn-box {
-            display: flex;
-            gap: 22px;
-            margin: 0 auto;
-        }
-    }
-
 
     .mainContent {
         flex-direction: column;
@@ -2170,36 +2076,6 @@
     .wrap-content .box{
         width: 290px;
     }
-
-    .banner-right {
-        display: flex;
-        flex-direction: column;
-        gap: 100px;
-        max-width: 320px;
-        box-sizing: border-box;
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            .introduce {
-                width: 320px;
-                font-weight: 700;
-                font-size: 24px;
-                color: var(--primary-color);
-            }
-            .info {
-                font-weight: 500;
-                font-size: 12px;
-                color: var(--text-color);
-            }
-        }
-        .btn-box {
-            display: flex;
-            gap: 22px;
-            margin: 0 auto;
-        }
-    }
-
 
     .mainContent {
         flex-direction: column;
