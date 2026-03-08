@@ -62,3 +62,10 @@ function noticBar() {
     notic.classList.toggle('active-notic');
 
 }
+
+
+lucide.createIcons();
+
+function closePJ() {
+            document.querySelector('.overlay-chitiet').style.display = 'none';
+        }

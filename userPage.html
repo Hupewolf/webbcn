@@ -16,6 +16,7 @@
     <script defer src="../js/header.js"></script>
     <script defer src="../js/main.js"></script>
     <script defer src="../js/userPage.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     
 </head>
 <body>
@@ -283,7 +284,7 @@
             <div class="project-box">
                 
                 <!-- Chi tiet du an -->
-                <div class="overlay-chitiet">
+                <!-- <div class="overlay-chitiet">
                     <div class="chiTietDuAn-1">
                         <div class="close-popUp-btn-CT">x</div>
                         
@@ -317,13 +318,6 @@
                                 </p>
                             </div>
 
-                            <!-- <div class="features">
-                                <div class="feature"><div class="popUp-icon fast"></div> Tìm kiếm thời gian thực</div>
-                                <div class="feature"><div class="popUp-icon security"></div> Phân quyền bảo mật</div>
-                                <div class="feature"><div class="popUp-icon chart"></div> Thống kê trực quan</div>
-                                <div class="feature"><div class="popUp-icon letter"></div> Thông báo mượn trả</div>
-                            </div> -->
-
                             <div class="tech">
                                 <strong><div class="popUp-icon code"></div>CÔNG NGHỆ</strong>
                                 <div class="tech-tags">
@@ -340,8 +334,110 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
+                <div class="overlay-chitiet">
+                    <div class="chiTietDuAn-1">
+                        <div class="close-popUp-btn-CT" onclick="closePJ()">×</div>
+                        
+                        <!-- Panel Trái: Hình ảnh -->
+                        <div class="popUp-left">
+                            <div class="popUp-img big">
+                                <i data-lucide="monitor" style="width: 48px; height: 48px; color: #94a3b8;"></i>
+                            </div>
+                            <div class="popUp-img-row">
+                                <div class="popUp-img small">
+                                    <i data-lucide="tablet" style="width: 24px; height: 24px; color: #94a3b8;"></i>
+                                </div>
+                                <div class="popUp-img small">
+                                    <i data-lucide="smartphone" style="width: 24px; height: 24px; color: #94a3b8;"></i>
+                                </div>
+                            </div>
+                            <div style="margin-top: auto; padding: 20px; background: #0f172a; border-radius: 16px; color: white;">
+                                <p style="font-size: 12px; font-style: italic; opacity: 0.8;">"Mục tiêu là giảm thiểu $40 thời gian vận hành thủ công cho hệ thống thư viện."</p>
+                            </div>
+                        </div>
+
+                        <!-- Panel Phải: Nội dung dự án chuyên sâu -->
+                        <div class="popUp-right">
+                            <div class="badge">
+                                <div class="dot"></div> DỰ ÁN HOÀN THÀNH
+                            </div>
+                            
+                            <h1>Design Wireframe Dự án Project 1</h1>
+                            <p class="desc">Giải pháp số hóa quy trình quản lý sách và mượn trả hiện đại cho các trường học quy mô lớn.</p>
+
+                            <div class="tags">
+                                <span class="ui-tag tag" style="color: white;">UI/UX</span>
+                                <span class="re-tag tag" style="color: white;">React</span>
+                                <span class="node-tag tag" style="color: white;">Node.js</span>
+                            </div>
+
+                            <!-- Thanh thông số nhanh -->
+                            <div class="stats-bar">
+                                <div class="stat-card">
+                                    <i data-lucide="calendar" style="width: 18px;"></i><br>
+                                    <span class="label">Thời gian</span><br>
+                                    <span class="value">12 Tuần</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i data-lucide="user" style="width: 18px;"></i><br>
+                                    <span class="label">Vai trò</span><br>
+                                    <span class="value">Fullstack</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i data-lucide="globe" style="width: 18px;"></i><br>
+                                    <span class="label">Lĩnh vực</span><br>
+                                    <span class="value">Giáo dục</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i data-lucide="target" style="width: 18px;"></i><br>
+                                    <span class="label">Tối ưu</span><br>
+                                    <span class="value">95%</span>
+                                </div>
+                            </div>
+
+                            <!-- Nội dung chi tiết -->
+                            <div class="content-section">
+                                <div class="section-header"><i data-lucide="info" style="width: 14px;"></i> Giới thiệu dự án</div>
+                                <p class="section-p">
+                                    Thiết kế dự án Project 1 tập trung vào việc chuẩn hoá và đồng bộ thư viện số. Hệ thống cho phép quản trị viên theo dõi hàng ngàn đầu sách, quản lý thẻ thành viên tự động và tạo báo cáo thống kê chính xác chỉ với một cú click.
+                                </p>
+                            </div>
+
+                            <div class="highlight-box">
+                                <p>"Hơn 70% dữ liệu mượn trả tại các thư viện truyền thống bị sai lệch do quy trình ghi chép thủ công. (Dữ liệu fake thôi :v)"</p>
+                            </div>
+
+                            <div class="content-section">
+                                <div class="section-header"><i data-lucide="zap" style="width: 14px;"></i> Thách thức & Giải pháp</div>
+                                <p class="section-p">
+                                    Chúng tôi sử dụng thuật toán tìm kiếm tối ưu với độ phức tạp giúp truy xuất đầu sách trong kho dữ liệu khổng lồ dưới 0.5s. Giao diện được thiết kế theo tư duy Mobile-First để thủ thư có thể kiểm kho linh hoạt.
+                                </p>
+                            </div>
+
+                            <div class="content-section">
+                                <div class="section-header"><i data-lucide="code-2" style="width: 14px;"></i> Công nghệ sử dụng</div>
+                                <div class="tech-grid">
+                                    <div class="inner-tech"><i data-lucide="zap" style="width: 16px; color: #f59e0b;"></i> React JS</div>
+                                    <div class="inner-tech"><i data-lucide="database" style="width: 16px; color: var(--primary-color);"></i> Firebase</div>
+                                    <div class="inner-tech"><i data-lucide="palette" style="width: 16px; color: #ec4899;"></i> Tailwind CSS</div>
+                                    <div class="inner-tech"><i data-lucide="figma" style="width: 16px; color: #a855f7;"></i> Figma Design</div>
+                                </div>
+                            </div>
+
+                            <!-- Nút hành động -->
+                            <div class="actions">
+                                <button class="btn-main" onclick="window.location.href = 'https://webbcn.vercel.app/userPage.html'">
+                                    <i data-lucide="external-link" style="width: 18px;"></i> XEM LIVE DEMO
+                                </button>
+                                <button class="btn-sub">
+                                    <i data-lucide="github" style="width: 18px;"></i> SOURCE CODE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="card-container" onclick="openPJ()">
                     <div class="img">
                         <div class="wrap-pj">
@@ -664,6 +760,9 @@
         <div class="coppyright">2026 PortfolioBCN . All Right Reserved. Powered by Team’s Uside</div>
     </div>
 
-   
+   <script>
+        // Hàm này sẽ thay thế tất cả các thẻ có thuộc tính data-lucide bằng icon SVG
+        lucide.createIcons();
+    </script>
 </body>
 </html>
