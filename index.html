@@ -189,9 +189,9 @@
             grid.innerHTML = "";
             const idPool = shuffle(Array.from({length: 899}, (_, i) => i + 101));
             const architecture = [
-                ...Array(4).fill({w: 5, h: 5, type: 'ultra'}),
-                ...Array(26).fill({w: 3, h: 3, type: 'medium'}),
-                ...Array(70).fill({w: 2, h: 2, type: 'standard'})
+                ...Array(6).fill({w: 8, h: 4, type: 'ultra'}),
+                ...Array(26).fill({w: 4, h: 4, type: 'medium'}),
+                ...Array(80).fill({w: 2, h: 2, type: 'standard'})
             ];
             shuffle(architecture);
 
@@ -204,8 +204,8 @@
                 block.style.gridRow = `span ${style.h}`;
 
                 let fs = "8px";
-                if (style.w === 5) fs = "22px";
-                else if (style.w === 3) fs = "10px";
+                if (style.w === 'ultra') fs = "22px";
+                else if (style.w === 'medium') fs = "10px";
 
                 block.innerHTML = `
                     <span class="block-name" style="font-size: ${fs}">${name}</span>
