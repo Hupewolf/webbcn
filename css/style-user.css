@@ -419,7 +419,7 @@ ul {
 
 .tagID {
     text-align: center;
-    color: var(--accent-color-darker);
+    color: rgb(125, 125, 125);
     margin-bottom: 20px;
     display: flex;
     gap: 10px;
@@ -508,10 +508,6 @@ ul {
 .bioChiTiet {
     font-size: 18px;
     color: var(--text-color);
-    span {
-        color: var(--primary-color);
-        font-weight: 700;
-    }
 }
 
 .bottom-bn-right {
@@ -575,7 +571,7 @@ ul {
 .accent-bt {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .accent-bt .line-1 {
