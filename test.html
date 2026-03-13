@@ -3,293 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vietnam Mega City - Urban Planning Edition</title>
+    <title>Light Luxury Portfolio Achievements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* CSS THUẦN - URBAN VIBE & GRID SYSTEM */
-        :root {
-            --bg-city: #050507;
-            --street-color: #0f172a;
-            --grid-line: rgba(255, 255, 255, 0.03);
-            --block-default: #1e293b;
-            --block-border: #334155;
-            --ultra-bg: #fefce8;
-            --ultra-text: #1e1b4b;
-            --ultra-glow: rgba(254, 252, 232, 0.15);
-            --unit-size: 28px; 
-            --road-gap: 12px; /* Độ rộng đường phố */
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-city);
-            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f5f9;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* HEADER - GLASSMORPHISM */
-        .header {
-            width: 100%;
-            max-width: 900px;
-            margin: 30px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(10px);
-            padding: 20px 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-sizing: border-box;
-            z-index: 100;
-        }
-
-        .brand h1 {
-            margin: 0;
-            font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: 0.1rem;
-            text-transform: uppercase;
-            color: #fde047;
-        }
-
-        .subtitle {
-            font-size: 9px;
-            font-weight: 600;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 0.2rem;
-            margin-top: 5px;
-        }
-
-        button#refresh-btn {
-            background: #fde047;
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 800;
-            font-size: 11px;
-            text-transform: uppercase;
-            transition: all 0.2s;
-        }
-
-        button#refresh-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(253, 224, 71, 0.3);
-        }
-
-        /* CITY CORE - THE GRID AREA */
-        .city-viewport {
-            position: relative;
+            justify-content: center;
             padding: 40px;
-            background: var(--bg-city);
-            /* Tạo lớp lưới đường phố chìm phía dưới */
-            background-image: 
-                linear-gradient(var(--grid-line) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-background-size: calc(var(--unit-size) + var(--road-gap)) calc(var(--unit-size) + var(--road-gap));
-            border-radius: 40px;
+        }
+
+        /* Light Luxury Card Base */
+        .luxury-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 24px;
+            width: 340px;
+            position: relative;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
         }
 
         .grid-container {
             display: grid;
-            grid-auto-flow: dense;
-            grid-template-columns: repeat(24, var(--unit-size));
-            grid-auto-rows: var(--unit-size);
-            gap: var(--road-gap);
-            width: fit-content;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding: 24px;
         }
 
-        /* CÁC KHỐI NHÀ (BUILDINGS) */
-        .block {
-            background-color: var(--block-default);
-            border: 1px solid var(--block-border);
-            border-radius: 6px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        /* Item Wrapper */
+        .slot {
             position: relative;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            cursor: pointer;
-        }
-
-        /* Khối đặc biệt 5x5 - Glowing Effect */
-        .block.ultra {
-            background-color: var(--ultra-bg);
-            border: none;
-            box-shadow: 0 0 30px var(--ultra-glow);
-            z-index: 10;
-        }
-
-        .block.ultra .block-name {
-            color: var(--ultra-text);
-        }
-
-        .block.ultra .block-id {
-            background: rgba(0,0,0,0.1);
-            color: var(--ultra-text);
-            opacity: 0.6;
-        }
-
-        .block:hover {
-            transform: scale(1.08) translateY(-5px);
-            z-index: 50;
-            border-color: #fde047;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .block-name {
-            font-weight: 800;
-            text-align: center;
-            letter-spacing: -0.02em;
-            pointer-events: none;
-        }
-
-        .block-id {
-            position: absolute;
-            bottom: 6px;
-            font-size: 7px;
-            font-weight: 700;
-            background: rgba(0,0,0,0.2);
-            padding: 2px 5px;
-            border-radius: 3px;
-            color: #64748b;
-        }
-
-        /* FOOTER STATS */
-        .footer-stats {
-            margin: 40px 0;
+            aspect-ratio: 1/1;
+            background: #f8fafc;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            border-radius: 16px;
             display: flex;
-            gap: 50px;
-            padding: 20px 40px;
-            background: rgba(30, 41, 59, 0.3);
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.05);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        .stat {
-            text-align: center;
+        .slot:hover {
+            background: #ffffff;
+            transform: translateY(-8px);
+            border-color: rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
         }
 
-        .stat-val {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: #fde047;
+        /* Rarity Glows (Light Mode) */
+        .rarity-legendary:hover { box-shadow: 0 8px 20px rgba(234, 179, 8, 0.15); border-color: #eab308; }
+        .rarity-epic:hover { box-shadow: 0 8px 20px rgba(168, 85, 247, 0.15); border-color: #a855f7; }
+        .rarity-rare:hover { box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15); border-color: #3b82f6; }
+
+        /* Tooltip Style (Light Mode) */
+        .details-popup {
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px) scale(0.9);
+            width: 220px;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 16px;
+            border-radius: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            pointer-events: none;
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
         }
 
-        .stat-label {
-            font-size: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.1rem;
-            color: #64748b;
+        .slot:hover .details-popup {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0) scale(1);
         }
+
+        /* Level Bar Luxury */
+        .xp-bar {
+            height: 6px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 12px;
+        }
+        .xp-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #eab308, #fbbf24);
+            width: 85%;
+        }
+
+        /* Icons */
+        .icon-svg {
+            width: 44px;
+            height: 44px;
+        }
+        
+        .locked {
+            filter: grayscale(1) opacity(0.3);
+        }
+
+        .text-title { color: #1e293b; }
+        .text-sub { color: #64748b; }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="brand">
-            <h1>Urban Mega City</h1>
-            <div class="subtitle">Systematic Planning & Infrastructure</div>
-        </div>
-<button id="refresh-btn">Re-Plan City</button>
-    </header>
-
-    <div class="city-viewport">
-        <div class="grid-container" id="city-grid"></div>
-    </div>
-
-    <div class="footer-stats">
-        <div class="stat">
-            <span class="stat-val">100</span>
-            <span class="stat-label">Building Units</span>
-        </div>
-        <div class="stat">
-            <span class="stat-val">24</span>
-            <span class="stat-label">Grid Sectors</span>
-        </div>
-        <div class="stat">
-            <span class="stat-val">4</span>
-            <span class="stat-label">Prime Districts</span>
-        </div>
-    </div>
-
-    <script>
-        /**
-         * LOGIC QUY HOẠCH:
-         * 1. Unique ID & Object: Tạo 100 đối tượng riêng biệt để không bao giờ trùng Name + ID.
-         * 2. Tỉ lệ quy hoạch:
-         * - 4 lô Prime (5x5): Trung tâm hành chính.
-         * - 26 lô Medium (3x3): Khu thương mại.
-         * - 70 lô Standard (2x2): Khu dân cư cao cấp.
-         * 3. Grid Dynamics: Khoảng cách gap mô phỏng hệ thống đường xá (Street).
-         */
-
-        const NAMES = [
-            "Huy", "Nam", "Dũng", "Linh", "Cường", "Sơn", "Hà", "Minh", "Trang", "Tuấn",
-            "An", "Bắc", "Việt", "Phong", "Thành", "Trung", "Đức", "Tùng", "Quang", "Hùng",
-            "Yến", "Thảo", "Mai", "Hồng", "Oanh", "Phúc", "Lộc", "Thắng", "Bình", "Vinh"
-        ];
-
-        const grid = document.getElementById('city-grid');
-        const refreshBtn = document.getElementById('refresh-btn');
-
-        function shuffle(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        function generate() {
-            grid.innerHTML = "";
-
-            // Tạo 100 ID duy nhất từ 101 đến 999
-            const idPool = shuffle(Array.from({length: 899}, (_, i) => i + 101));
+    <div class="luxury-card overflow-hidden">
+        <!-- Profile/Header Section -->
+        <div class="p-6 border-b border-slate-100 bg-slate-50/50">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 rounded-full border-2 border-yellow-500/30 p-0.5 shadow-sm">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Huy" alt="Avatar" class="w-full h-full rounded-full bg-white">
+                </div>
+                <div>
+                    <h2 class="text-title font-bold tracking-wide">Huy Ly</h2>
+                    <p class="text-yellow-600 text-[10px] font-bold uppercase tracking-[0.2em]">Grandmaster Dev</p>
+                </div>
+            </div>
             
-            // Tạo mảng kích thước cố định để đảm bảo tỉ lệ
-            const architecture = [
-                ...Array(4).fill({w: 5, h: 5, type: 'ultra'}),
-                ...Array(26).fill({w: 3, h: 3, type: 'medium'}),
-                ...Array(70).fill({w: 2, h: 2, type: 'standard'})
-            ];
-            shuffle(architecture);
+            <div class="flex justify-between items-end text-[11px] mb-1">
+                <span class="text-sub font-medium">Cấp độ 42</span>
+                <span class="text-yellow-600 font-bold italic">85% Hoàn thành</span>
+            </div>
+            <div class="xp-bar">
+                <div class="xp-fill"></div>
+            </div>
+        </div>
 
-            architecture.forEach((style, index) => {
-                const name = NAMES[Math.floor(Math.random() * NAMES.length)];
-                const id = idPool[index];
+        <!-- Achievements Grid (3x3) -->
+        <div class="grid-container">
+            
+            <!-- 1. Legendary Cup -->
+            <div class="slot rarity-legendary">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="1.5">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-2.34M12 2v12.66" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="details-popup">
+                    <span class="text-[9px] text-yellow-600 font-black uppercase">Legendary</span>
+                    <h4 class="text-title font-bold text-sm mt-1">Quán Quân Quốc Gia</h4>
+                    <p class="text-sub text-[11px] mt-2 leading-relaxed">Đạt giải nhất cuộc thi Sáng tạo Công nghệ 2025.</p>
+                </div>
+            </div>
 
-                const block = document.createElement('div');
-                block.className = `block ${style.type}`;
-                block.style.gridColumn = `span ${style.w}`;
-                block.style.gridRow = `span ${style.h}`;
+            <!-- 2. Epic Diamond -->
+            <div class="slot rarity-epic">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5">
+                    <path d="M6 3h12l4 6-10 12L2 9l4-6zM11 3v18M2 9h20M6.5 3l5.5 18M17.5 3l-5.5 18" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="details-popup">
+                    <span class="text-[9px] text-purple-600 font-black uppercase">Epic</span>
+                    <h4 class="text-title font-bold text-sm mt-1">Clean Code Jewel</h4>
+                    <p class="text-sub text-[11px] mt-2">Duy trì tiêu chuẩn mã nguồn hoàn hảo trong 12 tháng.</p>
+                </div>
+            </div>
 
-                // Tính toán cỡ chữ theo tỉ lệ khối
-                let fs = "8px";
-                if (style.w === 5) fs = "22px";
-else if (style.w === 3) fs = "10px";
+            <!-- 3. Rare Flame -->
+            <div class="slot rarity-rare">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3 2.5.5 4.5 2.5 4.5 5.5a3.5 3.5 0 1 1-7 0c0-1.1.3-2.1.8-3C7.1 13 8.5 14.5 8.5 14.5zM12 2c0 2-2 3.5-2 6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="details-popup">
+                    <span class="text-[9px] text-blue-600 font-black uppercase">Rare</span>
+                    <h4 class="text-title font-bold text-sm mt-1">Nỗ Lực Không Ngừng</h4>
+                    <p class="text-sub text-[11px] mt-2">Đạt 365 ngày streak đóng góp liên tục trên Github.</p>
+                </div>
+            </div>
 
-                block.innerHTML = `
-                    <span class="block-name" style="font-size: ${fs}">${name}</span>
-                    <span class="block-id">UNIT-${id}</span>
-                `;
+            <!-- 4. Rare Shield -->
+            <div class="slot rarity-rare">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="details-popup">
+                    <span class="text-[9px] text-blue-600 font-black uppercase">Rare</span>
+                    <h4 class="text-title font-bold text-sm mt-1">Bảo Mật Gia</h4>
+                    <p class="text-sub text-[11px] mt-2">Vá thành công 5 lỗ hổng Zero-day nghiêm trọng.</p>
+                </div>
+            </div>
 
-                grid.appendChild(block);
-            });
-        }
+            <!-- 5. Epic Star -->
+            <div class="slot rarity-epic">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="details-popup">
+                    <span class="text-[9px] text-purple-600 font-black uppercase">Epic</span>
+                    <h4 class="text-title font-bold text-sm mt-1">Siêu Sao Review</h4>
+                    <p class="text-sub text-[11px] mt-2">Hỗ trợ Review hơn 500 Pull Request chất lượng.</p>
+                </div>
+            </div>
 
-        refreshBtn.addEventListener('click', generate);
-        window.onload = generate;
-    </script>
+            <!-- 6. Legendary Crown -->
+            <div class="slot rarity-legendary">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="1.5">
+                    <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zM5 20h14" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="details-popup">
+                    <span class="text-[9px] text-yellow-600 font-black uppercase">Legendary</span>
+                    <h4 class="text-title font-bold text-sm mt-1">Dẫn Dắt Dự Án</h4>
+                    <p class="text-sub text-[11px] mt-2">Tech Lead cho dự án quy mô triệu người dùng.</p>
+                </div>
+            </div>
+
+            <!-- 7. Locked Slot 1 -->
+            <div class="slot">
+                <svg class="icon-svg locked" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5">
+                    <path d="M12 15v2m-6-3V10a6 6 0 0 1 12 0v4m-14 0h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="details-popup">
+                    <h4 class="text-title font-bold text-sm">Đang Khóa</h4>
+                    <p class="text-sub text-[11px] mt-2 italic">Hoàn thành bài thuyết trình quốc tế để mở.</p>
+                </div>
+            </div>
+
+            <!-- 8. Locked Slot 2 -->
+            <div class="slot">
+                <svg class="icon-svg locked" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="details-popup">
+                    <h4 class="text-title font-bold text-sm">Đang Khóa</h4>
+                    <p class="text-sub text-[11px] mt-2 italic">Làm chủ kiến trúc Microservices.</p>
+                </div>
+            </div>
+
+            <!-- 9. Hidden Slot -->
+            <div class="slot border-dashed border-slate-200">
+                <span class="text-slate-200 font-bold text-xl">?</span>
+                <div class="details-popup">
+                    <h4 class="text-title font-bold text-sm">???</h4>
+                    <p class="text-sub text-[11px] mt-2">Thành tựu bí mật sẽ xuất hiện sau khi đạt Level 50.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Luxury Footer -->
+        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+            <span class="text-[10px] text-slate-400 font-medium uppercase tracking-widest">Hall of Fame</span>
+            <button class="text-[10px] text-yellow-600 font-bold uppercase hover:underline transition-all">Chi tiết</button>
+        </div>
+    </div>
+
 </body>
 </html>
