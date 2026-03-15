@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style-user.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/quanLy.css">
+    <title>Quản lý dự án Project 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <script defer src="./js/header.js"></script>
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/userPage.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+</head>
+<body>
+    <div class="header-wrapper">
+        <header>
+            <div class="container-header">
+                <div class="wrap-left">
+                    <a class="logo" href="index.html">Portfolio<span>BCN</span></a>
+                    <navbar>
+                        <a href="index.html" class="item-hd">Trang chủ</a>
+                        <a href="userPage.html" class="item-hd active">Cộng đồng</a>
+                        <a href="projectPage.html" class="item-hd">Dự án</a>
+                        <div class="indicator"></div>
+                    </navbar>
+                </div>
+                <div class="wrap-right">
+                    
+                    <div class="search" id="searchBox">
+                        <div class="icon-btn" onclick="search()">
+                            <div class="icon-search">
+    
+                            </div>
+
+                        </div>
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+                    </div>
+    
+                    <div class="themDuAn hover hover-dark" onclick="AddProject()">
+                        <div class="title">Thêm</div>
+                        <div class="dauCong">
+    
+                        </div>
+                    </div>
+    
+                    <div class="notic" onclick="noticBar()">
+                        <div id="belt" class="belt">
+                            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        </div>
+    
+                    </div>
+    
+                    <div class="notic-bar">
+                        <div class="item-notic">Dự án project 1 đã được duyệt</div>
+                        <div class="item-notic checked">Dự án project 1 đã được duyệt</div>
+                    </div>
+    
+                    <div class="line"></div>
+    
+                    <div class="user-box" onclick="openSetting()">
+                        <div class="info-and-setting">
+                            <div class="user-name">Nguyễn Hùng</div>
+                        </div>
+                        <div class="avatar">H</div>
+                    </div>
+
+                    <div class="setting-bar">
+                        <div class="search-mobile" id="searchBox">
+                            <div class="icon-btn" onclick="search()">
+                                <div class="icon-search">
+        
+                                </div>
+
+                            </div>
+                            <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+                        </div>
+                        <a class="item-setting mobile" href="index.html">Trang chủ</a>
+                        <a class="item-setting mobile" href="userPage.html">Cộng đồng</a>
+                        <a class="item-setting mobile" href="projectPage.html">Dự án</a>
+                        <div class="line mobile"></div>
+                        <div class="item-setting">Cài đặt cá nhân</div>
+                        <div class="line"></div>
+                        <div class="item-setting">Cài đặt</div>
+                        <div class="item-setting" onclick="changeTheme()">Đổi nền</div>
+                        <div class="item-setting dangXuat">Đăng Xuất</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="overlay">
+        <div class="themDuAn-popUp">
+            <div class="close-popUp-btn" onclick="closePopUp()">x</div>
+        </div>
+
+    </div>
+
+    <div class="dieuHuong">
+        <div class="item-dieuHuong">
+            <a href="index.html">Trang chủ</a>>
+            <a href="#">...</a>>
+            <a href="userPage.html">Hồ sơ của tôi</a>>
+            <a href="quanLy.html" class="item-active">Quản lý dự án Project 1</a>
+        </div>
+    </div>
+
+    <!-- Quan ly section -->
+     <div class="quanLySection container">
+        <div class="tieuDe_QuanLy">
+            <div class="left-QuanLy">
+                <div class="heading-text">Không gian leader - Đội ngũ của tôi</div>
+                <div class="textNho">Quản lý quyền hạn và chuyển giao vai trò các thành viên</div>
+            </div>
+            <div class="right-QuanLy">
+                <div class="dauCongQL"></div>Thêm thành viên  
+            </div>
+        </div>
+        <div class="wrapThanhVien">
+            <div class="thanhVien">
+                <div class="top">
+                    <div class="avt avt1">B</div>
+                    <div class="ten">Bảo</div>
+                    <div class="vaiTro des">Designer</div>
+                    <div class="bin"></div>
+                </div>
+                <div class="lineNgang"></div>
+                <div class="bottom">
+                    <div class="hoSo">Hồ sơ</div>
+                    <div class="lienLac">Nhắn tin</div>
+                </div>
+            </div>
+            <div class="thanhVien">
+                <div class="top">
+                    <div class="avt avt2">N</div>
+                    <div class="ten">Nhân</div>
+                    <div class="vaiTro cod">Coder</div>
+                    <div class="bin"></div>
+                </div>
+                <div class="lineNgang"></div>
+                <div class="bottom">
+                    <div class="hoSo">Hồ sơ</div>
+                    <div class="lienLac">Nhắn tin</div>
+                </div>
+            </div>
+            <div class="thanhVien">
+                <div class="top">
+                    <div class="avt avt3">H</div>
+                    <div class="ten">Huy</div>
+                    <div class="vaiTro soc">Social</div>
+                    <div class="bin"></div>
+                </div>
+                <div class="lineNgang"></div>
+                <div class="bottom">
+                    <div class="hoSo">Hồ sơ</div>
+                    <div class="lienLac">Nhắn tin</div>
+                </div>
+            </div>
+            <div class="thanhVien">
+                <div class="top">
+                    <div class="avt avt4">C</div>
+                    <div class="ten">Chánh</div>
+                    <div class="vaiTro guest">Dân làng</div>
+                    <div class="bin"></div>
+                </div>
+                <div class="lineNgang"></div>
+                <div class="bottom">
+                    <div class="hoSo">Hồ sơ</div>
+                    <div class="lienLac">Nhắn tin</div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+
+    <!-- Lich trinh cho thanh vien -->
+
+    <div class="lichTrinh-wrap container">
+        <div class="left-QuanLy">
+            <div class="heading-text">Triển khai lịch trình</div>
+            <div class="textNho">Giao nhiệm vụ cho thành viên</div>
+        </div>
+
+        <div class="lichTrinh grey">
+            <div class="tieuDeLT">Giai đoạn chuẩn bị</div>
+            <div class="xem">Người phụ trách</div>
+            <div class="date">12/10/2025</div>
+            <div class="bioLT">Chuẩn bị ý tưởng, bắt đầu tham khảo các trang web khác để lấy ý tưởng chung</div>
+        </div>
+        <div class="lichTrinh yellow">
+            <div class="tieuDeLT">Triển khai</div>
+            <div class="xem">Người phụ trách</div>
+            <div class="date">30/10/2025</div>
+            <div class="bioLT">Thống nhất ý tưởng và bắt đầu thiết kế đồ hoạ, UI/ UX, nghiên cứu hành vi người dùng</div>
+        </div>
+        <div class="lichTrinh green">
+            <div class="tieuDeLT">Giai đoạn phát triển và cải tiến</div>
+            <div class="xem">Người phụ trách</div>
+            <div class="date">30/11/2025</div>
+            <div class="bioLT">Đưa lên bản demo của dự án và đội ngũ phát triển chữa lỗi của người dùng feedback</div>
+        </div>
+        <div class="lichTrinh blue">
+            <div class="tieuDeLT">Về đích</div>
+            <div class="xem">Người phụ trách</div>
+            <div class="date">22/2/2026</div>
+            <div class="bioLT">Hoàn thành dự án, kiểm thử và ra mắt sản phẩm cho thị trường</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="frame1">
+            <div class="item1">
+                <div class="logo">Portfolio<span>BCN</span></div>
+                <div class="discript">
+                    <p>Điều khoản người dùng</p>
+                    <p>Câu hỏi thường gặp</p>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="item2">
+                    <div class="title">Trang web này</div>
+                    <div class="option">
+                        <p>Trang Chủ</p>
+                        <p>Người Dùng</p>
+                        <p>Dự Án</p>
+                    </div>
+                </div>
+                
+                <div class="item2">
+                    <div class="title">Hỗ trợ</div>
+                    <div class="option">
+                        <p>Trung tâm hỗ trợ</p>
+                        <p>Báo cáo người dùng</p>
+                        <p>Liên hệ hỗ trợ</p>
+                    </div>
+                </div>
+                <div class="item2">
+                    <div class="title">Liên lạc</div>
+                    <div class="option">
+                        <p>Facebook</p>
+                        <p>Instagram</p>
+                        <p>Zalo</p>
+                        <p>Youtube</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="coppyright">2026 PortfolioBCN . All Right Reserved. Powered by Team’s Uside</div>
+    </div>
+</body>
+</html>

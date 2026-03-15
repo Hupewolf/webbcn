@@ -1,0 +1,272 @@
+:root {
+    --shadow-premium-hover: 0 10px 40px -10px rgba(0, 0, 0, 0.147), 0 20px 25px -5px rgba(0, 0, 0, 0.02);
+}
+
+.dauCongQL {
+    mask-image: url(../img/add-line.svg);
+    width: 24px;
+    height: 24px;
+    background-color: white;
+}
+
+.bin {
+    display: none;
+    mask-image: url(../img/bin.svg);
+    width: 24px;
+    height: 24px;
+    background-color: rgba(128, 128, 128, 0.306);
+    position: absolute;
+    right: 30px;
+}
+
+.quanLySection {
+    margin-top: 190px;
+    margin-bottom: 50px;
+    border-radius: 30px;
+    height: fit-content;
+    padding: 30px;
+    background-color: var(--white);
+    box-shadow: var(--shadow-premium);
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.tieuDe_QuanLy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-QuanLy {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.left-QuanLy .heading-text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.textNho {
+    font-size: 14px;
+    color: rgb(107, 107, 107);
+}
+
+.right-QuanLy {
+    display: flex;
+    gap: 5px;
+    background-color: var(--primary-color);
+    height: fit-content;
+    padding: 5px 15px;
+    border-radius: 30px;
+    align-items: center;
+    color: white;
+
+    cursor: pointer;
+}
+
+.right-QuanLy:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.wrapThanhVien {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.wrapThanhVien .thanhVien {
+    width: 280px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    border-radius: 30px;
+    box-shadow: var(--shadow-premium);
+}
+
+.lineNgang {
+    width: 80%;
+    margin: 0 auto;
+    height: 1px;
+    background-color: rgba(61, 61, 61, 0.635);
+}
+
+.thanhVien .top {
+    height: fit-content;
+    box-shadow: none;
+    background-color: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.thanhVien .top .avt {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 36px;
+    color: white;
+}
+
+.avt1 {
+    background-color: rgb(255, 140, 253);
+}
+
+.avt2 {
+    background-color: rgb(252, 206, 147);
+}
+
+.avt3 {
+    background-color: rgb(255, 132, 127);
+}
+
+.avt4 {
+    background-color: rgb(148, 102, 248);
+}
+
+.thanhVien .top .ten {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.thanhVien .top .vaiTro {
+    padding: 5px 15px;
+    width: fit-content;
+    margin:  0 auto;
+    border-radius: 30px;
+}
+
+.thanhVien .bottom {
+    display: flex;
+    gap: 10px;
+    box-shadow: none;
+    padding: 25px 30px;
+}
+
+.des {
+    background-color: rgba(128, 0, 128, 0.246);
+    border: 1px dashed purple;
+}
+
+.cod {
+    background-color: rgba(0, 128, 0, 0.294);
+    border: 1px dashed green;
+}
+
+.soc {
+    background-color: rgba(255, 166, 0, 0.336);
+    border: 1px dashed orange;
+}
+
+.guest {
+    background-color: rgba(127, 255, 212, 0.377);
+    border: 1px dashed rgb(26, 180, 126);
+}
+
+.hoSo, .lienLac {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hoSo {
+    background-color: var(--accent-color-darker);
+    cursor: pointer;
+}
+
+.hoSo:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.thanhVien:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium-hover);
+}
+
+.thanhVien:hover .bin {
+    display: flex;
+    cursor: pointer;
+}
+
+.lichTrinh-wrap {
+    background-color: var(--white);
+    margin-bottom: 50px;
+    box-shadow: var(--shadow-premium);
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lichTrinh-wrap .lichTrinh {
+    border: 1px solid var(--accent-color-darker);
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.lichTrinh:hover {
+    border-color: var(--primary-color);
+}
+
+.lichTrinh .tieuDeLT {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.lichTrinh .date {
+    padding: 5px 15px;
+    border-radius: 30px;
+    background-color: white;
+    width: fit-content;
+    margin-bottom: 15px;
+}
+
+.grey {
+    background-color: rgba(214, 214, 214, 0.421);
+}
+
+.yellow {
+    background-color: rgba(250, 250, 170, 0.455);
+}
+
+.green {
+    background-color: rgba(0, 128, 0, 0.302);
+}
+
+.blue {
+    background-color: rgba(0, 157, 255, 0.405);
+}
+
+.xem {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    padding: 5px 15px;
+    background-color: var(--accent-color-darker);
+    border-radius: 30px;
+}
+
+.xem:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    cursor: pointer;
+}
