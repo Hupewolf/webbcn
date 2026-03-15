@@ -575,7 +575,7 @@ ul {
 .accent-bt {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .accent-bt .line-1 {

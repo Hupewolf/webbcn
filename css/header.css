@@ -146,15 +146,18 @@ navbar {
     padding: 5px;
     background-color: var(--nav-color);
     border-radius: 40px;
+    box-shadow: 0 0 8px 
+        color-mix(in srgb, #cbd5e1 40%, transparent), inset -2px -2px 4px #ffffff4d, inset 2px 2px 4px #0000001a;
 }
 
 .indicator {
     position: absolute;
     bottom: 5px;
-    height: 40px;
+    height: 36px;
     background-color: var(--accent-light, #ffffff); /* Sử dụng biến accent của bạn */
     border-radius: 40px;
     transition: all 0.3s ease; /* Tạo hiệu ứng trượt mượt */
+    box-shadow: 3px 3px 6px #16111d26, -3px -3px 6px #FAFBFF;
 }
 
 navbar .item-hd{
