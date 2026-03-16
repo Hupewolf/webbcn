@@ -636,6 +636,11 @@ ul {
 
 /* Chi tiet du an */
 
+.thanhVienTD {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
 .thanhVienTG {
     display: flex;
     gap: 5px;
@@ -644,14 +649,22 @@ ul {
 }
 
 .tv {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     font-size: 12px;
     text-align: center;
     align-content: center;
     border-radius: 50%;
     color: white;
     cursor: pointer;
+}
+
+.plus {
+    background-color: rgba(61, 61, 61, 0.409);
+    color: rgb(239, 239, 239);
+    text-align: center;
+    align-content: center;
+    margin: 0 0 0 0;
 }
 
 .overlay-chitiet {
