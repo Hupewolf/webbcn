@@ -1052,72 +1052,173 @@ ul {
     background: #e2e8f0; 
 }
 
+/* ------------------------------------------------------------------------------------------------------------ */
 
-/* @media screen and (max-width: 1000px) {
-    .chiTietDuAn-1 { 
-        grid-template-columns: 1fr; 
-        width: 95%; height: 95vh; 
-        overflow-y: auto; 
-    }
-    .popUp-left { position: relative; border-right: none; border-bottom: 1px solid var(--accent-color-darker); }
-    .stats-bar { grid-template-columns: 1fr 1fr; }
-} */
-
-/* .title-popUp-DuAn {
+/* Them du an */
+.line-head {
+    position: fixed;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     color: var(--primary-color);
-    text-align: center;
 }
 
-.content-popUp-DuAn {
+.themDuAn-popUp .line-1 {
+    margin-top: 40px;
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    gap: 30px;
+    border-top: solid 1px rgb(211, 211, 211);
+    padding-top: 20px;
+
 }
 
-.content-popUp-DuAn .left-popUp {
-    flex: 1;
-    min-height: 400px;
-    box-sizing: border-box;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: var(--accent-color);
-    border: solid 2px var(--primary-color);
-}
-
-.left-popUp .bg-popUp {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    background: url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==);
-    background-size: cover;
-    background-position: center;
-}
-
-.content-popUp-DuAn .right-popUp {
-    width: 55%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.right-popUp .title-pop {
+.left-line {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.title-pop .high {
-    font-size: 20px;
+.tieuDe-line {
     font-weight: 600;
+    font-size: 18px;
     color: var(--primary-color);
 }
 
-.title-pop .text {
-    font-size: 16px;
-} */
+.left-line .themAnh {
+    width: 410px;
+    height: 300px;
+    background-color: var(--accent-color-lighter);
+    border-radius: 30px;
+    border: dashed 1px var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap-themAnh {
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color-darker);
+}
+
+.addIcon {
+    mask-image: url(../img/add-line.svg);
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color-darker);
+}
+
+.right-line {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.input-T {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: solid 1px rgb(214, 214, 214);
+    width: 410px;
+    font-size: 14px;
+}
+
+.right-line textarea {
+    height: 220px;
+}
+
+.themDuAn-popUp .line-2 {
+    display: flex;
+    gap: 30px;
+}
+
+.themDuAn-popUp  .line-3 {
+    display: flex;
+    gap: 30px;
+}
+
+.tag-input-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-add-tag {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tags-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-item {
+    background: #eef4ff;
+    color: var(--primary-color);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag-item .remove {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ff4d4d;
+}
+
+#hlInput, #memberInput, #techInput {
+    width: 325px !important; 
+}
+
+#optionTag {
+    width: 410px;
+}
+
+/* Footer Buttons */
+.popup-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-footer {
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 15px;
+}
+
+.btn-save {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-cancel {
+    background: #f1f1f1;
+    color: #666;
+}
+
+/* Custom Scrollbar */
+.themDuAn-popUp::-webkit-scrollbar {
+    width: 8px;
+}
+.themDuAn-popUp::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
 
 /* ------------------------------------------------------------------------------------------------------------ */
 /* Timeline Section */

@@ -101,6 +101,71 @@
     <div class="overlay">
         <div class="themDuAn-popUp">
             <div class="close-popUp-btn" onclick="closePopUp()">x</div>
+            <div class="line-head">Bạn đang thêm một dự án mới !</div>
+            <div class="line-1">
+                <div class="left-line">
+                    <div class="tieuDe-line">Thêm ảnh bìa</div>
+                    <div class="themAnh">
+                        <div class="wrap-themAnh">
+                            <div class="addIcon"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-line">
+                    <div class="tieuDe-line">Thêm tên dự án</div>
+                    <input class="input-T" type="text" placeholder="Nhập tên dự án...">
+                    <div class="tieuDe-line">Mô tả tổng quan dự án</div>
+                    <textarea class="input-T" name="" placeholder="Mô tả tổng quan dự án..." id=""></textarea>
+                </div>
+            </div>
+
+            <div class="line-2">
+                <div class="left-line">
+                    <div class="tieuDe-line">Lĩnh vực</div>
+                    <select id="optionTag" class="input-T">
+                        <option value="">-- Chọn lĩnh vực --</option>
+                        <option value="Giáo dục">Giáo dục</option>
+                        <option value="Y tế">Y tế</option>
+                        <option value="Thương mại">Thương mại</option>
+                        <option value="Fintech">Fintech</option>
+                        <option value="Giải trí">Giải trí</option>
+                    </select>
+                </div>
+                <div class="right-line">
+                    <div class="tieuDe-line">Công nghệ sử dụng</div>
+                    <div class="tag-input-wrapper">
+                        <input id="techInput" class="input-T" type="text" placeholder="React, CSS, Nodejs...">
+                        <button class="btn-add-tag" onclick="addTag('tech')">Thêm</button>
+                    </div>
+                    <div class="tags-display" id="techTags"></div>
+                </div>
+            </div>
+
+            <!-- LINE 3: Highlights & Members -->
+            <div class="line-3">
+                <div class="left-line">
+                    <div class="tieuDe-line">Điểm nổi bật (Highlights)</div>
+                    <div class="tag-input-wrapper">
+                        <input id="hlInput" class="input-T" type="text" placeholder="Tốc độ cao, UI đẹp...">
+                        <button class="btn-add-tag" onclick="addTag('hl')">Thêm</button>
+                    </div>
+                    <div class="tags-display" id="hlTags"></div>
+                </div>
+                <div class="right-line">
+                    <div class="tieuDe-line">Thành viên tham gia</div>
+                    <div class="tag-input-wrapper">
+                        <input id="memberInput" class="input-T" type="text" placeholder="Tên cộng sự...">
+                        <button class="btn-add-tag" onclick="addTag('member')">Thêm</button>
+                    </div>
+                    <div class="tags-display" id="memberTags"></div>
+                </div>
+            </div>
+
+            <!-- Nút Lưu / Hủy -->
+            <div class="popup-footer">
+                <button class="btn-footer btn-cancel" onclick="closePopUp()">Hủy bỏ</button>
+                <button class="btn-footer btn-save" onclick="saveProject()">Lưu dự án</button>
+            </div>
         </div>
 
     </div>
