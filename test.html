@@ -3,251 +3,1024 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light Luxury Portfolio Achievements</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Quản lý dự án Project 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-        
+        /* ================= VARIABLES & RESET ================= */
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --white: #ffffff;
+            --bg-body: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent-color-darker: #f1f5f9;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            --shadow-premium-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+            --border-color: #e2e8f0;
+            
+            --grey-bg: rgba(214, 214, 214, 0.42);
+            --yellow-bg: rgba(250, 250, 170, 0.6);
+            --green-bg: rgba(74, 222, 128, 0.2);
+            --blue-bg: rgba(56, 189, 248, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f1f5f9;
-            display: flex;
-            justify-content: center;
-            padding: 40px;
+            background-color: var(--bg-body);
+            color: var(--text-main);
         }
 
-        /* Light Luxury Card Base */
-        .luxury-card {
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 24px;
-            width: 340px;
-            position: relative;
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .grid-container {
+        a { text-decoration: none; color: inherit; }
+
+        /* ================= BENTO HERO SECTION ================= */
+        .bento-hero {
+            margin-top: 40px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            padding: 24px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 20px;
         }
 
-        /* Item Wrapper */
-        .slot {
+        .bento-item {
+            background-color: var(--white);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--shadow-premium);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
             position: relative;
-            aspect-ratio: 1/1;
-            background: #f8fafc;
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            border-radius: 16px;
+        }
+
+        .bento-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium-hover);
+        }
+
+        /* Hero Images */
+        .bento-images {
+            grid-column: span 2;
+            grid-row: span 2;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
         }
 
-        .slot:hover {
-            background: #ffffff;
-            transform: translateY(-8px);
-            border-color: rgba(0, 0, 0, 0.08);
-            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Rarity Glows (Light Mode) */
-        .rarity-legendary:hover { box-shadow: 0 8px 20px rgba(234, 179, 8, 0.15); border-color: #eab308; }
-        .rarity-epic:hover { box-shadow: 0 8px 20px rgba(168, 85, 247, 0.15); border-color: #a855f7; }
-        .rarity-rare:hover { box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15); border-color: #3b82f6; }
-
-        /* Tooltip Style (Light Mode) */
-        .details-popup {
+        .device-mockup {
             position: absolute;
-            bottom: 130%;
-            left: 50%;
-            transform: translateX(-50%) translateY(10px) scale(0.9);
-            width: 220px;
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            padding: 16px;
-            border-radius: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 100;
-            pointer-events: none;
-            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
-        }
-
-        .slot:hover .details-popup {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0) scale(1);
-        }
-
-        /* Level Bar Luxury */
-        .xp-bar {
-            height: 6px;
-            background: #f1f5f9;
+            background-size: cover;
+            background-position: top center;
             border-radius: 10px;
-            overflow: hidden;
-            margin-top: 12px;
-        }
-        .xp-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #eab308, #fbbf24);
-            width: 85%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 4px solid #333;
         }
 
-        /* Icons */
-        .icon-svg {
-            width: 44px;
-            height: 44px;
+        .mockup-desktop {
+            width: 70%; height: 60%;
+            background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800');
+            z-index: 1;
+            transform: translateY(-20px);
+        }
+
+        .mockup-tablet {
+            width: 35%; height: 50%;
+            background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=400');
+            z-index: 2;
+            right: 10%; bottom: 15%;
+        }
+
+        .mockup-mobile {
+            width: 20%; height: 45%;
+            background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=300');
+            z-index: 3;
+            left: 10%; bottom: 10%;
+            border-radius: 16px;
+        }
+
+        /* Project Info Bento */
+        .bento-info {
+            grid-column: span 2;
+            background-color: var(--primary-color);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
-        .locked {
-            filter: grayscale(1) opacity(0.3);
+        .bento-info h1 { font-size: 32px; margin-bottom: 10px; }
+        .bento-info p { font-size: 16px; opacity: 0.9; line-height: 1.5; }
+
+        /* Action Links */
+        .action-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
 
-        .text-title { color: #1e293b; }
-        .text-sub { color: #64748b; }
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-github {
+            background-color: #0f172a;
+            color: #ffffff;
+            border: 1px solid #0f172a;
+        }
+
+        .btn-github:hover {
+            background-color: #1e293b;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.4);
+        }
+
+        .btn-demo {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-demo:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: #ffffff;
+        }
+
+        /* Tech Stack Bento */
+        .bento-tech {
+            grid-column: span 1;
+        }
+        .bento-tech h3 { margin-bottom: 15px; font-size: 18px; }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tech-tags span {
+            background-color: var(--accent-color-darker);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Status Bento */
+        .bento-status {
+            grid-column: span 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .status-ring {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            border: 8px solid #22c55e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .status-ring::after {
+            content: "✓";
+            color: #22c55e;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        /* ================= QUICK STATS (SECTION MỚI) ================= */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .stat-card {
+            background-color: var(--white);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-premium-hover); }
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        .stat-value span { font-size: 18px; color: var(--text-muted); }
+        .stat-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* ================= TEAM SECTION ================= */
+        .quanLySection {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border-radius: 30px;
+            padding: 40px;
+            background-color: var(--white);
+            box-shadow: var(--shadow-premium);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .tieuDe_QuanLy { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; }
+        .left-QuanLy { display: flex; flex-direction: column; gap: 5px; }
+        .left-QuanLy .heading-text { font-size: 28px; font-weight: 700; color: var(--text-main); }
+        .textNho { font-size: 15px; color: var(--text-muted); }
+
+        .wrapThanhVien { display: flex; gap: 25px; flex-wrap: wrap; }
+        .thanhVien {
+            width: calc(25% - 19px);
+            display: flex; flex-direction: column; gap: 15px;
+            border-radius: 24px; box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            background: var(--white);
+            padding-top: 25px;
+        }
+        .thanhVien:hover { transform: translateY(-5px); box-shadow: var(--shadow-premium-hover); }
+
+        .thanhVien .top { text-align: center; display: flex; flex-direction: column; gap: 10px; }
+        .thanhVien .top .avt {
+            width: 80px; height: 80px; margin: 0 auto;
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 50%; font-size: 28px; color: white; font-weight: 600;
+        }
+        .avt1 { background-color: #ec4899; }
+        .avt2 { background-color: #f59e0b; }
+        .avt3 { background-color: #ef4444; }
+        .avt4 { background-color: #8b5cf6; }
+
+        .thanhVien .top .ten { font-weight: 700; font-size: 18px; }
+        .thanhVien .top .vaiTro {
+            padding: 4px 12px; font-size: 13px; font-weight: 500;
+            margin: 0 auto; border-radius: 20px;
+        }
+        .des { background-color: #fdf4ff; color: #c026d3; border: 1px solid #e879f9; }
+        .cod { background-color: #f0fdf4; color: #16a34a; border: 1px solid #4ade80; }
+        .soc { background-color: #fffbeb; color: #d97706; border: 1px solid #fbbf24; }
+        .guest { background-color: #f0f9ff; color: #0284c7; border: 1px solid #38bdf8; }
+
+        .lineNgang { width: 100%; height: 1px; background-color: var(--border-color); }
+        .thanhVien .bottom { display: flex; gap: 10px; padding: 0 20px 20px; }
+        .hoSo, .lienLac {
+            flex: 1; text-align: center; padding: 10px 0;
+            border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500;
+            transition: 0.2s;
+        }
+        .hoSo { background-color: var(--accent-color-darker); color: var(--text-main); }
+        .hoSo:hover { background-color: #e2e8f0; }
+        .lienLac { background-color: var(--primary-color); color: white; }
+        .lienLac:hover { background-color: var(--primary-hover); }
+
+        /* ================= TIMELINE DROPDOWN SECTION ================= */
+        .lichTrinh-wrap {
+            background-color: var(--white);
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-premium);
+            padding: 40px;
+            border-radius: 30px;
+        }
+
+        details.timeline-dropdown {
+            margin-bottom: 15px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        summary.timeline-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            cursor: pointer;
+            list-style: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        summary.timeline-summary::-webkit-details-marker { display: none; }
+        
+        .timeline-summary.grey { background-color: var(--grey-bg); }
+        .timeline-summary.yellow { background-color: var(--yellow-bg); }
+        .timeline-summary.green { background-color: var(--green-bg); }
+        .timeline-summary.blue { background-color: var(--blue-bg); }
+
+        .summary-left { display: flex; flex-direction: column; gap: 5px; }
+        .summary-left .date { font-size: 13px; font-weight: 500; opacity: 0.7; }
+        
+        .arrow-icon {
+            transition: transform 0.3s ease;
+            width: 20px; height: 20px;
+        }
+        details[open] .arrow-icon { transform: rotate(180deg); }
+
+        .timeline-content {
+            padding: 20px 25px;
+            background-color: var(--white);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Task Card */
+        .task-card {
+            display: flex;
+            align-items: center;
+            background-color: var(--accent-color-darker);
+            border-radius: 12px;
+            padding: 15px;
+            gap: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .task-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 200px;
+            border-right: 1px solid #cbd5e1;
+            padding-right: 20px;
+        }
+        
+        .task-user .avt-small {
+            width: 40px; height: 40px;
+            border-radius: 50%; color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 16px;
+        }
+
+        .user-info-text { display: flex; flex-direction: column; }
+        .user-info-text strong { font-size: 15px; color: var(--text-main); }
+        .user-info-text span { font-size: 12px; color: var(--text-muted); }
+
+        .task-detail {
+            font-size: 15px;
+            color: var(--text-main);
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        /* ================= COMMENTS SECTION ================= */
+        .comment-section {
+            background-color: var(--white);
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-premium);
+            padding: 40px;
+            border-radius: 30px;
+        }
+
+        .comment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .comment-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            background-color: var(--white);
+            transition: box-shadow 0.2s;
+        }
+        
+        .comment-card:hover { box-shadow: var(--shadow); }
+
+        .comment-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .comment-header img {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .comment-meta { display: flex; flex-direction: column; }
+        .comment-meta .name { font-weight: 600; font-size: 15px; }
+        .comment-meta .date { font-size: 12px; color: var(--text-muted); }
+
+        .stars { color: #facc15; font-size: 14px; margin-bottom: 10px; }
+        .comment-body { font-size: 14px; color: var(--text-main); line-height: 1.6; }
+
+        /* Responsive chung */
+        @media (max-width: 1024px) {
+            .bento-hero { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+            .quick-stats { grid-template-columns: repeat(2, 1fr); }
+            .thanhVien { width: calc(50% - 13px); }
+            .comment-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .bento-hero { grid-template-columns: 1fr; }
+            .bento-images, .bento-info, .bento-tech, .bento-status { grid-column: span 1; }
+            .bento-images { height: 300px; }
+            .thanhVien { width: 100%; }
+            .comment-grid { grid-template-columns: 1fr; }
+            .task-card { flex-direction: column; align-items: flex-start; }
+            .task-user { border-right: none; border-bottom: 1px solid #cbd5e1; padding-bottom: 10px; padding-right: 0; width: 100%; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="luxury-card overflow-hidden">
-        <!-- Profile/Header Section -->
-        <div class="p-6 border-b border-slate-100 bg-slate-50/50">
-            <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 rounded-full border-2 border-yellow-500/30 p-0.5 shadow-sm">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Huy" alt="Avatar" class="w-full h-full rounded-full bg-white">
-                </div>
-                <div>
-                    <h2 class="text-title font-bold tracking-wide">Huy Ly</h2>
-                    <p class="text-yellow-600 text-[10px] font-bold uppercase tracking-[0.2em]">Grandmaster Dev</p>
+    <!-- 1. BENTO HERO SECTION -->
+    <div class="container">
+        <div class="bento-hero">
+            <!-- Ảnh Dự án trên 3 nền tảng -->
+            <div class="bento-item bento-images">
+                <div class="device-mockup mockup-desktop"></div>
+                <div class="device-mockup mockup-tablet"></div>
+                <div class="device-mockup mockup-mobile"></div>
+            </div>
+
+            <!-- Giới thiệu Dự án -->
+            <div class="bento-item bento-info">
+                <h1>Project 1</h1>
+                <p>Một giải pháp toàn diện cho việc quản lý quy trình làm việc, tối ưu UI/UX trên mọi thiết bị và tích hợp dữ liệu thời gian thực.</p>
+                
+                <!-- Action Links -->
+                <div class="action-links">
+                    <a href="#" target="_blank" class="btn-link btn-github">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Source GitHub
+                    </a>
+                    <a href="#" target="_blank" class="btn-link btn-demo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Live Demo
+                    </a>
                 </div>
             </div>
-            
-            <div class="flex justify-between items-end text-[11px] mb-1">
-                <span class="text-sub font-medium">Cấp độ 42</span>
-                <span class="text-yellow-600 font-bold italic">85% Hoàn thành</span>
+
+            <!-- Công nghệ sử dụng -->
+            <div class="bento-item bento-tech">
+                <h3>Công nghệ cốt lõi</h3>
+                <div class="tech-tags">
+                    <span>React JS</span>
+                    <span>Tailwind CSS</span>
+                    <span>Node.js</span>
+                    <span>Figma</span>
+                    <span>MongoDB</span>
+                    <span>REST API</span>
+                </div>
             </div>
-            <div class="xp-bar">
-                <div class="xp-fill"></div>
+
+            <!-- Trạng thái -->
+            <div class="bento-item bento-status">
+                <div class="status-ring"></div>
+                <h3>Đã hoàn thành</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 5px;">Hoàn thành 100% tiến độ</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1.5 QUICK STATS SECTION (MỚI THÊM) -->
+    <div class="quick-stats container">
+        <div class="stat-card">
+            <div class="stat-value">24</div>
+            <div class="stat-label">Tổng số hạng mục (Tasks)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">24</div>
+            <div class="stat-label">Tasks đã hoàn thành</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">320<span>h</span></div>
+            <div class="stat-label">Tổng giờ làm việc</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">03</div>
+            <div class="stat-label">Phản hồi cần xử lý</div>
+        </div>
+    </div>
+
+    <!-- 2. TEAM SECTION -->
+    <div class="quanLySection container">
+        <div class="tieuDe_QuanLy">
+            <div class="left-QuanLy">
+                <div class="heading-text">Đội ngũ phát triển</div>
+                <div class="textNho">Các thành viên cốt cán của dự án này</div>
+            </div>
+        </div>
+        <div class="wrapThanhVien">
+            <div class="thanhVien">
+                <div class="top">
+                    <div class="avt avt1">B</div>
+                    <div class="ten">Bảo</div>
+                    <div class="vaiTro des">Designer</div>
+                </div>
+                <div class="lineNgang"></div>
+                <div class="bottom">
+                    <div class="hoSo">Hồ sơ</div>
+                    <div class="lienLac">Nhắn tin</div>
+                </div>
+            </div>
+            <div class="thanhVien">
+                <div class="top">
+                    <div class="avt avt2">N</div>
+                    <div class="ten">Nhân</div>
+                    <div class="vaiTro cod">Coder</div>
+                </div>
+                <div class="lineNgang"></div>
+                <div class="bottom">
+                    <div class="hoSo">Hồ sơ</div>
+                    <div class="lienLac">Nhắn tin</div>
+                </div>
+            </div>
+            <div class="thanhVien">
+                <div class="top">
+                    <div class="avt avt3">H</div>
+                    <div class="ten">Huy</div>
+                    <div class="vaiTro soc">Social</div>
+                </div>
+                <div class="lineNgang"></div>
+                <div class="bottom">
+                    <div class="hoSo">Hồ sơ</div>
+                    <div class="lienLac">Nhắn tin</div>
+                </div>
+            </div>
+            <div class="thanhVien">
+                <div class="top">
+                    <div class="avt avt4">C</div>
+                    <div class="ten">Chánh</div>
+                    <div class="vaiTro guest">Dân làng</div>
+                </div>
+                <div class="lineNgang"></div>
+                <div class="bottom">
+                    <div class="hoSo">Hồ sơ</div>
+                    <div class="lienLac">Nhắn tin</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. TIMELINE SECTION -->
+    <div class="lichTrinh-wrap container">
+        <div class="tieuDe_QuanLy">
+            <div class="left-QuanLy">
+                <div class="heading-text">Tiến độ & Nhiệm vụ</div>
+                <div class="textNho">Chi tiết các hạng mục và phân công công việc</div>
             </div>
         </div>
 
-        <!-- Achievements Grid (3x3) -->
-        <div class="grid-container">
-            
-            <!-- 1. Legendary Cup -->
-            <div class="slot rarity-legendary">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="1.5">
-                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-2.34M12 2v12.66" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="details-popup">
-                    <span class="text-[9px] text-yellow-600 font-black uppercase">Legendary</span>
-                    <h4 class="text-title font-bold text-sm mt-1">Quán Quân Quốc Gia</h4>
-                    <p class="text-sub text-[11px] mt-2 leading-relaxed">Đạt giải nhất cuộc thi Sáng tạo Công nghệ 2025.</p>
+        <!-- Block Lịch trình 1 -->
+        <details class="timeline-dropdown">
+            <summary class="timeline-summary yellow">
+                <div class="summary-left">
+                    <div class="tieuDe">Bắt đầu dự án</div>
+                    <div class="date">Bắt đầu: 30/10/2025</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Nghiên cứu: hành vi người dùng, phác thảo Wireframe và hoàn thiện bản thiết kế UI trên Figma cho cả 3 nền tảng.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Nghiên cứu: Các trang web Dribble, Pinterest,...
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Tài liệu nghiên cứu chung.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Nghiên cứu: phác thảo Wireframe và hoàn thiện bản thiết kế UI trên Figma cho cả 3 nền tảng.
+                    </div>
                 </div>
             </div>
+        </details>
 
-            <!-- 2. Epic Diamond -->
-            <div class="slot rarity-epic">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5">
-                    <path d="M6 3h12l4 6-10 12L2 9l4-6zM11 3v18M2 9h20M6.5 3l5.5 18M17.5 3l-5.5 18" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="details-popup">
-                    <span class="text-[9px] text-purple-600 font-black uppercase">Epic</span>
-                    <h4 class="text-title font-bold text-sm mt-1">Clean Code Jewel</h4>
-                    <p class="text-sub text-[11px] mt-2">Duy trì tiêu chuẩn mã nguồn hoàn hảo trong 12 tháng.</p>
+        <!-- Block Lịch trình 2 -->
+        <details class="timeline-dropdown">
+            <summary class="timeline-summary blue">
+                <div class="summary-left">
+                    <div class="tieuDe">Xây dựng module: Khung UI/UX</div>
+                    <div class="date">Dự kiến: 05/11/2025</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Header, Footer
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: trang chủ và khung các trang chi tiết.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị của Header, Footer.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: các Section MVP.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị trên các thiết bị di động, tablet.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Trang chi tiết dự án.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt4">C</div>
+                        <div class="user-info-text">
+                            <strong>Chánh</strong>
+                            <span>UID: #8892</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Màu sắc chủ đạo của trang web.
+                    </div>
                 </div>
             </div>
+        </details>
 
-            <!-- 3. Rare Flame -->
-            <div class="slot rarity-rare">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5">
-                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3 2.5.5 4.5 2.5 4.5 5.5a3.5 3.5 0 1 1-7 0c0-1.1.3-2.1.8-3C7.1 13 8.5 14.5 8.5 14.5zM12 2c0 2-2 3.5-2 6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="details-popup">
-                    <span class="text-[9px] text-blue-600 font-black uppercase">Rare</span>
-                    <h4 class="text-title font-bold text-sm mt-1">Nỗ Lực Không Ngừng</h4>
-                    <p class="text-sub text-[11px] mt-2">Đạt 365 ngày streak đóng góp liên tục trên Github.</p>
+        <details class="timeline-dropdown">
+            <summary class="timeline-summary blue">
+                <div class="summary-left">
+                    <div class="tieuDe">Xây dựng module: API</div>
+                    <div class="date">Dự kiến: 15/11/2025</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: hệ thống REST API, kết nối cơ sở dữ liệu.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị API.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị trên các thiết bị di động, tablet.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị trên các thiết bị di động, tablet.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Section Contact.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Form Contact.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi Form Contact.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt4">C</div>
+                        <div class="user-info-text">
+                            <strong>Chánh</strong>
+                            <span>UID: #8892</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Kiểm thử: Test luồng dữ liệu API, báo cáo các lỗi bảo mật và tối ưu truy vấn Database.
+                    </div>
                 </div>
             </div>
+        </details>
 
-            <!-- 4. Rare Shield -->
-            <div class="slot rarity-rare">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="details-popup">
-                    <span class="text-[9px] text-blue-600 font-black uppercase">Rare</span>
-                    <h4 class="text-title font-bold text-sm mt-1">Bảo Mật Gia</h4>
-                    <p class="text-sub text-[11px] mt-2">Vá thành công 5 lỗ hổng Zero-day nghiêm trọng.</p>
+        <details class="timeline-dropdown">
+            <summary class="timeline-summary blue">
+                <div class="summary-left">
+                    <div class="tieuDe">Xây dựng module: Database Server</div>
+                    <div class="date">Dự kiến: 15/11/2025</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: hệ thống Database và kết nối dữ liệu.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Tối ưu: Hiển thị dữ liệu.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Section dữ liệu mới.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt4">C</div>
+                        <div class="user-info-text">
+                            <strong>Chánh</strong>
+                            <span>UID: #8892</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Kiểm thử: Kiểm tra tối ưu hiển thị dữ liệu.
+                    </div>
                 </div>
             </div>
+        </details>        
 
-            <!-- 5. Epic Star -->
-            <div class="slot rarity-epic">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="details-popup">
-                    <span class="text-[9px] text-purple-600 font-black uppercase">Epic</span>
-                    <h4 class="text-title font-bold text-sm mt-1">Siêu Sao Review</h4>
-                    <p class="text-sub text-[11px] mt-2">Hỗ trợ Review hơn 500 Pull Request chất lượng.</p>
+        <!-- Block Lịch trình 3 -->
+        <details class="timeline-dropdown" open>
+            <summary class="timeline-summary green">
+                <div class="summary-left">
+                    <div class="tieuDe">Dự án hoàn thành</div>
+                    <div class="date">Hoàn thành: 22/02/2026</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Lên chiến dịch truyền thông (Social Campaign), thu thập Feedback từ người dùng Beta để team Dev vá lỗi.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Ra mắt sản phẩm.
+                    </div>
                 </div>
             </div>
+        </details>
+    </div>
 
-            <!-- 6. Legendary Crown -->
-            <div class="slot rarity-legendary">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="1.5">
-                    <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zM5 20h14" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="details-popup">
-                    <span class="text-[9px] text-yellow-600 font-black uppercase">Legendary</span>
-                    <h4 class="text-title font-bold text-sm mt-1">Dẫn Dắt Dự Án</h4>
-                    <p class="text-sub text-[11px] mt-2">Tech Lead cho dự án quy mô triệu người dùng.</p>
-                </div>
+    <!-- 4. COMMENTS SECTION -->
+    <div class="comment-section container">
+        <div class="tieuDe_QuanLy">
+            <div class="left-QuanLy">
+                <div class="heading-text">Đánh giá cộng đồng</div>
+                <div class="textNho">Những phản hồi mới nhất về dự án</div>
             </div>
-
-            <!-- 7. Locked Slot 1 -->
-            <div class="slot">
-                <svg class="icon-svg locked" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5">
-                    <path d="M12 15v2m-6-3V10a6 6 0 0 1 12 0v4m-14 0h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="details-popup">
-                    <h4 class="text-title font-bold text-sm">Đang Khóa</h4>
-                    <p class="text-sub text-[11px] mt-2 italic">Hoàn thành bài thuyết trình quốc tế để mở.</p>
-                </div>
-            </div>
-
-            <!-- 8. Locked Slot 2 -->
-            <div class="slot">
-                <svg class="icon-svg locked" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="details-popup">
-                    <h4 class="text-title font-bold text-sm">Đang Khóa</h4>
-                    <p class="text-sub text-[11px] mt-2 italic">Làm chủ kiến trúc Microservices.</p>
-                </div>
-            </div>
-
-            <!-- 9. Hidden Slot -->
-            <div class="slot border-dashed border-slate-200">
-                <span class="text-slate-200 font-bold text-xl">?</span>
-                <div class="details-popup">
-                    <h4 class="text-title font-bold text-sm">???</h4>
-                    <p class="text-sub text-[11px] mt-2">Thành tựu bí mật sẽ xuất hiện sau khi đạt Level 50.</p>
-                </div>
-            </div>
-
         </div>
 
-        <!-- Luxury Footer -->
-        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
-            <span class="text-[10px] text-slate-400 font-medium uppercase tracking-widest">Hall of Fame</span>
-            <button class="text-[10px] text-yellow-600 font-bold uppercase hover:underline transition-all">Chi tiết</button>
+        <div class="comment-grid">
+            <div class="comment-card">
+                <div class="comment-header">
+                    <img src="https://i.pravatar.cc/100?img=3" alt="User">
+                    <div class="comment-meta">
+                        <span class="name">Trần Khang</span>
+                        <span class="date">2 ngày trước</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <div class="comment-body">
+                    Giao diện rất trực quan và dễ sử dụng. Phần quản lý task làm rất mượt, hy vọng team sớm ra mắt phiên bản chính thức!
+                </div>
+            </div>
+
+            <div class="comment-card">
+                <div class="comment-header">
+                    <img src="https://i.pravatar.cc/100?img=5" alt="User">
+                    <div class="comment-meta">
+                        <span class="name">Lê Thị Minh</span>
+                        <span class="date">5 ngày trước</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★☆</div>
+                <div class="comment-body">
+                    Ý tưởng dự án tuyệt vời. Layout bento grid ở trang chủ rất hiện đại. Tuy nhiên, bản mobile load ảnh hơi chậm một chút.
+                </div>
+            </div>
+
+            <div class="comment-card">
+                <div class="comment-header">
+                    <img src="https://i.pravatar.cc/100?img=11" alt="User">
+                    <div class="comment-meta">
+                        <span class="name">Hoàng Nam Dev</span>
+                        <span class="date">1 tuần trước</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <div class="comment-body">
+                    Source code tổ chức tốt, API thiết kế chuẩn RESTful. Đặc biệt thích cách team chia timeline rõ ràng theo từng người phụ trách.
+                </div>
+            </div>
         </div>
     </div>
 

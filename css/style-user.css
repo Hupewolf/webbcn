@@ -371,10 +371,17 @@ ul {
     gap: 10px;
 }
 
+.banner-left .top:hover {
+    transform: translateY(-5px);
+}
 .banner-left .bottom {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.banner-left .bottom:hover {
+    transform: translateY(-5px);
 }
 
 .avatar-wrapper {
@@ -481,6 +488,11 @@ ul {
     padding: 50px;
 }
 
+.banner-right .top:hover {
+    transform: translateY(-5px);
+}
+
+
 .top .tieuDeNho {
     width: fit-content;
 
@@ -520,6 +532,10 @@ ul {
     border-radius: 20px;
     box-shadow: var(--shadow-premium);
     background-color: var(--white);
+}
+
+.bottom-bn-right .bottom-1:hover, .bottom-2:hover {
+    transform: translateY(-5px);
 }
 
 .banner-right .bottom-1 {

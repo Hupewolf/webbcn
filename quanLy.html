@@ -110,28 +110,95 @@
             <a href="index.html">Trang chủ</a>>
             <a href="#">...</a>>
             <a href="userPage.html">Hồ sơ của tôi</a>>
-            <a href="quanLy.html" class="item-active">Quản lý dự án Project 1</a>
+            <a href="quanLy.html" class="item-active">Design Wireframe Dự án Project 1</a>
         </div>
     </div>
 
-    <!-- Quan ly section -->
-     <div class="quanLySection container">
+    <div class="heroSection">
+        <div class="destopView"></div>
+        <div class="otherDevices">
+            <div class="mobileView"></div>
+            <div class="tabletView"></div>
+        </div>
+    </div>
+
+    <!-- 1. BENTO HERO SECTION -->
+    <div class="container">
+        <div class="bento-hero">
+            <div class="bento-item bento-images">
+                <div class="device-mockup mockup-desktop"></div>
+                <div class="device-mockup mockup-tablet"></div>
+                <div class="device-mockup mockup-mobile"></div>
+            </div>
+
+            <div class="bento-item bento-info">
+                <h1>Project 1</h1>
+                <p>Một giải pháp toàn diện cho việc quản lý quy trình làm việc, tối ưu UI/UX trên mọi thiết bị và tích hợp dữ liệu thời gian thực.</p>
+                
+                <div class="action-links">
+                    <a href="#" target="_blank" class="btn-link btn-github">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Source GitHub
+                    </a>
+                    <a href="#" target="_blank" class="btn-link btn-demo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Live Demo
+                    </a>
+                </div>
+            </div>
+
+            <div class="bento-item bento-tech">
+                <h3>Công nghệ cốt lõi</h3>
+                <div class="tech-tags">
+                    <span>React JS</span>
+                    <span>Tailwind CSS</span>
+                    <span>Node.js</span>
+                    <span>Figma</span>
+                    <span>MongoDB</span>
+                    <span>REST API</span>
+                </div>
+            </div>
+
+            <div class="bento-item bento-status">
+                <div class="status-ring"></div>
+                <h3>Đã hoàn thành</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 5px;">Hoàn thành 100% tiến độ</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="quick-stats container">
+        <div class="stat-card">
+            <div class="stat-value">24</div>
+            <div class="stat-label">Tổng số hạng mục (Tasks)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">24</div>
+            <div class="stat-label">Tasks đã hoàn thành</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">120h</div>
+            <div class="stat-label">Tổng giờ làm việc</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">03</div>
+            <div class="stat-label">Phản hồi cần xử lý</div>
+        </div>
+    </div>
+
+    <div class="quanLySection container">
         <div class="tieuDe_QuanLy">
             <div class="left-QuanLy">
-                <div class="heading-text">Không gian leader - Đội ngũ của tôi</div>
-                <div class="textNho">Quản lý quyền hạn và chuyển giao vai trò các thành viên</div>
-            </div>
-            <div class="right-QuanLy">
-                <div class="dauCongQL"></div>Thêm thành viên  
+                <div class="heading-text">Đội ngũ phát triển</div>
+                <div class="textNho">Các thành viên cốt cán của dự án này</div>
             </div>
         </div>
         <div class="wrapThanhVien">
             <div class="thanhVien">
-                <div class="top">
+                <div class="topTV">
                     <div class="avt avt1">B</div>
                     <div class="ten">Bảo</div>
                     <div class="vaiTro des">Designer</div>
-                    <div class="bin"></div>
                 </div>
                 <div class="lineNgang"></div>
                 <div class="bottom">
@@ -140,11 +207,10 @@
                 </div>
             </div>
             <div class="thanhVien">
-                <div class="top">
+                <div class="topTV">
                     <div class="avt avt2">N</div>
                     <div class="ten">Nhân</div>
                     <div class="vaiTro cod">Coder</div>
-                    <div class="bin"></div>
                 </div>
                 <div class="lineNgang"></div>
                 <div class="bottom">
@@ -153,11 +219,10 @@
                 </div>
             </div>
             <div class="thanhVien">
-                <div class="top">
+                <div class="topTV">
                     <div class="avt avt3">H</div>
                     <div class="ten">Huy</div>
                     <div class="vaiTro soc">Social</div>
-                    <div class="bin"></div>
                 </div>
                 <div class="lineNgang"></div>
                 <div class="bottom">
@@ -165,61 +230,440 @@
                     <div class="lienLac">Nhắn tin</div>
                 </div>
             </div>
-            <!-- <div class="thanhVien">
-                <div class="top">
+            <div class="thanhVien">
+                <div class="topTV">
                     <div class="avt avt4">C</div>
                     <div class="ten">Chánh</div>
                     <div class="vaiTro guest">Dân làng</div>
-                    <div class="bin"></div>
                 </div>
                 <div class="lineNgang"></div>
                 <div class="bottom">
                     <div class="hoSo">Hồ sơ</div>
                     <div class="lienLac">Nhắn tin</div>
                 </div>
-            </div> -->
+            </div>
         </div>
-     </div>
-
-
-    <!-- Lich trinh cho thanh vien -->
+    </div>
 
     <div class="lichTrinh-wrap container">
-
         <div class="tieuDe_QuanLy">
             <div class="left-QuanLy">
-                <div class="heading-text">Triển khai lịch trình</div>
-                <div class="textNho">Giao nhiệm vụ cho thành viên</div>
-            </div>
-            <div class="right-QuanLy">
-                <div class="dauCongQL"></div>Thêm lịch trình
+                <div class="heading-text">Tiến độ & Nhiệm vụ</div>
+                <div class="textNho">Chi tiết các hạng mục và phân công công việc</div>
             </div>
         </div>
 
+        <details class="timeline-dropdown">
+            <summary class="timeline-summary yellow">
+                <div class="summary-left">
+                    <div class="tieuDeCT">Bắt đầu dự án</div>
+                    <div class="date">Bắt đầu: 30/10/2025</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Nghiên cứu: hành vi người dùng, phác thảo Wireframe và hoàn thiện bản thiết kế UI trên Figma cho cả 3 nền tảng.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Nghiên cứu: Các trang web Dribble, Pinterest,...
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Tài liệu nghiên cứu chung.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Nghiên cứu: phác thảo Wireframe và hoàn thiện bản thiết kế UI trên Figma cho cả 3 nền tảng.
+                    </div>
+                </div>
+            </div>
+        </details>
 
-        <div class="lichTrinh grey">
-            <div class="tieuDeLT">Giai đoạn chuẩn bị</div>
-            <div class="xem">Người phụ trách</div>
-            <div class="date">12/10/2025</div>
-            <div class="bioLT">Chuẩn bị ý tưởng, bắt đầu tham khảo các trang web khác để lấy ý tưởng chung</div>
+        <details class="timeline-dropdown">
+            <summary class="timeline-summary blue">
+                <div class="summary-left">
+                    <div class="tieuDeCT">Xây dựng module: Khung UI/UX</div>
+                    <div class="date">Dự kiến: 05/11/2025</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Header, Footer
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: trang chủ và khung các trang chi tiết.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị của Header, Footer.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: các Section MVP.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị trên các thiết bị di động, tablet.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Trang chi tiết dự án.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt4">C</div>
+                        <div class="user-info-text">
+                            <strong>Chánh</strong>
+                            <span>UID: #8892</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Màu sắc chủ đạo của trang web.
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="timeline-dropdown">
+            <summary class="timeline-summary blue">
+                <div class="summary-left">
+                    <div class="tieuDeCT">Xây dựng module: API</div>
+                    <div class="date">Dự kiến: 15/11/2025</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: hệ thống REST API, kết nối cơ sở dữ liệu.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị API.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị trên các thiết bị di động, tablet.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi hiển thị trên các thiết bị di động, tablet.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Section Contact.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt1">B</div>
+                        <div class="user-info-text">
+                            <strong>Bảo</strong>
+                            <span>UID: #2319</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Form Contact.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Fix lỗi Form Contact.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt4">C</div>
+                        <div class="user-info-text">
+                            <strong>Chánh</strong>
+                            <span>UID: #8892</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Kiểm thử: Test luồng dữ liệu API, báo cáo các lỗi bảo mật và tối ưu truy vấn Database.
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="timeline-dropdown">
+            <summary class="timeline-summary blue">
+                <div class="summary-left">
+                    <div class="tieuDeCT">Xây dựng module: Database Server</div>
+                    <div class="date">Dự kiến: 15/11/2025</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt2">N</div>
+                        <div class="user-info-text">
+                            <strong>Nhân</strong>
+                            <span>UID: #4421</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: hệ thống Database và kết nối dữ liệu.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Tối ưu: Hiển thị dữ liệu.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Xây dựng: Section dữ liệu mới.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt4">C</div>
+                        <div class="user-info-text">
+                            <strong>Chánh</strong>
+                            <span>UID: #8892</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Kiểm thử: Kiểm tra tối ưu hiển thị dữ liệu.
+                    </div>
+                </div>
+            </div>
+        </details>        
+
+        <details class="timeline-dropdown" open>
+            <summary class="timeline-summary green">
+                <div class="summary-left">
+                    <div class="tieuDeCT">Dự án hoàn thành</div>
+                    <div class="date">Hoàn thành: 22/02/2026</div>
+                </div>
+                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="timeline-content">
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Lên chiến dịch truyền thông (Social Campaign), thu thập Feedback từ người dùng Beta để team Dev vá lỗi.
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-user">
+                        <div class="avt-small avt3">H</div>
+                        <div class="user-info-text">
+                            <strong>Huy</strong>
+                            <span>UID: #1102</span>
+                        </div>
+                    </div>
+                    <div class="task-detail">
+                        Ra mắt sản phẩm.
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <div class="comment-section container">
+        <div class="tieuDe_QuanLy">
+            <div class="left-QuanLy">
+                <div class="heading-text">Đánh giá cộng đồng</div>
+                <div class="textNho">Những phản hồi mới nhất về dự án</div>
+            </div>
         </div>
-        <div class="lichTrinh yellow">
-            <div class="tieuDeLT">Triển khai</div>
-            <div class="xem">Người phụ trách</div>
-            <div class="date">30/10/2025</div>
-            <div class="bioLT">Thống nhất ý tưởng và bắt đầu thiết kế đồ hoạ, UI/ UX, nghiên cứu hành vi người dùng</div>
-        </div>
-        <div class="lichTrinh green">
-            <div class="tieuDeLT">Giai đoạn phát triển và cải tiến</div>
-            <div class="xem">Người phụ trách</div>
-            <div class="date">30/11/2025</div>
-            <div class="bioLT">Đưa lên bản demo của dự án và đội ngũ phát triển chữa lỗi của người dùng feedback</div>
-        </div>
-        <div class="lichTrinh blue">
-            <div class="tieuDeLT">Về đích</div>
-            <div class="xem">Người phụ trách</div>
-            <div class="date">22/2/2026</div>
-            <div class="bioLT">Hoàn thành dự án, kiểm thử và ra mắt sản phẩm cho thị trường</div>
+
+        <div class="comment-grid">
+            <div class="comment-card">
+                <div class="comment-header">
+                    <img src="https://i.pravatar.cc/100?img=3" alt="User">
+                    <div class="comment-meta">
+                        <span class="name">Trần Khang</span>
+                        <span class="date">2 ngày trước</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <div class="comment-body">
+                    Giao diện rất trực quan và dễ sử dụng. Phần quản lý task làm rất mượt, hy vọng team sớm ra mắt phiên bản chính thức!
+                </div>
+            </div>
+
+            <div class="comment-card">
+                <div class="comment-header">
+                    <img src="https://i.pravatar.cc/100?img=5" alt="User">
+                    <div class="comment-meta">
+                        <span class="name">Lê Thị Minh</span>
+                        <span class="date">5 ngày trước</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★☆</div>
+                <div class="comment-body">
+                    Ý tưởng dự án tuyệt vời. Layout bento grid ở trang chủ rất hiện đại. Tuy nhiên, bản mobile load ảnh hơi chậm một chút.
+                </div>
+            </div>
+
+            <div class="comment-card">
+                <div class="comment-header">
+                    <img src="https://i.pravatar.cc/100?img=11" alt="User">
+                    <div class="comment-meta">
+                        <span class="name">Hoàng Nam Dev</span>
+                        <span class="date">1 tuần trước</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <div class="comment-body">
+                    Source code tổ chức tốt, API thiết kế chuẩn RESTful. Đặc biệt thích cách team chia timeline rõ ràng theo từng người phụ trách.
+                </div>
+            </div>
         </div>
     </div>
 
