@@ -190,13 +190,13 @@
             grid.innerHTML = "";
             const idPool = shuffle(Array.from({length: 899}, (_, i) => i + 101));
             const architecture = [
-                ...Array(6).fill({w: 6, h: 6, type: 'ultra'}),
-                ...Array(26).fill({w: 4, h: 4, type: 'medium'}),
+                ...Array(1).fill({w: 6, h: 6, type: 'ultra'}),
+                ...Array(5).fill({w: 4, h: 4, type: 'medium'}),
                 ...Array(11).fill({w: 4, h: 4, type: 'ttsMedium'}),
-                ...Array(26).fill({w: 4, h: 4, type: 'ctvMedium'}),
-                ...Array(26).fill({w: 2, h: 4, type: 'firstMedium'}),
-                ...Array(26).fill({w: 4, h: 2, type: 'secondMedium'}),
-                ...Array(80).fill({w: 2, h: 2, type: 'standard'})
+                ...Array(13).fill({w: 4, h: 4, type: 'ctvMedium'}),
+                ...Array(13).fill({w: 2, h: 4, type: 'firstMedium'}),
+                ...Array(13).fill({w: 4, h: 2, type: 'secondMedium'}),
+                ...Array(30).fill({w: 2, h: 2, type: 'standard'})
             ];
             shuffle(architecture);
 
