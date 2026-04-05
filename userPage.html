@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/quanLy.css">
+    <link rel="stylesheet" href="./css/tagMedal.css">
     <title>Nguyễn Hùng</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -310,87 +311,192 @@
 
             </div>
         </div>
+
+        <div class="achv-modal-overlay" id="achvModal" onclick="closeModalByOverlay(event)">
+        <div class="achv-modal-content" id="achvModalContent">
+            <button class="achv-modal-close" onclick="closeAchvModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+            <div id="achvModalBody">
+                <!-- Nội dung được điền bởi JS -->
+            </div>
+        </div>
+    </div>
         
     </section>
 
-    
-    
-    <div class="about-me container">
-        
-    </div>
-
-    <section class="mainContent container">
-        <div class="main-left">
-            <div class="content">
-                <div class="intro">Kỹ năng</div>
-                <div class="wrap-hl">
-                    <div class="high-light">
-                        <div class="hl-head">Front-end</div>
-                        <div class="list-item">
-                            <div class="item color-text re-tag">React</div>
-                            <div class="item color-text basic-tag">HTML, CSS, JS</div>
-                            <div class="item color-text ui-tag">UI/ UX</div>
-                            
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    
-                    <div class="high-light">
-                        <div class="hl-head">Back-end</div>
-                        <div class="list-item">
-                            <div class="item color-text node-tag">Node.js</div>
-                            <div class="item color-text nex-tag">Next.js</div>
-                        </div>
-                    </div>
-
-                    <div class="line"></div>
-                    <div class="high-light">
-                        <div class="hl-head">Công cụ</div>
-                        <div class="list-item">
-                            <div class="item"> <div class="icon-li git-icon"></div> Git</div>
-                            <div class="item"> <div class="icon-li github"></div> Github</div>
-                            <div class="item"> <div class="icon-li figma-icon"></div> Figma</div>
-                            <div class="item"> <div class="icon-li vercel-icon"></div> Vercel</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="intro">Hoạt động</div>
-                <div class="wrap-hl-2">
-
-                    <div class="high-light-2">
-                        <div class="hl-head-icon icon-1">
-                            
-                        </div>
-                        <div class="wrap-text-hl">
-                            <div class="title-hl">Cuộc thi Hackathons</div>
-                            <div class="content-hl"><span>Top 10%</span> thực chiến Web App</div>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <div class="high-light-2">
-                        <div class="hl-head-icon icon-2">
-                            
-                        </div>
-                        <div class="wrap-text-hl">
-                            <div class="title-hl">Meet-up Công Nghệ</div>
-                            <div class="content-hl"><span>1K+</span> người tham gia chia sẻ</div>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <div class="high-light-2">
-                        <div class="hl-head-icon icon-3">
-                            
-                        </div>
-                        <div class="wrap-text-hl">
-                            <div class="title-hl">Hoạt động hướng dẫn nhỏ</div>
-                            <div class="content-hl">Hướng dẫn cơ bản về HTML, CSS, JS.</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+   <div class="achv-main-container container" id="achvMain">
+        <div class="achv-header-wrapper">
+            <h1 class="titleTT">Thành tích <span>&</span> huy chương</h1>
+            <div class="achv-total-text" id="achvTotalCount">0 huy chương</div>
         </div>
+        <div class="achv-filter-list" id="achvFilterStats"></div>
+        <div class="achv-cards-grid" id="achvGrid"></div>
+        
+        <div class="achv-load-more-container">
+            <button class="achv-btn-show" id="achvBtnToggle" onclick="toggleExpand()">
+                <span id="achvBtnText">Xem thêm 10 thành tựu khác</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+        </div>
+    </div>
+    <script>
+       const achvData = [
+            { id: 1, title: "Hackathon Web App 2024", organizer: "Google Developer Group", date: "Tháng 11 - 2024", type: "gold", rank: "1st", desc: "Đạt giải nhất cuộc thi lập trình ứng dụng web quy mô khu vực với dự án hệ thống quản lý rác thải thông minh sử dụng AI." },
+            { id: 2, title: "UI/UX Design Sprint", organizer: "BCN City Community", date: "Tháng 8 - 2024", type: "gold", rank: "1st", desc: "Thiết kế trải nghiệm người dùng xuất sắc nhất trong cuộc thi chạy nước rút thiết kế kéo dài 48 giờ liên tục." },
+            { id: 3, title: "Best Open Source Project", organizer: "IUH Tech Fest", date: "Tháng 5 - 2023", type: "gold", rank: "1st", desc: "Dự án thư viện mã nguồn mở hỗ trợ xử lý dữ liệu lớn được cộng đồng đánh giá cao nhất tại ngày hội công nghệ." },
+            { id: 4, title: "Fullstack Showdown", organizer: "Techcombank Dev Challenge", date: "Tháng 3 - 2024", type: "silver", rank: "2nd", desc: "Vượt qua hơn 50 đội thi để giành vị trí á quân trong thử thách phát triển sản phẩm tài chính toàn diện." },
+            { id: 5, title: "Code Battle 2023", organizer: "Vietnam IT Student Assoc.", date: "Tháng 9 - 2023", type: "silver", rank: "2nd", desc: "Đấu trường thuật toán dành cho sinh viên CNTT toàn quốc, thể hiện kỹ năng giải quyết vấn đề phức tạp." },
+            { id: 6, title: "Mobile UX Challenge", organizer: "Grab Student Program", date: "Tháng 7 - 2023", type: "bronze", rank: "3rd", desc: "Tối ưu hóa hành trình khách hàng cho ứng dụng di động trong phân khúc dịch vụ vận chuyển." },
+            { id: 7, title: "Algorithm Sprint", organizer: "HCM Open Coding Cup", date: "Tháng 4 - 2022", type: "bronze", rank: "3rd", desc: "Thử thách lập trình thi đấu tập trung vào tối ưu hóa cấu trúc dữ liệu và giải thuật." },
+            { id: 8, title: "Top Contributor 2024", organizer: "BCN City — Ban quản trị", date: "Tháng 12 - 2024", type: "special", rank: "✦", desc: "Giải thưởng vinh danh cá nhân có đóng góp tích cực nhất cho sự phát triển của cộng đồng BCN trong năm 2024." },
+            { id: 9, title: "Backend Master Class", organizer: "GDG Cloud Da Nang", date: "Tháng 10 - 2024", type: "silver", rank: "2nd", desc: "Chứng nhận hoàn thành xuất sắc khóa đào tạo chuyên sâu về kiến trúc Microservices và bảo mật hệ thống." },
+            { id: 10, title: "Innovative Idea 2024", organizer: "Startup Wheel", date: "Tháng 9 - 2024", type: "gold", rank: "1st", desc: "Ý tưởng khởi nghiệp đột phá trong lĩnh vực công nghệ giáo dục (EdTech) với mô hình học tập tương tác." },
+            { id: 11, title: "Clean Code Contest", organizer: "FPT Software", date: "Tháng 8 - 2024", type: "bronze", rank: "3rd", desc: "Cuộc thi viết code sạch, dễ bảo trì và tối ưu hiệu suất theo tiêu chuẩn công nghiệp." },
+            { id: 12, title: "AI Integration Award", organizer: "NVIDIA Developer", date: "Tháng 7 - 2024", type: "special", rank: "Top 5", desc: "Ứng dụng trí tuệ nhân tạo vào sản phẩm thực tế một cách sáng tạo và có tính thực tiễn cao." },
+            { id: 13, title: "Cyber Security Hero", organizer: "WhiteHat Contest", date: "Tháng 6 - 2024", type: "silver", rank: "2nd", desc: "Tham gia thử thách CTF và bảo mật hệ thống, xếp hạng cao trong danh sách các nhà nghiên cứu bảo mật trẻ." },
+            { id: 14, title: "Best UI Animation", organizer: "Dribbble Community", date: "Tháng 5 - 2024", type: "gold", rank: "1st", desc: "Thiết kế chuyển động giao diện lôi cuốn và mượt mà nhất trong cuộc thi hàng tháng của cộng đồng." },
+            { id: 15, title: "Database Architect 2023", organizer: "AWS User Group", date: "Tháng 12 - 2023", type: "silver", rank: "2nd", desc: "Thiết kế cấu trúc cơ sở dữ liệu có khả năng mở rộng cao trên nền tảng điện toán đám mây." },
+            { id: 16, title: "DevOps Champion", organizer: "GitLab Vietnam", date: "Tháng 11 - 2023", type: "bronze", rank: "3rd", desc: "Tối ưu hóa quy trình CI/CD giúp giảm 50% thời gian triển khai ứng dụng." },
+            { id: 17, title: "Outstanding Mentor", organizer: "BCN City Academy", date: "Tháng 10 - 2023", type: "special", rank: "Honor", desc: "Dẫn dắt các học viên hoàn thành dự án thực tế với kết quả xuất sắc." },
+            { id: 18, title: "React Global Summit", organizer: "Meta Developers", date: "Tháng 8 - 2023", type: "gold", rank: "1st", desc: "Dự án sử dụng React JS tiên tiến nhất, áp dụng Server Components và tối ưu hóa hiệu năng vượt trội." }
+        ];
+
+        const achvColors = {
+            gold: { primary: "#f59e0b", bg: "#fffbeb", label: "Vàng" },
+            silver: { primary: "#94a3b8", bg: "#f8fafc", label: "Bạc" },
+            bronze: { primary: "#d97706", bg: "#fff7ed", label: "Đồng" },
+            special: { primary: "#6366f1", bg: "#f5f3ff", label: "Đặc biệt" }
+        };
+
+        const INITIAL_COUNT = 8;
+        let isExpanded = false;
+
+        function getMedalSVG(type, size = 86) {
+            const primary = achvColors[type].primary;
+            const bg = achvColors[type].bg;
+            return `
+                <svg width="${size}" height="${size}" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="${primary}" stroke-opacity="0.1" stroke-width="1.5"/>
+                    <circle cx="50" cy="50" r="39" stroke="${primary}" stroke-opacity="0.3" stroke-width="3"/>
+                    <circle cx="50" cy="50" r="32" fill="${bg}" stroke="${primary}" stroke-width="4"/>
+                    <path d="M50 38L53.5 45.2L61.5 46.4L55.7 52L57.1 60L50 56.2L42.9 60L44.3 52L38.5 46.4L46.5 45.2L50 38Z" fill="${primary}"/>
+                    <rect x="42" y="76" width="6" height="14" rx="2" fill="${primary}" fill-opacity="0.6"/>
+                    <rect x="52" y="76" width="6" height="14" rx="2" fill="${primary}" fill-opacity="0.6"/>
+                </svg>
+            `;
+        }
+
+        function toggleExpand() {
+            isExpanded = !isExpanded;
+            const btnText = document.getElementById('achvBtnText');
+            const btn = document.getElementById('achvBtnToggle');
+            const container = document.getElementById('achvMain');
+
+            if (isExpanded) {
+                btnText.textContent = "Thu gọn";
+                btn.classList.add('is-expanded');
+            } else {
+                btnText.textContent = `Xem thêm ${achvData.length - INITIAL_COUNT} thành tựu khác`;
+                btn.classList.remove('is-expanded');
+                container.scrollIntoView({ behavior: 'smooth' });
+            }
+            renderCards();
+        }
+
+        function openAchvModal(id) {
+            const item = achvData.find(a => a.id === id);
+            if (!item) return;
+
+            const modal = document.getElementById('achvModal');
+            const body = document.getElementById('achvModalBody');
+            
+            body.innerHTML = `
+                <div class="achv-icon-wrap" style="width: 120px; height: 120px; margin: 0 auto 24px;">
+                    ${getMedalSVG(item.type, 120)}
+                </div>
+                <div class="achv-rank-label" style="position: static; color: ${achvColors[item.type].primary}; font-size: 14px; margin-bottom: 8px;">
+                    ${item.rank}
+                </div>
+                <h2 style="font-size: 24px; font-weight: 800; color: #111; margin-bottom: 8px;">${item.title}</h2>
+                <p style="font-size: 13px; color: #64748b; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">${item.organizer}</p>
+                <div class="achv-modal-desc">
+                    <strong>Thông tin chi tiết:</strong><br>
+                    ${item.desc}
+                </div>
+                <div style="margin-top: 30px; font-size: 12px; color: #94a3b8; font-weight: 500;">
+                    Ngày đạt được: ${item.date}
+                </div>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Khóa cuộn trang
+        }
+
+        function closeAchvModal() {
+            const modal = document.getElementById('achvModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Mở khóa cuộn trang
+        }
+
+        function closeModalByOverlay(e) {
+            if (e.target.id === 'achvModal') closeAchvModal();
+        }
+
+        // Đóng modal bằng phím ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAchvModal();
+        });
+
+        function renderCards() {
+            const grid = document.getElementById('achvGrid');
+            if (!grid) return;
+            
+            const visibleCount = isExpanded ? achvData.length : INITIAL_COUNT;
+            const itemsToShow = achvData.slice(0, visibleCount);
+            
+            grid.innerHTML = itemsToShow.map(item => `
+                <div class="achv-medal-card achv-status-${item.type}" onclick="openAchvModal(${item.id})">
+                    <div class="achv-rank-label">${item.rank}</div>
+                    <div class="achv-icon-wrap">${getMedalSVG(item.type)}</div>
+                    <h3 class="achv-item-name">${item.title}</h3>
+                    <p class="achv-item-org">${item.organizer}</p>
+                    <div class="achv-item-date">${item.date}</div>
+                </div>
+            `).join('');
+        }
+
+        function initAchvSection() {
+            const totalEl = document.getElementById('achvTotalCount');
+            const statsEl = document.getElementById('achvFilterStats');
+            const btnText = document.getElementById('achvBtnText');
+            
+            if (!totalEl || !statsEl) return;
+
+            totalEl.textContent = `${achvData.length} huy chương`;
+            btnText.textContent = `Xem thêm ${achvData.length - INITIAL_COUNT} thành tựu khác`;
+
+            const stats = achvData.reduce((acc, item) => {
+                acc[item.type] = (acc[item.type] || 0) + 1;
+                return acc;
+            }, {});
+
+            statsEl.innerHTML = Object.entries(stats).map(([type, count]) => `
+                <div class="achv-filter-tag">
+                    <div class="achv-indicator-dot" style="background-color: ${achvColors[type].primary}"></div>
+                    <strong>${count}</strong> ${achvColors[type].label}
+                </div>
+            `).join('');
+
+            renderCards();
+        }
+
+        document.addEventListener('DOMContentLoaded', initAchvSection);
+    </script>
+
+    
+    <section class="mainContent container">
+        
         <div class="main-right">
             <div class="title">Dự án của tôi</div>
             <!-- <div class="filter-bar">
@@ -700,7 +806,6 @@
             </div>
         </div> -->
     </section>
-
 
     <div class="timeline container">
         <div class="title-wrap">
