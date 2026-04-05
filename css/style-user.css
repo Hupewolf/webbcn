@@ -605,6 +605,11 @@ ul {
     background-color: var(--primary-color);
 }
 
+.accent {
+    background-color: #e2e2e2;
+    color: var(--primary-color);
+}
+
 .accent-bt {
     display: flex;
     flex-direction: column;
