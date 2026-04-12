@@ -601,6 +601,14 @@ ul {
     background-color: var(--text-color);
 }
 
+.icon-project {
+    display: block;
+    mask-image: url(../img/kanban-view.svg);
+    width: 20px;
+    height: 20px;
+    background-color: var(--text-color);
+}
+
 .primary-bt {
     background-color: var(--primary-color);
 }
